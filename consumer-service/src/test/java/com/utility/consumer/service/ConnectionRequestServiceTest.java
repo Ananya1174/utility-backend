@@ -61,11 +61,38 @@ class ConnectionRequestServiceTest {
     void createRequest_consumerNotFound() {
 
         when(consumerRepo.existsById("C1")).thenReturn(false);
+        CreateConnectionRequestDto cc=new CreateConnectionRequestDto();
 
         assertThrows(ApiException.class,
-                () -> service.createRequest("C1", new CreateConnectionRequestDto()));
+                () -> service.createRequest("C1", cc));
     }
+    @Test
+    void approveRequest_notFound_lambdaCovered() {
 
+        when(requestRepo.findByIdAndStatus("R404", ConnectionRequestStatus.PENDING))
+                .thenReturn(Optional.empty());
+
+        ApproveConnectionRequestDto dto = new ApproveConnectionRequestDto();
+        dto.setMeterNumber("MTR1");
+
+        ApiException ex = assertThrows(ApiException.class,
+                () -> service.approveRequest("R404", dto, "ADMIN"));
+
+        assertEquals("Pending request not found", ex.getMessage());    }
+
+
+
+    @Test
+    void rejectRequest_notFound_lambdaCovered() {
+
+        when(requestRepo.findByIdAndStatus("R404", ConnectionRequestStatus.PENDING))
+                .thenReturn(Optional.empty());
+
+        ApiException ex = assertThrows(ApiException.class,
+                () -> service.rejectRequest("R404", "ADMIN"));
+
+        assertEquals("Pending request not found", ex.getMessage());
+        }
     @Test
     void approveRequest_success() {
 

@@ -5,9 +5,9 @@ import java.util.List;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.security.authentication.BadCredentialsException;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -28,8 +28,7 @@ import com.utility.auth.dto.response.UserResponseDto;
 import com.utility.auth.model.Role;
 import com.utility.auth.model.User;
 import com.utility.auth.service.AuthService;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
+
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 
@@ -93,10 +92,10 @@ public class AuthController {
                 SecurityContextHolder.getContext().getAuthentication();
 
         if (authentication == null || authentication.getPrincipal() == null) {
-            throw new RuntimeException("Unauthorized");
+            throw new BadCredentialsException("Unauthorized");
         }
 
-        String userId = authentication.getPrincipal().toString(); // 👈 userId from JWT
+        String userId = authentication.getPrincipal().toString(); 
 
         authService.changePassword(
                 userId,
@@ -112,7 +111,7 @@ public class AuthController {
         return ResponseEntity.ok(authService.getAllUsers());
     }
     @GetMapping("/users/{userId}")
-    public ResponseEntity<UserResponseDto> getUserById(@PathVariable String userId) {
+    public ResponseEntity<UserResponseDto> getUserById(@PathVariable("userId") String userId) {
 
         UserResponseDto user = authService.getUserById(userId);
         return ResponseEntity.ok(user);
@@ -120,7 +119,6 @@ public class AuthController {
     @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/users/{userId}")
     public ResponseEntity<Void> deleteUser(@PathVariable("userId") String userId) {
-        System.out.println("Deleting user with ID: " + userId);
         authService.deleteUser(userId);
         return ResponseEntity.noContent().build();
     }

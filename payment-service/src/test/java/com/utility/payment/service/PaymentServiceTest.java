@@ -81,9 +81,13 @@ class PaymentServiceTest {
 
         when(billingClient.getBill("B1")).thenReturn(bill);
 
-        ApiException ex = assertThrows(ApiException.class,
-                () -> service.initiateOnline(
-                        new InitiateOnlinePaymentRequest("B1", "C1")));
+        InitiateOnlinePaymentRequest request =
+                new InitiateOnlinePaymentRequest("B1", "C1");
+
+        ApiException ex = assertThrows(
+                ApiException.class,
+                () -> service.initiateOnline(request)
+        );
 
         assertEquals(HttpStatus.BAD_REQUEST, ex.getStatus());
     }
@@ -131,9 +135,13 @@ class PaymentServiceTest {
         when(paymentRepository.findById("P1"))
                 .thenReturn(Optional.of(payment));
 
-        assertThrows(ApiException.class,
-                () -> service.confirmOtp(
-                        new ConfirmOtpRequest("P1", "999999")));
+        ConfirmOtpRequest request =
+                new ConfirmOtpRequest("P1", "999999");
+
+        assertThrows(
+                ApiException.class,
+                () -> service.confirmOtp(request)
+        );
     }
 
     /* ================= OFFLINE PAYMENT ================= */

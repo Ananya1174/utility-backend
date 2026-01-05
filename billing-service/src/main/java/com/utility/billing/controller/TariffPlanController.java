@@ -6,7 +6,7 @@ import java.util.Map;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
-import com.utility.billing.model.TariffPlan;
+import com.utility.billing.dto.TariffPlanDto;
 import com.utility.billing.service.TariffPlanService;
 
 import lombok.RequiredArgsConstructor;
@@ -16,28 +16,27 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class TariffPlanController {
 
-    private final TariffPlanService tariffPlanService;
+    private final TariffPlanService service;
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public TariffPlan create(@RequestBody TariffPlan plan) {
-        return tariffPlanService.createTariffPlan(plan);
+    public TariffPlanDto create(@RequestBody TariffPlanDto dto) {
+        return service.createTariffPlan(dto);
     }
 
     @PutMapping("/{id}/deactivate")
-    public Map<String, String> deactivate(
-            @PathVariable("id") String id) {
-        return tariffPlanService.deactivateTariffPlan(id);
+    public Map<String, String> deactivate(@PathVariable("id") String id) {
+        return service.deactivateTariffPlan(id);
     }
 
     @GetMapping
-    public List<TariffPlan> getPlans(
-    		  @RequestParam(name = "active", required = false) Boolean active) {
-        return tariffPlanService.getPlans(active);
+    public List<TariffPlanDto> getPlans(
+            @RequestParam(name = "active",required = false) Boolean active) {
+        return service.getPlans(active);
     }
 
     @GetMapping("/active")
-    public List<TariffPlan> activePlans() {
-        return tariffPlanService.getActivePlans();
+    public List<TariffPlanDto> activePlans() {
+        return service.getActivePlans();
     }
 }

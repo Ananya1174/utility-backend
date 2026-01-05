@@ -7,11 +7,10 @@ import java.util.UUID;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
-import org.springframework.security.authentication.BadCredentialsException;
-
 
 import com.utility.auth.dto.response.LoginResponseDto;
 import com.utility.auth.dto.response.UserResponseDto;
@@ -32,15 +31,15 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class AuthService {
 
+    private static final String USER_NOT_FOUND = "User not found";
+
     private final AuthenticationManager authenticationManager;
     private final JwtUtil jwtUtil;
-
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
     private final PasswordResetTokenRepository passwordResetTokenRepository;
     private final NotificationPublisher notificationPublisher;
 
-    // ---------------- REGISTER (ADMIN ONLY) ----------------
     public User registerUser(User user) {
 
         if (userRepository.existsByUsername(user.getUsername())) {
@@ -59,19 +58,17 @@ public class AuthService {
         return userRepository.save(user);
     }
 
-    // ---------------- LOGIN ----------------
     public LoginResponseDto login(String username, String password) {
 
         authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(username, password));
 
         User user = userRepository.findByUsername(username)
-        		.orElseThrow(() -> new BadCredentialsException("Invalid credentials"));
-
+                .orElseThrow(() -> new BadCredentialsException("Invalid credentials"));
 
         String token = jwtUtil.generateToken(
-                user.getUserId(),             
-                user.getUsername(),     
+                user.getUserId(),
+                user.getUsername(),
                 user.getRole().name()
         );
 
@@ -83,10 +80,10 @@ public class AuthService {
         );
     }
 
-    // ---------------- FORGOT PASSWORD ----------------
     public void forgotPassword(String email) {
 
         userRepository.findByEmail(email).ifPresent(user -> {
+
             List<PasswordResetToken> oldTokens =
                     passwordResetTokenRepository.findByEmailAndUsedFalse(email);
 
@@ -111,7 +108,7 @@ public class AuthService {
             notificationPublisher.publishPasswordReset(event);
         });
     }
-    // ---------------- RESET PASSWORD ----------------
+
     public void resetPassword(String token, String newPassword) {
 
         PasswordResetToken resetToken =
@@ -127,10 +124,10 @@ public class AuthService {
         PasswordPolicyValidator.validate(newPassword);
 
         User user = userRepository.findByEmail(resetToken.getEmail())
-                .orElseThrow(() -> new ResourceNotFoundException("User not found"));
+                .orElseThrow(() -> new ResourceNotFoundException(USER_NOT_FOUND));
 
         user.setPassword(passwordEncoder.encode(newPassword));
-        user.setPasswordChangeRequired(false);   
+        user.setPasswordChangeRequired(false);
         user.setUpdatedAt(LocalDateTime.now());
         userRepository.save(user);
 
@@ -141,19 +138,20 @@ public class AuthService {
     public void changePassword(String userId, String oldPassword, String newPassword) {
 
         User user = userRepository.findById(userId)
-                .orElseThrow(() -> new ResourceNotFoundException("User not found"));
+                .orElseThrow(() -> new ResourceNotFoundException(USER_NOT_FOUND));
 
         if (!passwordEncoder.matches(oldPassword, user.getPassword())) {
-        	throw new ResponseStatusException(
-        	        HttpStatus.BAD_REQUEST,
-        	        "Old password is incorrect"
-        	    );
+            throw new ResponseStatusException(
+                    HttpStatus.BAD_REQUEST,
+                    "Old password is incorrect"
+            );
         }
 
         PasswordPolicyValidator.validate(newPassword);
+
         if (passwordEncoder.matches(newPassword, user.getPassword())) {
             throw new IllegalArgumentException(
-                "New password must be different from old password"
+                    "New password must be different from old password"
             );
         }
 
@@ -173,7 +171,7 @@ public class AuthService {
                         .username(user.getUsername())
                         .email(user.getEmail())
                         .role(user.getRole().name())
-                        .status(user.getActive() ? "ACTIVE" : "INACTIVE")
+                        .status(Boolean.TRUE.equals(user.getActive()) ? "ACTIVE" : "INACTIVE")
                         .build())
                 .toList();
     }
@@ -181,23 +179,23 @@ public class AuthService {
     public UserResponseDto getUserById(String userId) {
 
         User user = userRepository.findById(userId)
-                .orElseThrow(() -> new ResourceNotFoundException("User not found"));
+                .orElseThrow(() -> new ResourceNotFoundException(USER_NOT_FOUND));
 
         return UserResponseDto.builder()
                 .userId(user.getUserId())
                 .username(user.getUsername())
                 .email(user.getEmail())
                 .role(user.getRole().name())
-                .status(user.getActive() ? "ACTIVE" : "INACTIVE")
+                .status(Boolean.TRUE.equals(user.getActive()) ? "ACTIVE" : "INACTIVE")
                 .build();
     }
 
     public void deleteUser(String userId) {
 
         User user = userRepository.findById(userId)
-                .orElseThrow(() -> new ResourceNotFoundException("User not found"));
+                .orElseThrow(() -> new ResourceNotFoundException(USER_NOT_FOUND));
 
-        user.setActive(false); 
+        user.setActive(false);
         user.setUpdatedAt(LocalDateTime.now());
 
         userRepository.save(user);

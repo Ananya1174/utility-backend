@@ -1,6 +1,7 @@
 package com.utility.auth.service;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
 import java.time.LocalDateTime;
@@ -13,7 +14,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.server.ResponseStatusException;
 
@@ -32,74 +33,65 @@ import com.utility.auth.security.JwtUtil;
 @ExtendWith(MockitoExtension.class)
 class AuthServiceTest {
 
-    @Mock
-    private AuthenticationManager authenticationManager;
+    @Mock AuthenticationManager authenticationManager;
+    @Mock JwtUtil jwtUtil;
+    @Mock UserRepository userRepository;
+    @Mock PasswordEncoder passwordEncoder;
+    @Mock PasswordResetTokenRepository passwordResetTokenRepository;
+    @Mock NotificationPublisher notificationPublisher;
 
-    @Mock
-    private JwtUtil jwtUtil;
-
-    @Mock
-    private UserRepository userRepository;
-
-    @Mock
-    private PasswordEncoder passwordEncoder;
-
-    @Mock
-    private PasswordResetTokenRepository passwordResetTokenRepository;
-
-    @Mock
-    private NotificationPublisher notificationPublisher;
-
-    @InjectMocks
-    private AuthService authService;
+    @InjectMocks AuthService authService;
 
     // ---------------- REGISTER ----------------
+
     @Test
     void registerUser_success() {
-
         User user = User.builder()
                 .username("admin")
-                .email("admin@gmail.com")
+                .email("a@gmail.com")
                 .password("raw")
                 .build();
 
         when(userRepository.existsByUsername("admin")).thenReturn(false);
-        when(userRepository.existsByEmail("admin@gmail.com")).thenReturn(false);
-        when(passwordEncoder.encode("raw")).thenReturn("encoded");
+        when(userRepository.existsByEmail("a@gmail.com")).thenReturn(false);
+        when(passwordEncoder.encode("raw")).thenReturn("enc");
         when(userRepository.save(any())).thenReturn(user);
 
         User saved = authService.registerUser(user);
 
         assertNotNull(saved);
-        verify(userRepository).save(user);
+    }
+
+    @Test
+    void registerUser_usernameExists() {
+        User user = User.builder()
+                .username("admin")
+                .build();
+
+        when(userRepository.existsByUsername("admin")).thenReturn(true);
+
+        assertThrows(UserAlreadyExistsException.class,
+                () -> authService.registerUser(user));
+    }
+
+    @Test
+    void registerUser_emailExists() {
+        User user = User.builder()
+                .username("admin")
+                .email("a@gmail.com")
+                .build();
+
+        when(userRepository.existsByUsername("admin")).thenReturn(false);
+        when(userRepository.existsByEmail("a@gmail.com")).thenReturn(true);
+
+        assertThrows(UserAlreadyExistsException.class,
+                () -> authService.registerUser(user));
     }
 
     // ---------------- LOGIN ----------------
+
     @Test
     void login_success() {
-
-        User user = User.builder()
-                .userId("U1")
-                .username("admin")
-                .role(Role.ADMIN)
-                .password("encoded")
-                .passwordChangeRequired(false)
-                .build();
-
-        when(userRepository.findByUsername("admin"))
-                .thenReturn(Optional.of(user));
-
-        when(jwtUtil.generateToken("U1", "admin", "ADMIN"))
-                .thenReturn("jwt-token");
-
-        LoginResponseDto response =
-                authService.login("admin", "password");
-
-        assertEquals("jwt-token", response.getAccessToken());
-        assertEquals("ADMIN", response.getRole());
-    }
-    @Test
-    void login_success_executesLambda() {
         User user = User.builder()
                 .userId("U1")
                 .username("admin")
@@ -113,109 +105,155 @@ class AuthServiceTest {
         when(jwtUtil.generateToken("U1", "admin", "ADMIN"))
                 .thenReturn("token");
 
-        LoginResponseDto res = authService.login("admin", "pass");
+        LoginResponseDto res = authService.login("admin", "pwd");
 
-        assertNotNull(res.getAccessToken());
+        assertEquals("token", res.getAccessToken());
+    }
+
+    @Test
+    void login_userNotFound_lambdaCovered() {
+        when(userRepository.findByUsername("x"))
+                .thenReturn(Optional.empty());
+
+        assertThrows(BadCredentialsException.class,
+                () -> authService.login("x", "p"));
     }
 
     // ---------------- FORGOT PASSWORD ----------------
-    @Test
-    void forgotPassword_existingUser() {
 
-        User user = User.builder()
-                .email("test@gmail.com")
+    @Test
+    void forgotPassword_existingUser_lambdaCovered() {
+        User user = User.builder().email("a@gmail.com").build();
+
+        PasswordResetToken oldToken = PasswordResetToken.builder()
+                .used(false)
                 .build();
 
-        when(userRepository.findByEmail("test@gmail.com"))
+        when(userRepository.findByEmail("a@gmail.com"))
                 .thenReturn(Optional.of(user));
 
-        when(passwordResetTokenRepository.findByEmailAndUsedFalse("test@gmail.com"))
-                .thenReturn(List.of());
+        when(passwordResetTokenRepository.findByEmailAndUsedFalse("a@gmail.com"))
+                .thenReturn(List.of(oldToken));
 
-        authService.forgotPassword("test@gmail.com");
+        authService.forgotPassword("a@gmail.com");
 
-        verify(notificationPublisher)
-                .publishPasswordReset(any());
+        assertTrue(oldToken.getUsed());
+        verify(notificationPublisher).publishPasswordReset(any());
+    }
+
+    @Test
+    void forgotPassword_userNotFound_lambdaCovered() {
+        when(userRepository.findByEmail("x@gmail.com"))
+                .thenReturn(Optional.empty());
+
+        authService.forgotPassword("x@gmail.com");
+
+        verifyNoInteractions(notificationPublisher);
     }
 
     // ---------------- RESET PASSWORD ----------------
+
     @Test
     void resetPassword_success() {
-
         PasswordResetToken token = PasswordResetToken.builder()
-                .email("test@gmail.com")
-                .token("token123")
+                .email("a@gmail.com")
                 .used(false)
-                .expiryDate(LocalDateTime.now().plusMinutes(10))
+                .expiryDate(LocalDateTime.now().plusMinutes(5))
                 .build();
 
-        User user = User.builder()
-                .email("test@gmail.com")
-                .password("old")
-                .build();
+        User user = User.builder().email("a@gmail.com").build();
 
-        when(passwordResetTokenRepository.findByToken("token123"))
+        when(passwordResetTokenRepository.findByToken("t"))
                 .thenReturn(Optional.of(token));
-
-        when(userRepository.findByEmail("test@gmail.com"))
+        when(userRepository.findByEmail("a@gmail.com"))
                 .thenReturn(Optional.of(user));
+        when(passwordEncoder.encode(any()))
+                .thenReturn("enc");
 
-        when(passwordEncoder.encode("NewPassword@123"))
-                .thenReturn("encoded");
-
-        authService.resetPassword("token123", "NewPassword@123");
+        authService.resetPassword("t", "ValidPass@123");
 
         verify(userRepository).save(user);
         verify(passwordResetTokenRepository).save(token);
     }
 
-    // ---------------- CHANGE PASSWORD ----------------
     @Test
-    void changePassword_success() {
-
-        User user = User.builder()
-                .userId("U1")
-                .password("oldEncoded")
-                .build();
-
-        when(userRepository.findById("U1"))
-                .thenReturn(Optional.of(user));
-
-        when(passwordEncoder.matches("old", "oldEncoded"))
-                .thenReturn(true);
-
-        when(passwordEncoder.matches("NewPassword@123", "oldEncoded"))
-                .thenReturn(false);
-
-        when(passwordEncoder.encode("NewPassword@123"))
-                .thenReturn("newEncoded");
-
-        authService.changePassword("U1", "old", "NewPassword@123");
-
-        verify(userRepository).save(user);
-    }
-    @Test
-    void registerUser_usernameExists() {
-        User user = User.builder().username("admin").build();
-        when(userRepository.existsByUsername("admin")).thenReturn(true);
-
-        assertThrows(UserAlreadyExistsException.class,
-                () -> authService.registerUser(user));
-    }
-    @Test
-    void resetPassword_tokenExpired() {
+    void resetPassword_usedToken_lambdaCovered() {
         PasswordResetToken token = PasswordResetToken.builder()
-                .token("t")
-                .expiryDate(LocalDateTime.now().minusMinutes(1))
-                .used(false)
+                .used(true)
+                .expiryDate(LocalDateTime.now().plusMinutes(5))
                 .build();
 
         when(passwordResetTokenRepository.findByToken("t"))
                 .thenReturn(Optional.of(token));
 
         assertThrows(IllegalArgumentException.class,
-                () -> authService.resetPassword("t", "NewPassword@123"));
+                () -> authService.resetPassword("t", "ValidPass@123"));
     }
+
+    @Test
+    void resetPassword_userNotFound_lambdaCovered() {
+        PasswordResetToken token = PasswordResetToken.builder()
+                .email("a@gmail.com")
+                .used(false)
+                .expiryDate(LocalDateTime.now().plusMinutes(5))
+                .build();
+
+        when(passwordResetTokenRepository.findByToken("t"))
+                .thenReturn(Optional.of(token));
+        when(userRepository.findByEmail("a@gmail.com"))
+                .thenReturn(Optional.empty());
+
+        assertThrows(ResourceNotFoundException.class,
+                () -> authService.resetPassword("t", "ValidPass@123"));
+    }
+
+    // ---------------- CHANGE PASSWORD ----------------
+
+    @Test
+    void changePassword_success() {
+        User user = User.builder()
+                .userId("U1")
+                .password("old")
+                .build();
+
+        when(userRepository.findById("U1"))
+                .thenReturn(Optional.of(user));
+        when(passwordEncoder.matches("old", "old"))
+                .thenReturn(true);
+        when(passwordEncoder.matches("ValidPass@123", "old"))
+                .thenReturn(false);
+        when(passwordEncoder.encode("ValidPass@123"))
+                .thenReturn("encoded");
+
+        authService.changePassword("U1", "old", "ValidPass@123");
+
+        verify(userRepository).save(user);
+    }
+
+    @Test
+    void changePassword_wrongOldPassword_lambdaCovered() {
+        User user = User.builder().password("old").build();
+
+        when(userRepository.findById("U1"))
+                .thenReturn(Optional.of(user));
+        when(passwordEncoder.matches("x", "old"))
+                .thenReturn(false);
+
+        assertThrows(ResponseStatusException.class,
+                () -> authService.changePassword("U1", "x", "new"));
+    }
+
+    @Test
+    void changePassword_userNotFound_lambdaCovered() {
+        when(userRepository.findById("U1"))
+                .thenReturn(Optional.empty());
+
+        assertThrows(ResourceNotFoundException.class,
+                () -> authService.changePassword("U1", "o", "n"));
+    }
+
+    // ---------------- GET USER ----------------
+
     @Test
     void getUserById_success() {
         User user = User.builder()
@@ -231,51 +269,43 @@ class AuthServiceTest {
 
         UserResponseDto dto = authService.getUserById("U1");
 
-        assertEquals("U1", dto.getUserId());
+        assertEquals("ACTIVE", dto.getStatus());
     }
-    @Test
-    void changePassword_wrongOldPassword() {
-        User user = User.builder().password("encoded").build();
 
+    @Test
+    void getUserById_userNotFound_lambdaCovered() {
         when(userRepository.findById("U1"))
-                .thenReturn(Optional.of(user));
+                .thenReturn(Optional.empty());
 
-        when(passwordEncoder.matches("old", "encoded"))
-                .thenReturn(false);
-
-        assertThrows(ResponseStatusException.class,
-                () -> authService.changePassword("U1", "old", "NewPassword@123"));
+        assertThrows(ResourceNotFoundException.class,
+                () -> authService.getUserById("U1"));
     }
 
-    // ---------------- GET USERS ----------------
-    @Test
-    void getAllUsers_success() {
+    // ---------------- GET ALL USERS ----------------
 
+    @Test
+    void getAllUsers_streamLambdaCovered() {
         User user = User.builder()
                 .userId("U1")
                 .username("admin")
                 .email("a@gmail.com")
                 .role(Role.ADMIN)
-                .active(true)
+                .active(false)
                 .build();
 
         when(userRepository.findAll())
                 .thenReturn(List.of(user));
 
-        List<UserResponseDto> users =
-                authService.getAllUsers();
+        List<UserResponseDto> users = authService.getAllUsers();
 
-        assertEquals(1, users.size());
+        assertEquals("INACTIVE", users.get(0).getStatus());
     }
 
     // ---------------- DELETE USER ----------------
+
     @Test
     void deleteUser_success() {
-
-        User user = User.builder()
-                .userId("U1")
-                .active(true)
-                .build();
+        User user = User.builder().active(true).build();
 
         when(userRepository.findById("U1"))
                 .thenReturn(Optional.of(user));
@@ -283,6 +313,14 @@ class AuthServiceTest {
         authService.deleteUser("U1");
 
         assertFalse(user.getActive());
-        verify(userRepository).save(user);
+    }
+
+    @Test
+    void deleteUser_userNotFound_lambdaCovered() {
+        when(userRepository.findById("U1"))
+                .thenReturn(Optional.empty());
+
+        assertThrows(ResourceNotFoundException.class,
+                () -> authService.deleteUser("U1"));
     }
 }

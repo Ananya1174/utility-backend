@@ -1,7 +1,5 @@
 package com.utility.common.dto.event;
 
-import com.utility.billing.model.UtilityType;
-
 import lombok.Data;
 
 @Data

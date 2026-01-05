@@ -82,8 +82,10 @@ class MeterReadingServiceTest {
                 "CON1", 1, 2025))
                 .thenReturn(true);
 
+        CreateMeterReadingRequest req = request(); // ✅ correct type
+
         assertThrows(ApiException.class,
-                () -> service.addReading(request()));
+                () -> service.addReading(req));
     }
 
     @Test

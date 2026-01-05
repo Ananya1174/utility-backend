@@ -32,11 +32,9 @@ public class MeterReadingSeeder {
         return args -> {
 
             if (meterRepo.count() > 0) {
-                System.out.println(" Meter readings already exist. Skipping seed.");
                 return;
             }
 
-            System.out.println(" Seeding Meter Readings (Jun 2024 → Today)...");
 
             List<ConnectionDto> connections =
                     connectionClient.getAllConnections();
@@ -66,7 +64,6 @@ public class MeterReadingSeeder {
                 }
             }
 
-            System.out.println(" Meter Reading seeding completed");
         };
     }
 

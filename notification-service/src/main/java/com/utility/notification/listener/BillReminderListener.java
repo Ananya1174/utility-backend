@@ -20,7 +20,6 @@ public class BillReminderListener {
         if (event.getEmail() == null || event.getEmail().isBlank()) {
             return;
         }
-        System.out.println("REMINDER EMAIL TO → " + event.getEmail());
         emailService.sendPaymentReminderEmail(
                 event.getEmail(),
                 event

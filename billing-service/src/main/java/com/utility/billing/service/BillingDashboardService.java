@@ -3,6 +3,8 @@ package com.utility.billing.service;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.springframework.stereotype.Service;
+
 import com.utility.billing.dto.BillResponse;
 import com.utility.billing.dto.dashboard.AverageConsumptionDto;
 import com.utility.billing.dto.dashboard.BillsSummaryDto;
@@ -12,7 +14,6 @@ import com.utility.billing.model.Bill;
 import com.utility.billing.model.BillStatus;
 import com.utility.billing.repository.BillRepository;
 
-import org.springframework.stereotype.Service;
 import lombok.RequiredArgsConstructor;
 
 @Service
@@ -22,16 +23,17 @@ public class BillingDashboardService {
     private final BillRepository billRepository;
     private final BillingService billingService;
 
-    /* ================= DASHBOARD ================= */
-
     public BillsSummaryDto getBillsSummary(int month, int year) {
 
-        long total = billRepository
-                .countByBillingMonthAndBillingYear(month, year);
+        long total =
+                billRepository.countByBillingMonthAndBillingYear(month, year);
 
-        long paid = billRepository
-                .countByBillingMonthAndBillingYearAndStatus(
-                        month, year, BillStatus.PAID);
+        long paid =
+                billRepository.countByBillingMonthAndBillingYearAndStatus(
+                        month,
+                        year,
+                        BillStatus.PAID
+                );
 
         return new BillsSummaryDto(
                 month,
@@ -43,9 +45,12 @@ public class BillingDashboardService {
     }
 
     public List<ConsumptionSummaryDto> getConsumptionSummary(
-            int month, int year) {
+            int month,
+            int year
+    ) {
 
-        return billRepository.findByBillingMonthAndBillingYear(month, year)
+        return billRepository
+                .findByBillingMonthAndBillingYear(month, year)
                 .stream()
                 .collect(Collectors.groupingBy(
                         Bill::getUtilityType,
@@ -53,15 +58,22 @@ public class BillingDashboardService {
                 ))
                 .entrySet()
                 .stream()
-                .map(e -> new ConsumptionSummaryDto(
-                        e.getKey(), e.getValue()))
+                .map(e ->
+                        new ConsumptionSummaryDto(
+                                e.getKey(),
+                                e.getValue()
+                        )
+                )
                 .toList();
     }
 
     public List<AverageConsumptionDto> getAverageConsumption(
-            int month, int year) {
+            int month,
+            int year
+    ) {
 
-        return billRepository.findByBillingMonthAndBillingYear(month, year)
+        return billRepository
+                .findByBillingMonthAndBillingYear(month, year)
                 .stream()
                 .collect(Collectors.groupingBy(
                         Bill::getUtilityType,
@@ -69,49 +81,38 @@ public class BillingDashboardService {
                 ))
                 .entrySet()
                 .stream()
-                .map(e -> new AverageConsumptionDto(
-                        e.getKey(), e.getValue()))
+                .map(e ->
+                        new AverageConsumptionDto(
+                                e.getKey(),
+                                e.getValue()
+                        )
+                )
                 .toList();
     }
 
-    /* ================= REPORTS ================= */
-
     public List<ConsumerBillingSummaryDto> getConsumerBillingSummary(
-            int month, int year) {
+            int month,
+            int year
+    ) {
 
-        return billRepository.findByBillingMonthAndBillingYear(month, year)
+        return billRepository
+                .findByBillingMonthAndBillingYear(month, year)
                 .stream()
                 .collect(Collectors.groupingBy(Bill::getConsumerId))
                 .entrySet()
                 .stream()
-                .map(e -> {
-
-                    List<Bill> bills = e.getValue();
-
-                    double total = bills.stream()
-                            .mapToDouble(Bill::getTotalAmount)
-                            .sum();
-
-                    double paid = bills.stream()
-                            .filter(b -> b.getStatus() == BillStatus.PAID)
-                            .mapToDouble(Bill::getTotalAmount)
-                            .sum();
-
-                    return new ConsumerBillingSummaryDto(
-                            e.getKey(),
-                            bills.size(),
-                            total,
-                            paid,
-                            total - paid
-                    );
-                })
+                .map(e -> buildConsumerSummary(e.getKey(), e.getValue()))
                 .toList();
     }
 
-    public List<BillResponse> getConsumerBillingHistory(String consumerId) {
+    public List<BillResponse> getConsumerBillingHistory(
+            String consumerId
+    ) {
         return billingService.getBillsByConsumer(consumerId);
     }
+
     public double getTotalBilledForMonth(int month, int year) {
+
         return billRepository
                 .findByBillingMonthAndBillingYear(month, year)
                 .stream()
@@ -119,25 +120,28 @@ public class BillingDashboardService {
                 .sum();
     }
 
-    /* ================= MAPPER ================= */
+    private ConsumerBillingSummaryDto buildConsumerSummary(
+            String consumerId,
+            List<Bill> bills
+    ) {
 
-    private BillResponse map(Bill bill) {
+        double total =
+                bills.stream()
+                        .mapToDouble(Bill::getTotalAmount)
+                        .sum();
 
-        BillResponse r = new BillResponse();
-        r.setId(bill.getId());
-        r.setConsumerId(bill.getConsumerId());
-        r.setConnectionId(bill.getConnectionId());
-        r.setUtilityType(bill.getUtilityType());
-        r.setTariffPlan(bill.getTariffPlan());
-        r.setBillingMonth(bill.getBillingMonth());
-        r.setBillingYear(bill.getBillingYear());
-        r.setConsumptionUnits(bill.getConsumptionUnits());
-        r.setTax(bill.getTax());
-        r.setPenalty(bill.getPenalty());
-        r.setTotalAmount(bill.getTotalAmount());
-        r.setPayableAmount(bill.getTotalAmount() + bill.getPenalty());
-        r.setStatus(bill.getStatus());
-        r.setDueDate(bill.getDueDate());
-        return r;
+        double paid =
+                bills.stream()
+                        .filter(b -> b.getStatus() == BillStatus.PAID)
+                        .mapToDouble(Bill::getTotalAmount)
+                        .sum();
+
+        return new ConsumerBillingSummaryDto(
+                consumerId,
+                bills.size(),
+                total,
+                paid,
+                total - paid
+        );
     }
 }

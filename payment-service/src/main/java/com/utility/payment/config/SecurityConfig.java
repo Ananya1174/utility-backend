@@ -18,6 +18,11 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @RequiredArgsConstructor
 public class SecurityConfig {
 
+    private static final String ROLE_ADMIN = "ADMIN";
+    private static final String ROLE_ACCOUNTS = "ACCOUNTS_OFFICER";
+    private static final String ROLE_CONSUMER = "CONSUMER";
+    private static final String ROLE_BILLING = "BILLING_OFFICER";
+
     private final JwtUtil jwtUtil;
 
     @Bean
@@ -42,13 +47,13 @@ public class SecurityConfig {
                         HttpMethod.POST,
                         "/payments/online/initiate",
                         "/payments/online/confirm"
-                ).hasRole("CONSUMER")
+                ).hasRole(ROLE_CONSUMER)
 
                 /* ================= OFFLINE PAYMENTS ================= */
                 .requestMatchers(
                         HttpMethod.POST,
                         "/payments/offline"
-                ).hasRole("ACCOUNTS_OFFICER")
+                ).hasRole(ROLE_ACCOUNTS)
 
                 /* ================= PAYMENT VIEW ================= */
                 .requestMatchers(
@@ -58,24 +63,36 @@ public class SecurityConfig {
                         "/payments/consumer/**",
                         "/payments/outstanding/**",
                         "/payments/invoice/**"
-                ).hasAnyRole("CONSUMER", "ACCOUNTS_OFFICER", "ADMIN","BILLING_OFFICER")
+                ).hasAnyRole(
+                        ROLE_CONSUMER,
+                        ROLE_ACCOUNTS,
+                        ROLE_ADMIN,
+                        ROLE_BILLING
+                )
 
-                /* ================= PAYMENT DASHBOARD (CARDS) ================= */
+                /* ================= PAYMENT DASHBOARD ================= */
                 .requestMatchers(
                         HttpMethod.GET,
                         "/dashboard/payments/revenue-summary",
                         "/dashboard/payments/outstanding-summary",
                         "/dashboard/payments/outstanding-monthly"
-                ).hasAnyRole("ADMIN", "ACCOUNTS_OFFICER","BILLING_OFFICER")
+                ).hasAnyRole(
+                        ROLE_ADMIN,
+                        ROLE_ACCOUNTS,
+                        ROLE_BILLING
+                )
 
-                /* ================= PAYMENT REPORTS / ANALYTICS ================= */
+                /* ================= PAYMENT REPORTS ================= */
                 .requestMatchers(
                         HttpMethod.GET,
                         "/dashboard/payments/failed-summary",
                         "/dashboard/payments/revenue-by-mode",
                         "/dashboard/payments/consumer-summary",
                         "/dashboard/payments/revenue-yearly"
-                ).hasAnyRole("ADMIN","ACCOUNTS_OFFICER")
+                ).hasAnyRole(
+                        ROLE_ADMIN,
+                        ROLE_ACCOUNTS
+                )
 
                 /* ================= FALLBACK ================= */
                 .anyRequest().authenticated()

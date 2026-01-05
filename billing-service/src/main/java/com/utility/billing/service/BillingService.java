@@ -1,7 +1,12 @@
 package com.utility.billing.service;
 
+import java.time.LocalDate;
+import java.util.List;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Service;
+
 import com.utility.billing.dto.BillResponse;
-import lombok.extern.slf4j.Slf4j;
 import com.utility.billing.dto.GenerateBillRequest;
 import com.utility.billing.event.BillEventPublisher;
 import com.utility.billing.exception.ApiException;
@@ -18,237 +23,359 @@ import com.utility.common.dto.event.BillGeneratedEvent;
 
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import lombok.RequiredArgsConstructor;
-
-import org.springframework.http.HttpStatus;
-import org.springframework.stereotype.Service;
-
-import java.time.LocalDate;
-import java.util.List;
+import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Service
 @RequiredArgsConstructor
 public class BillingService {
 
-	private final BillRepository billRepository;
-	private final MeterReadingClient meterClient;
-	private final TariffSlabRepository slabRepository;
-	private final ConsumerClient consumerClient;
-	private final BillEventPublisher billEventPublisher;
-	private final ConnectionClient connectionClient;
+    private final BillRepository billRepository;
+    private final MeterReadingClient meterClient;
+    private final TariffSlabRepository slabRepository;
+    private final ConsumerClient consumerClient;
+    private final BillEventPublisher billEventPublisher;
+    private final ConnectionClient connectionClient;
 
-	@CircuitBreaker(name = "meterReadingCB", fallbackMethod = "meterFallback")
-	public MeterReadingResponse fetchLatestMeterReading(String connectionId) {
-		return meterClient.getLatest(connectionId);
-	}
+    @CircuitBreaker(
+            name = "meterReadingCB",
+            fallbackMethod = "meterFallback"
+    )
+    public MeterReadingResponse fetchLatestMeterReading(
+            String connectionId
+    ) {
+        return meterClient.getLatest(connectionId);
+    }
 
-	public MeterReadingResponse meterFallback(String connectionId, Throwable ex) {
-		return null;
-	}
+    public MeterReadingResponse meterFallback(
+            String connectionId,
+            Throwable ex
+    ) {
+        log.error(
+                "Meter reading service unavailable for connection {}",
+                connectionId,
+                ex
+        );
+        return null;
+    }
 
-	public BillResponse generateBill(GenerateBillRequest request) {
+    public BillResponse generateBill(GenerateBillRequest request) {
 
-		var lastBillOpt = billRepository
-				.findTopByConnectionIdOrderByBillingYearDescBillingMonthDesc(request.getConnectionId());
-		var reading = fetchLatestMeterReading(request.getConnectionId());
+        var lastBillOpt =
+                billRepository.findTopByConnectionIdOrderByBillingYearDescBillingMonthDesc(
+                        request.getConnectionId()
+                );
 
-		if (reading == null) {
-			throw new ApiException("Meter reading not available for next billing period", HttpStatus.BAD_REQUEST);
-		}
+        var reading =
+                fetchLatestMeterReading(request.getConnectionId());
 
-		int billingMonth = reading.getReadingMonth();
-		int billingYear = reading.getReadingYear();
+        if (reading == null) {
+            throw new ApiException(
+                    "Meter reading not available for next billing period",
+                    HttpStatus.BAD_REQUEST
+            );
+        }
 
-		if (lastBillOpt.isPresent()) {
-			var lastBill = lastBillOpt.get();
+        int billingMonth = reading.getReadingMonth();
+        int billingYear = reading.getReadingYear();
 
-			if (billingYear < lastBill.getBillingYear()
-					|| (billingYear == lastBill.getBillingYear() && billingMonth <= lastBill.getBillingMonth())) {
-				throw new ApiException("Meter reading for next billing period not available yet",
-						HttpStatus.BAD_REQUEST);
-			}
-		}
+        lastBillOpt.ifPresent(lastBill -> {
+            boolean invalidPeriod =
+                    billingYear < lastBill.getBillingYear()
+                            || (billingYear == lastBill.getBillingYear()
+                            && billingMonth <= lastBill.getBillingMonth());
 
-		billRepository.findByConnectionIdAndBillingMonthAndBillingYearAndStatusNot(request.getConnectionId(),
-				billingMonth, billingYear, BillStatus.PAID).ifPresent(b -> {
-					throw new ApiException("Unpaid bill already exists for this billing period",
-							HttpStatus.BAD_REQUEST);
-				});
+            if (invalidPeriod) {
+                throw new ApiException(
+                        "Meter reading for next billing period not available yet",
+                        HttpStatus.BAD_REQUEST
+                );
+            }
+        });
 
-		long units = reading.getConsumptionUnits();
-		if (units <= 0) {
-			throw new ApiException("Invalid consumption units", HttpStatus.BAD_REQUEST);
-		}
+        billRepository
+                .findByConnectionIdAndBillingMonthAndBillingYearAndStatusNot(
+                        request.getConnectionId(),
+                        billingMonth,
+                        billingYear,
+                        BillStatus.PAID
+                )
+                .ifPresent(b -> {
+                    throw new ApiException(
+                            "Unpaid bill already exists for this billing period",
+                            HttpStatus.BAD_REQUEST
+                    );
+                });
 
-		var connection = connectionClient.getConnectionById(request.getConnectionId());
+        long units = reading.getConsumptionUnits();
+        if (units <= 0) {
+            throw new ApiException(
+                    "Invalid consumption units",
+                    HttpStatus.BAD_REQUEST
+            );
+        }
 
-		if (connection == null || !connection.isActive()) {
-			throw new ApiException("Connection not active or not found", HttpStatus.BAD_REQUEST);
-		}
+        var connection =
+                connectionClient.getConnectionById(
+                        request.getConnectionId()
+                );
 
-		if (!connection.getUtilityType().equals(reading.getUtilityType())) {
-			throw new ApiException("Utility type mismatch between meter and connection", HttpStatus.BAD_REQUEST);
-		}
+        if (connection == null || !connection.isActive()) {
+            throw new ApiException(
+                    "Connection not active or not found",
+                    HttpStatus.BAD_REQUEST
+            );
+        }
 
-		List<TariffSlab> slabs = slabRepository.findByUtilityTypeAndPlanCodeOrderByMinUnitsAsc(
-				connection.getUtilityType(), connection.getTariffPlan());
-		if (slabs.isEmpty()) {
-			throw new ApiException("Tariff slabs not configured", HttpStatus.INTERNAL_SERVER_ERROR);
-		}
+        if (!connection.getUtilityType()
+                .equals(reading.getUtilityType())) {
+            throw new ApiException(
+                    "Utility type mismatch between meter and connection",
+                    HttpStatus.BAD_REQUEST
+            );
+        }
 
-		double energyCharge = calculateFromSlabs(units, slabs);
-		double fixedCharge = 50;
-		double tax = energyCharge * 0.05;
+        List<TariffSlab> slabs =
+                slabRepository.findByUtilityTypeAndPlanCodeOrderByMinUnitsAsc(
+                        connection.getUtilityType(),
+                        connection.getTariffPlan()
+                );
 
-		Bill bill = new Bill();
-		bill.setConsumerId(request.getConsumerId());
-		bill.setConnectionId(request.getConnectionId());
-		bill.setUtilityType(connection.getUtilityType());
-		bill.setTariffPlan(connection.getTariffPlan());
+        if (slabs.isEmpty()) {
+            throw new ApiException(
+                    "Tariff slabs not configured",
+                    HttpStatus.INTERNAL_SERVER_ERROR
+            );
+        }
 
-		bill.setBillingMonth(billingMonth);
-		bill.setBillingYear(billingYear);
+        double energyCharge =
+                calculateFromSlabs(units, slabs);
 
-		bill.setConsumptionUnits(units);
-		bill.setEnergyCharge(energyCharge);
-		bill.setFixedCharge(fixedCharge);
-		bill.setTax(tax);
-		bill.setPenalty(0);
-		bill.setTotalAmount(energyCharge + fixedCharge + tax);
+        double fixedCharge = 50;
+        double tax = energyCharge * 0.05;
 
-		bill.setStatus(BillStatus.DUE);
-		bill.setBillDate(LocalDate.now());
-		bill.setDueDate(LocalDate.now().plusDays(15));
-		Bill savedBill = billRepository.save(bill);
+        Bill bill = new Bill();
+        bill.setConsumerId(request.getConsumerId());
+        bill.setConnectionId(request.getConnectionId());
+        bill.setUtilityType(connection.getUtilityType());
+        bill.setTariffPlan(connection.getTariffPlan());
+        bill.setBillingMonth(billingMonth);
+        bill.setBillingYear(billingYear);
+        bill.setConsumptionUnits(units);
+        bill.setEnergyCharge(energyCharge);
+        bill.setFixedCharge(fixedCharge);
+        bill.setTax(tax);
+        bill.setPenalty(0);
+        bill.setTotalAmount(energyCharge + fixedCharge + tax);
+        bill.setStatus(BillStatus.DUE);
+        bill.setBillDate(LocalDate.now());
+        bill.setDueDate(LocalDate.now().plusDays(15));
 
-		try {
-			var consumer = consumerClient.getConsumerById(request.getConsumerId());
+        Bill savedBill =
+                billRepository.save(bill);
 
-			BillGeneratedEvent event = new BillGeneratedEvent();
-			event.setBillId(savedBill.getId());
-			event.setConsumerId(savedBill.getConsumerId());
-			event.setEmail(consumer.getEmail());
-			event.setUtilityType(savedBill.getUtilityType().name());
-			event.setTariffPlan(savedBill.getTariffPlan());
-			event.setAmount(savedBill.getTotalAmount());
-			event.setDueDate(savedBill.getDueDate().toString());
-			billEventPublisher.publish(event);
+        publishEventSafely(
+                savedBill,
+                request.getConsumerId()
+        );
 
-		} catch (Exception e) {
-			log.error("Bill generated but email notification failed", e);
-		}
+        return map(savedBill);
+    }
 
-		return map(bill);
-	}
+    private void publishEventSafely(
+            Bill bill,
+            String consumerId
+    ) {
 
-	private double calculateFromSlabs(long units, List<TariffSlab> slabs) {
+        try {
+            var consumer =
+                    consumerClient.getConsumerById(consumerId);
 
-		double amount = 0;
-		long remaining = units;
+            BillGeneratedEvent event =
+                    new BillGeneratedEvent();
 
-		for (TariffSlab slab : slabs) {
-			if (remaining <= 0)
-				break;
+            event.setBillId(bill.getId());
+            event.setConsumerId(bill.getConsumerId());
+            event.setEmail(consumer.getEmail());
+            event.setUtilityType(
+                    bill.getUtilityType().name()
+            );
+            event.setTariffPlan(bill.getTariffPlan());
+            event.setAmount(bill.getTotalAmount());
+            event.setDueDate(
+                    bill.getDueDate().toString()
+            );
 
-			long slabUnits = Math.min(remaining, slab.getMaxUnits() - slab.getMinUnits() + 1);
+            billEventPublisher.publish(event);
 
-			amount += slabUnits * slab.getRate();
-			remaining -= slabUnits;
-		}
-		return amount;
-	}
+        } catch (RuntimeException ex) {
+            log.error(
+                    "Bill generated but email notification failed",
+                    ex
+            );
+        }
+    }
 
-	public List<BillResponse> getOverdueBills() {
-		return billRepository.findByStatus(BillStatus.OVERDUE).stream().map(this::map).toList();
-	}
+    private double calculateFromSlabs(
+            long units,
+            List<TariffSlab> slabs
+    ) {
 
-	public void markBillAsPaid(String billId) {
+        double amount = 0;
+        long remaining = units;
 
-		Bill bill = billRepository.findById(billId)
-				.orElseThrow(() -> new ApiException("Bill not found", HttpStatus.NOT_FOUND));
+        for (TariffSlab slab : slabs) {
 
-		if (bill.getStatus() == BillStatus.PAID) {
-			throw new ApiException("Bill already paid", HttpStatus.BAD_REQUEST);
-		}
+            long slabUnits =
+                    Math.min(
+                            remaining,
+                            slab.getMaxUnits()
+                                    - slab.getMinUnits()
+                                    + 1
+                    );
 
-		bill.setStatus(BillStatus.PAID);
-		bill.setTotalAmount(bill.getEnergyCharge() + bill.getFixedCharge() + bill.getTax() + bill.getPenalty());
+            if (slabUnits > 0) {
+                amount += slabUnits * slab.getRate();
+                remaining -= slabUnits;
+            }
+        }
 
-		billRepository.save(bill);
-	}
+        return amount;
+    }
 
-	public BillResponse getBillById(String billId) {
-		return billRepository.findById(billId).map(this::map)
-				.orElseThrow(() -> new ApiException("Bill not found", HttpStatus.NOT_FOUND));
-	}
+    public List<BillResponse> getOverdueBills() {
+        return billRepository
+                .findByStatus(BillStatus.OVERDUE)
+                .stream()
+                .map(this::map)
+                .toList();
+    }
 
-	public List<BillResponse> getBillsByConsumer(String consumerId) {
+    public void markBillAsPaid(String billId) {
 
-		var bills = billRepository.findByConsumerId(consumerId);
-		if (bills.isEmpty()) {
-			throw new ApiException("No bills found for consumer", HttpStatus.NOT_FOUND);
-		}
-		return bills.stream().map(this::map).toList();
-	}
-	public List<BillResponse> getAllBills(
-	        BillStatus status,
-	        Integer month,
-	        Integer year,
-	        String consumerId
-	) {
+        Bill bill =
+                billRepository.findById(billId)
+                        .orElseThrow(() ->
+                                new ApiException(
+                                        "Bill not found",
+                                        HttpStatus.NOT_FOUND
+                                )
+                        );
 
-	    List<Bill> bills;
+        if (bill.getStatus() == BillStatus.PAID) {
+            throw new ApiException(
+                    "Bill already paid",
+                    HttpStatus.BAD_REQUEST
+            );
+        }
 
-	    if (consumerId != null && status != null) {
-	        bills = billRepository.findByConsumerIdAndStatus(consumerId, status);
+        bill.setStatus(BillStatus.PAID);
+        bill.setTotalAmount(
+                bill.getEnergyCharge()
+                        + bill.getFixedCharge()
+                        + bill.getTax()
+                        + bill.getPenalty()
+        );
 
-	    } else if (consumerId != null) {
-	        bills = billRepository.findByConsumerId(consumerId);
+        billRepository.save(bill);
+    }
 
-	    } else if (status != null) {
-	        bills = billRepository.findByStatus(status);
+    public BillResponse getBillById(String billId) {
+        return billRepository
+                .findById(billId)
+                .map(this::map)
+                .orElseThrow(() ->
+                        new ApiException(
+                                "Bill not found",
+                                HttpStatus.NOT_FOUND
+                        )
+                );
+    }
 
-	    } else if (month != null && year != null) {
-	        bills = billRepository.findByBillingMonthAndBillingYear(month, year);
+    public List<BillResponse> getBillsByConsumer(
+            String consumerId
+    ) {
 
-	    } else {
-	        bills = billRepository.findAll();
-	    }
+        var bills =
+                billRepository.findByConsumerId(consumerId);
 
-	    return bills.stream()
-	            .map(this::map)
-	            .toList();
-	}
-	public double getTotalBilledAmount() {
-	    return billRepository.findAll()
-	            .stream()
-	            .mapToDouble(Bill::getTotalAmount)
-	            .sum();
-	}
+        if (bills.isEmpty()) {
+            throw new ApiException(
+                    "No bills found for consumer",
+                    HttpStatus.NOT_FOUND
+            );
+        }
 
-	private BillResponse map(Bill bill) {
+        return bills.stream().map(this::map).toList();
+    }
 
-		BillResponse r = new BillResponse();
-		r.setId(bill.getId());
-		r.setConsumerId(bill.getConsumerId());
-		r.setConnectionId(bill.getConnectionId());
+    public List<BillResponse> getAllBills(
+            BillStatus status,
+            Integer month,
+            Integer year,
+            String consumerId
+    ) {
 
-		r.setUtilityType(bill.getUtilityType());
-		r.setTariffPlan(bill.getTariffPlan());
-		r.setBillingMonth(bill.getBillingMonth());
-		r.setBillingYear(bill.getBillingYear());
-		r.setEnergyCharge(bill.getEnergyCharge());
+        List<Bill> bills;
 
-		r.setConsumptionUnits(bill.getConsumptionUnits());
-		r.setTax(bill.getTax());
-		r.setPenalty(bill.getPenalty());
+        if (consumerId != null && status != null) {
+            bills =
+                    billRepository.findByConsumerIdAndStatus(
+                            consumerId,
+                            status
+                    );
+        } else if (consumerId != null) {
+            bills =
+                    billRepository.findByConsumerId(
+                            consumerId
+                    );
+        } else if (status != null) {
+            bills =
+                    billRepository.findByStatus(status);
+        } else if (month != null && year != null) {
+            bills =
+                    billRepository.findByBillingMonthAndBillingYear(
+                            month,
+                            year
+                    );
+        } else {
+            bills =
+                    billRepository.findAll();
+        }
 
-		r.setTotalAmount(bill.getTotalAmount());
-		r.setPayableAmount(bill.getTotalAmount() + bill.getPenalty());
+        return bills.stream().map(this::map).toList();
+    }
 
-		r.setStatus(bill.getStatus());
-		r.setDueDate(bill.getDueDate());
+    public double getTotalBilledAmount() {
 
-		return r;
-	}
+        return billRepository
+                .findAll()
+                .stream()
+                .mapToDouble(Bill::getTotalAmount)
+                .sum();
+    }
+
+    private BillResponse map(Bill bill) {
+
+        BillResponse r = new BillResponse();
+        r.setId(bill.getId());
+        r.setConsumerId(bill.getConsumerId());
+        r.setConnectionId(bill.getConnectionId());
+        r.setUtilityType(bill.getUtilityType());
+        r.setTariffPlan(bill.getTariffPlan());
+        r.setBillingMonth(bill.getBillingMonth());
+        r.setBillingYear(bill.getBillingYear());
+        r.setEnergyCharge(bill.getEnergyCharge());
+        r.setConsumptionUnits(bill.getConsumptionUnits());
+        r.setTax(bill.getTax());
+        r.setPenalty(bill.getPenalty());
+        r.setTotalAmount(bill.getTotalAmount());
+        r.setPayableAmount(
+                bill.getTotalAmount() + bill.getPenalty()
+        );
+        r.setStatus(bill.getStatus());
+        r.setDueDate(bill.getDueDate());
+
+        return r;
+    }
 }

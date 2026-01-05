@@ -33,12 +33,8 @@ public class ConsumerDataSeeder {
         return args -> {
 
             if (consumerRepo.count() > 0) {
-                System.out.println("ℹ️ Consumer data already exists. Skipping seed.");
                 return;
             }
-
-            System.out.println("🌱 Seeding Consumer Service data...");
-
             // ---------------- CONSUMERS ----------------
             for (int i = 1; i <= 10; i++) {
 
@@ -56,7 +52,6 @@ public class ConsumerDataSeeder {
                 seedRequests(consumer);
             }
 
-            System.out.println("✅ Consumer seeding completed");
         };
     }
 

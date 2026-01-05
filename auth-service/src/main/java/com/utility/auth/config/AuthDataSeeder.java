@@ -9,7 +9,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-import com.utility.auth.model.*;
+import com.utility.auth.model.AccountRequest;
+import com.utility.auth.model.AccountRequestStatus;
+import com.utility.auth.model.Role;
+import com.utility.auth.model.User;
 import com.utility.auth.repository.AccountRequestRepository;
 import com.utility.auth.repository.UserRepository;
 
@@ -18,6 +21,8 @@ import lombok.RequiredArgsConstructor;
 @Configuration
 @RequiredArgsConstructor
 public class AuthDataSeeder {
+
+    private static final String DEFAULT_PASSWORD = "ChangeMe@123";
 
     private final PasswordEncoder passwordEncoder;
     private final UserRepository userRepository;
@@ -29,51 +34,34 @@ public class AuthDataSeeder {
         return args -> {
 
             if (userRepository.count() > 0) {
-                System.out.println("ℹ️ Auth data already exists. Skipping seed.");
                 return;
             }
 
-            System.out.println("🌱 Seeding Auth Service data...");
+            String adminPassword =
+                    System.getenv().getOrDefault("ADMIN_PASSWORD", DEFAULT_PASSWORD);
+            String billingPassword =
+                    System.getenv().getOrDefault("BILLING_PASSWORD", DEFAULT_PASSWORD);
+            String accountsPassword =
+                    System.getenv().getOrDefault("ACCOUNTS_PASSWORD", DEFAULT_PASSWORD);
+            String consumerPassword =
+                    System.getenv().getOrDefault("CONSUMER_PASSWORD", DEFAULT_PASSWORD);
 
             List<User> users = new ArrayList<>();
             List<AccountRequest> requests = new ArrayList<>();
 
-            // ---------------- ADMIN USERS ----------------
-            users.add(buildUser(
-                    "admin",
-                    "admin@ubs.com",
-                    "Admin@123",
-                    Role.ADMIN,
-                    false
-            ));
+            users.add(buildUser("admin", "admin@ubs.com", adminPassword, Role.ADMIN, false));
+            users.add(buildUser("billing", "billing@ubs.com", billingPassword, Role.BILLING_OFFICER, false));
+            users.add(buildUser("accounts", "accounts@ubs.com", accountsPassword, Role.ACCOUNTS_OFFICER, false));
 
-            users.add(buildUser(
-                    "billing",
-                    "billing@ubs.com",
-                    "Billing@123",
-                    Role.BILLING_OFFICER,
-                    false
-            ));
-
-            users.add(buildUser(
-                    "accounts",
-                    "accounts@ubs.com",
-                    "Accounts@123",
-                    Role.ACCOUNTS_OFFICER,
-                    false
-            ));
-
-            // ---------------- CONSUMERS ----------------
             for (int i = 1; i <= 10; i++) {
 
                 String email = "consumer" + i + "@mail.com";
 
-                // USER ENTRY
                 users.add(
                         User.builder()
                                 .username("consumer" + i)
                                 .email(email)
-                                .password(passwordEncoder.encode("Consumer@123"))
+                                .password(passwordEncoder.encode(consumerPassword))
                                 .role(Role.CONSUMER)
                                 .active(true)
                                 .createdAt(LocalDateTime.now().minusDays(30))
@@ -81,7 +69,6 @@ public class AuthDataSeeder {
                                 .build()
                 );
 
-                // ACCOUNT REQUEST (APPROVED)
                 requests.add(
                         AccountRequest.builder()
                                 .name("Consumer " + i)
@@ -98,8 +85,6 @@ public class AuthDataSeeder {
 
             userRepository.saveAll(users);
             accountRequestRepository.saveAll(requests);
-
-            System.out.println("✅ Auth users & approved account requests seeded");
         };
     }
 

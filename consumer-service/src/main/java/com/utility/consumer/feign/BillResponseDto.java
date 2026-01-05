@@ -1,7 +1,6 @@
 package com.utility.consumer.feign;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 import lombok.Data;
 @Data

@@ -14,7 +14,7 @@ public class RabbitMQConfig {
     public static final String PAYMENT_OTP_KEY = "payment.otp.generated";
 
     @Bean
-    public DirectExchange exchange() {
+    public DirectExchange notificationExchange() {
         return new DirectExchange(EXCHANGE);
     }
 
@@ -27,7 +27,7 @@ public class RabbitMQConfig {
     public Binding paymentOtpBinding() {
         return BindingBuilder
                 .bind(paymentOtpQueue())
-                .to(exchange())
+                .to(notificationExchange())
                 .with(PAYMENT_OTP_KEY);
     }
 

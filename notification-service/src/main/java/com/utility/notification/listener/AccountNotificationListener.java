@@ -25,13 +25,11 @@ public class AccountNotificationListener {
                 event.getTemporaryPassword()
         );
 
-        System.out.println(" Credentials email sent to " + event.getEmail());
     }
     @RabbitListener(queues = RabbitMQConfig.REJECT_QUEUE)
     public void handleAccountRejected(AccountRejectedEvent event) {
 
         emailService.sendRejectionEmail(event.getEmail());
 
-        System.out.println("📧 Rejection email sent to " + event.getEmail());
     }
 }

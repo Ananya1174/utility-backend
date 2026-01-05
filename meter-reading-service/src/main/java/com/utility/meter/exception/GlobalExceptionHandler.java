@@ -11,7 +11,7 @@ import java.util.Map;
 public class GlobalExceptionHandler {
 
     @ExceptionHandler(ApiException.class)
-    public ResponseEntity<?> handle(ApiException ex) {
+    public ResponseEntity<Map<String, Object>> handle(ApiException ex) {
         return ResponseEntity
                 .status(ex.getStatus())
                 .body(Map.of(

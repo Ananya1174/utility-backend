@@ -10,7 +10,6 @@ import com.utility.consumer.dto.request.ConsumerRequestDTO;
 import com.utility.consumer.dto.response.ConsumerResponseDTO;
 import com.utility.consumer.exception.ApiException;
 import com.utility.consumer.model.Consumer;
-import com.utility.consumer.repository.ConnectionRequestRepository;
 import com.utility.consumer.repository.ConsumerRepository;
 
 import lombok.RequiredArgsConstructor;
@@ -20,6 +19,7 @@ import lombok.RequiredArgsConstructor;
 public class ConsumerService {
 
     private final ConsumerRepository consumerRepository;
+    private static final String CONSUMER_NOT_FOUND = "Consumer not found";
     
 
     public ConsumerResponseDTO createConsumer(ConsumerRequestDTO dto) {
@@ -52,7 +52,7 @@ public class ConsumerService {
         Consumer consumer = consumerRepository.findById(id)
                 .orElseThrow(() -> new ApiException(
                         HttpStatus.NOT_FOUND,
-                        "Consumer not found"
+                        CONSUMER_NOT_FOUND
                 ));
         return mapToDTO(consumer);
     }
@@ -69,7 +69,7 @@ public class ConsumerService {
         Consumer consumer = consumerRepository.findById(id)
                 .orElseThrow(() -> new ApiException(
                         HttpStatus.NOT_FOUND,
-                        "Consumer not found"
+                        CONSUMER_NOT_FOUND
                 ));
 
         consumer.setFullName(dto.getFullName());
@@ -84,7 +84,7 @@ public class ConsumerService {
         Consumer consumer = consumerRepository.findById(id)
                 .orElseThrow(() -> new ApiException(
                         HttpStatus.NOT_FOUND,
-                        "Consumer not found"
+                        CONSUMER_NOT_FOUND
                 ));
 
         consumer.setActive(false);

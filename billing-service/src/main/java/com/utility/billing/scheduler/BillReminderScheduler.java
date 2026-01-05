@@ -1,19 +1,19 @@
 package com.utility.billing.scheduler;
 
-import com.utility.billing.model.Bill;
-import com.utility.billing.model.BillStatus;
-import com.utility.billing.repository.BillRepository;
-import com.utility.billing.event.BillEventPublisher;
-import com.utility.billing.feign.ConsumerClient;
-import com.utility.common.dto.event.BillDueReminderEvent;
+import java.time.LocalDate;
+import java.util.List;
 
-import lombok.RequiredArgsConstructor;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.util.List;
+import com.utility.billing.event.BillEventPublisher;
+import com.utility.billing.feign.ConsumerClient;
+import com.utility.billing.model.Bill;
+import com.utility.billing.model.BillStatus;
+import com.utility.billing.repository.BillRepository;
+import com.utility.common.dto.event.BillDueReminderEvent;
+
+import lombok.RequiredArgsConstructor;
 
 @Component
 @RequiredArgsConstructor
@@ -54,7 +54,6 @@ public class BillReminderScheduler {
 
 
             } catch (Exception e) {
-                System.err.println("Reminder skipped for bill " + bill.getId());
                 e.printStackTrace();
             }
         }

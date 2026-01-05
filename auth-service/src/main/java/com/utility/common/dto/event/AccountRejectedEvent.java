@@ -1,9 +1,7 @@
 package com.utility.common.dto.event;
 
-import lombok.Builder;
-import lombok.NoArgsConstructor;
-
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor

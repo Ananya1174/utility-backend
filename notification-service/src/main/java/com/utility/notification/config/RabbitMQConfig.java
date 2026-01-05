@@ -34,7 +34,7 @@ public class RabbitMQConfig {
 	    public Binding paymentOtpBinding() {
 	        return BindingBuilder
 	                .bind(paymentOtpQueue())
-	                .to(exchange())
+	                .to(notificationExchange())
 	                .with(PAYMENT_OTP_KEY);
 	    }
 	    
@@ -47,7 +47,7 @@ public class RabbitMQConfig {
 	public Binding passwordResetBinding() {
 	    return BindingBuilder
 	            .bind(passwordResetQueue())
-	            .to(exchange())
+	            .to(notificationExchange())
 	            .with(PASSWORD_RESET_KEY);
 	}
 
@@ -58,7 +58,7 @@ public class RabbitMQConfig {
 
 	@Bean
 	public Binding billReminderBinding() {
-		return BindingBuilder.bind(billReminderQueue()).to(exchange()).with(BILL_REMINDER_KEY);
+		return BindingBuilder.bind(billReminderQueue()).to(notificationExchange()).with(BILL_REMINDER_KEY);
 	}
 
 	@Bean
@@ -68,7 +68,7 @@ public class RabbitMQConfig {
 
 	@Bean
 	public Binding billBinding() {
-		return BindingBuilder.bind(billQueue()).to(exchange()).with(BILL_ROUTING_KEY);
+		return BindingBuilder.bind(billQueue()).to(notificationExchange()).with(BILL_ROUTING_KEY);
 	}
 
 	@Bean
@@ -77,8 +77,8 @@ public class RabbitMQConfig {
 	}
 
 	@Bean
-	public DirectExchange exchange() {
-		return new DirectExchange(EXCHANGE);
+	public DirectExchange notificationExchange() {
+	    return new DirectExchange(EXCHANGE);
 	}
 
 	@Bean
@@ -93,11 +93,11 @@ public class RabbitMQConfig {
 
 	@Bean
 	public Binding accountBinding() {
-		return BindingBuilder.bind(accountQueue()).to(exchange()).with(ACCOUNT_ROUTING_KEY);
+		return BindingBuilder.bind(accountQueue()).to(notificationExchange()).with(ACCOUNT_ROUTING_KEY);
 	}
 
 	@Bean
 	public Binding rejectBinding() {
-		return BindingBuilder.bind(rejectQueue()).to(exchange()).with(ACCOUNT_REJECTED_KEY);
+		return BindingBuilder.bind(rejectQueue()).to(notificationExchange()).with(ACCOUNT_REJECTED_KEY);
 	}
 }

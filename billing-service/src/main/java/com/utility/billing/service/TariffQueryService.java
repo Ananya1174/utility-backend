@@ -1,7 +1,6 @@
 package com.utility.billing.service;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
@@ -38,10 +37,10 @@ public class TariffQueryService {
 
 			List<TariffSlabDto> slabDtos = slabs.stream()
 					.map(slab -> new TariffSlabDto(slab.getMinUnits(), slab.getMaxUnits(), slab.getRate()))
-					.collect(Collectors.toList());
+					.toList();
 
 			return new TariffPlanDto(plan.getPlanCode(), slabDtos);
-		}).collect(Collectors.toList());
+		}).toList();
 
 		return new TariffResponseDto(utilityType.name(), planDtos);
 	}

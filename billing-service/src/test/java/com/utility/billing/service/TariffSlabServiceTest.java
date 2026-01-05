@@ -1,5 +1,6 @@
 package com.utility.billing.service;
 
+import com.utility.billing.dto.TariffSlabDto;
 import com.utility.billing.exception.ApiException;
 import com.utility.billing.model.TariffSlab;
 import com.utility.billing.repository.TariffSlabRepository;
@@ -10,6 +11,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import java.util.List;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -25,6 +27,28 @@ class TariffSlabServiceTest {
     private TariffSlabService service;
 
     @Test
+    void createSlab_success() {
+
+        TariffSlabDto dto =
+                new TariffSlabDto(0, 100, 5.0);
+
+        when(repository.findByUtilityTypeAndPlanCodeOrderByMinUnitsAsc(any(), any()))
+                .thenReturn(List.of());
+
+        TariffSlab saved = new TariffSlab();
+        saved.setMinUnits(0);
+        saved.setMaxUnits(100);
+        saved.setRate(5.0);
+
+        when(repository.save(any(TariffSlab.class)))
+                .thenReturn(saved);
+
+        TariffSlabDto result = service.createSlab(dto);
+
+        assertEquals(5.0, result.getRate());
+    }
+
+    @Test
     void deleteSlab_success() {
 
         TariffSlab slab = new TariffSlab();
@@ -33,7 +57,7 @@ class TariffSlabServiceTest {
         when(repository.findById("S1"))
                 .thenReturn(Optional.of(slab));
 
-        TariffSlab deleted = service.deleteSlab("S1");
+        TariffSlabDto deleted = service.deleteSlab("S1");
 
         assertNotNull(deleted);
         verify(repository).delete(slab);
