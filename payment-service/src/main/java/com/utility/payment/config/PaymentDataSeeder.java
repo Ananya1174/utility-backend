@@ -1,9 +1,9 @@
 package com.utility.payment.config;
 
+import java.security.SecureRandom;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.List;
-import java.util.Random;
 import java.util.UUID;
 
 import org.springframework.boot.CommandLineRunner;
@@ -26,7 +26,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class PaymentDataSeeder {
 
-    private static final Random RANDOM = new Random(); // reused
+    private static final SecureRandom RANDOM = new SecureRandom();
 
     private final PaymentRepository paymentRepository;
     private final InvoiceRepository invoiceRepository;
@@ -73,7 +73,9 @@ public class PaymentDataSeeder {
     // ---------- Helper Methods ----------
 
     private LocalDate generatePaymentDate(LocalDate dueDate) {
-    	return dueDate.plusDays(RANDOM.nextInt(10) - 5L);    }
+        // SecureRandom instead of Random / Math.random
+        return dueDate.plusDays(RANDOM.nextInt(10) - 5);
+    }
 
     private boolean isPaymentSuccessful(long ageInDays) {
         if (ageInDays > 60) {

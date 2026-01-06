@@ -22,8 +22,6 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class AuthDataSeeder {
 
-    private static final String DEFAULT_PASSWORD = "ChangeMe@123";
-
     private final PasswordEncoder passwordEncoder;
     private final UserRepository userRepository;
     private final AccountRequestRepository accountRequestRepository;
@@ -37,14 +35,10 @@ public class AuthDataSeeder {
                 return;
             }
 
-            String adminPassword =
-                    System.getenv().getOrDefault("ADMIN_PASSWORD", DEFAULT_PASSWORD);
-            String billingPassword =
-                    System.getenv().getOrDefault("BILLING_PASSWORD", DEFAULT_PASSWORD);
-            String accountsPassword =
-                    System.getenv().getOrDefault("ACCOUNTS_PASSWORD", DEFAULT_PASSWORD);
-            String consumerPassword =
-                    System.getenv().getOrDefault("CONSUMER_PASSWORD", DEFAULT_PASSWORD);
+            String adminPassword = requireEnv("ADMIN_PASSWORD");
+            String billingPassword = requireEnv("BILLING_PASSWORD");
+            String accountsPassword = requireEnv("ACCOUNTS_PASSWORD");
+            String consumerPassword = requireEnv("CONSUMER_PASSWORD");
 
             List<User> users = new ArrayList<>();
             List<AccountRequest> requests = new ArrayList<>();
@@ -86,6 +80,16 @@ public class AuthDataSeeder {
             userRepository.saveAll(users);
             accountRequestRepository.saveAll(requests);
         };
+    }
+
+    private static String requireEnv(String key) {
+        String value = System.getenv(key);
+        if (value == null || value.isBlank()) {
+            throw new IllegalStateException(
+                    "Missing required environment variable: " + key
+            );
+        }
+        return value;
     }
 
     private User buildUser(

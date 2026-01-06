@@ -1,6 +1,8 @@
 package com.utility.billing.scheduler;
 
 import java.time.LocalDate;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import java.util.List;
 
 import org.springframework.scheduling.annotation.Scheduled;
@@ -22,6 +24,8 @@ public class BillReminderScheduler {
     private final BillRepository billRepository;
     private final ConsumerClient consumerClient;
     private final BillEventPublisher billEventPublisher;
+    private static final Logger log =
+            LoggerFactory.getLogger(BillReminderScheduler.class);
 
     
     @Scheduled(cron = "0 0 9 * * ?") // every minute for testing 0 */1 * * * ?
@@ -53,8 +57,13 @@ public class BillReminderScheduler {
                 billEventPublisher.publishDueReminder(event);
 
 
-            } catch (Exception e) {
-                e.printStackTrace();
+            } catch (Exception ex) {
+                log.error(
+                        "Failed to send due reminder for billId={} consumerId={}",
+                        bill.getId(),
+                        bill.getConsumerId(),
+                        ex
+                );
             }
         }
     }
