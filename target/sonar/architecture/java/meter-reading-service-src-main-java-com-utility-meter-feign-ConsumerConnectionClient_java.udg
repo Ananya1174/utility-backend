@@ -1,0 +1,175 @@
+
+1.0Ananya1174_utility-backendJavaFrontend"1767671991708*java2.BÜ
+^
+Ymeter-reading-service/src/main/java/com/utility/meter/feign/ConsumerConnectionClient.java2
+	
+type3
+	
+MAIN4
+
+
+module-key5
+
+meter-reading-service6
+
+package8
+2
+-meter-reading-service:com.utility.meter.feign9
+6
+0com.utility.meter.feign.ConsumerConnectionClient11
+
+	interface12
+
+access13
+
+public14
+
+
+full-range15
+
+(11:1)-(19:2)16
+
+simple-name17
+
+ConsumerConnectionClient18
+5
+/org.springframework.cloud.openfeign.FeignClient20
+
+unknown21
+
+annotated by22
+
+
+uses23
+Z
+Tcom.utility.meter.feign.ConsumerConnectionClient#getAllConnections()Ljava/util/List;25
+
+method26
+
+(14:5)-(15:45)27
+
+getAllConnections28
+8
+2org.springframework.web.bind.annotation.GetMapping30
+)
+#com.utility.meter.dto.ConnectionDto32
+Å
+{com.utility.meter.feign.ConsumerConnectionClient#getConnectionById(Ljava/lang/String;)Lcom/utility/meter/dto/ConnectionDto;34
+
+(17:5)-(18:72)35
+
+getConnectionById36
+
+returns37
+:
+4org.springframework.web.bind.annotation.PathVariable39J%
+#
+1
+12
+
+3
+4
+
+5
+6 Z
+
+7
+7982
+
+
+5
+68jº
+
+38
+383921
+
+29
+293021
+J
+10D
+101112 *
+1 (*:7B$
+
+
+13
+14
+
+
+15
+16
+
+
+17
+18
+
+19
+192021
+N
+24H
+242526 *
+1 (*210:7B$
+
+
+13
+14
+
+
+15
+27
+
+
+17
+28
+
+31
+313221
+N
+33H
+333426 *
+1 ($210:7B$
+
+
+13
+14
+
+
+15
+35
+
+
+17
+36r©
+
+101922*
+1 ((
+
+101923*
+1 (
+
+242922*
+1 (-
+
+242923*
+1 (
+
+243123*
+1
+ (
+
+333137*
+1 (
+
+332922*
+1 (/
+
+332923*
+1 (
+
+333123*
+1 (
+
+333822*
+1% (2
+
+333823*
+1& (2

@@ -1,0 +1,744 @@
+
+1.0Ananya1174_utility-backendJavaFrontend"1767671991942*java2.Bî
+[
+Vmeter-reading-service/src/main/java/com/utility/meter/service/MeterReadingService.java2
+	
+type3
+	
+MAIN4
+
+
+module-key5
+
+meter-reading-service6
+
+package8
+4
+/meter-reading-service:com.utility.meter.service9
+3
+-com.utility.meter.service.MeterReadingService11
+
+class12
+
+access13
+
+public14
+
+
+full-range15
+
+(18:1)-(167:2)16
+
+simple-name17
+
+MeterReadingService18
+,
+&org.springframework.stereotype.Service20
+
+unknown21
+
+annotated by22
+
+
+uses23
+$
+lombok.RequiredArgsConstructor25
+>
+8com.utility.meter.service.MeterReadingService.repository27
+
+field28
+
+private29
+
+(22:5)-(22:53)30
+
+
+repository31
+9
+3com.utility.meter.repository.MeterReadingRepository33
+
+is type34
+L
+Fcom.utility.meter.service.MeterReadingService.consumerConnectionClient36
+
+(23:5)-(23:69)37
+
+consumerConnectionClient38
+6
+0com.utility.meter.feign.ConsumerConnectionClient40
+û
+ócom.utility.meter.service.MeterReadingService#addReading(Lcom/utility/meter/dto/CreateMeterReadingRequest;)Lcom/utility/meter/dto/MeterReadingResponse;42
+
+method43
+
+(26:5)-(105:6)44
+
+
+addReading45
+0
+*com.utility.meter.dto.MeterReadingResponse47
+
+returns48
+5
+/com.utility.meter.dto.CreateMeterReadingRequest50
+
+	has param51
+)
+#com.utility.meter.dto.ConnectionDto53
+
+
+references54
+Å
+{com.utility.meter.feign.ConsumerConnectionClient#getConnectionById(Ljava/lang/String;)Lcom/utility/meter/dto/ConnectionDto;56
+
+calls57
+.
+(com.utility.meter.exception.ApiException59
+)
+#org.springframework.http.HttpStatus61
+5
+/org.springframework.http.HttpStatus.BAD_REQUEST63
+3
+-org.springframework.http.HttpStatus.FORBIDDEN65
+Ç
+|com.utility.meter.repository.MeterReadingRepository#existsByConnectionIdAndReadingMonthAndReadingYear(Ljava/lang/String;II)Z67
+û
+ócom.utility.meter.repository.MeterReadingRepository#findTopByConnectionIdOrderByReadingYearDescReadingMonthDesc(Ljava/lang/String;)Ljava/util/Optional;69
+*
+$com.utility.meter.model.MeterReading71
+8
+2org.springframework.data.repository.CrudRepository73
+c
+]org.springframework.data.repository.CrudRepository#save(Ljava/lang/Object;)Ljava/lang/Object;75
+å
+Öcom.utility.meter.service.MeterReadingService#map(Lcom/utility/meter/model/MeterReading;)Lcom/utility/meter/dto/MeterReadingResponse;77
+e
+_com.utility.meter.service.MeterReadingService#getByConsumer(Ljava/lang/String;)Ljava/util/List;79
+
+(107:5)-(112:6)80
+
+getByConsumer81
+n
+hcom.utility.meter.repository.MeterReadingRepository#findByConsumerId(Ljava/lang/String;)Ljava/util/List;83
+R
+Lcom.utility.meter.service.MeterReadingService#getByMonth(II)Ljava/util/List;85
+
+(114:5)-(119:6)86
+
+
+getByMonth87
+n
+hcom.utility.meter.repository.MeterReadingRepository#findByReadingMonthAndReadingYear(II)Ljava/util/List;89
+}
+wcom.utility.meter.service.MeterReadingService#getLatest(Ljava/lang/String;)Lcom/utility/meter/dto/MeterReadingResponse;91
+
+(121:5)-(135:6)92
+
+	getLatest93
+3
+-org.springframework.http.HttpStatus.NOT_FOUND95
+
+(137:5)-(150:6)96
+	
+map97
+g
+acom.utility.meter.service.MeterReadingService#getByConnection(Ljava/lang/String;)Ljava/util/List;99
+
+(151:5)-(166:6)100
+
+getByConnection101
+q
+jcom.utility.meter.repository.MeterReadingRepository#findByConnectionId(Ljava/lang/String;)Ljava/util/List;103J%
+#
+1
+12
+
+3
+4
+
+5
+6 Z
+
+7
+7982
+
+
+5
+68j˘
+
+68
+686921
+
+94
+949521
+
+32
+323321
+
+24
+242521
+
+72
+727321
+
+19
+192021
+
+39
+394021
+
+46
+464721
+
+70
+707121
+
+74
+747521
+J
+10D
+101112 *
+1 (!:7B$
+
+
+13
+14
+
+
+15
+16
+
+
+17
+18
+
+102
+10210321
+N
+26H
+262728 *
+1* (4210:7B$
+
+
+13
+29
+
+
+15
+30
+
+
+17
+31
+
+62
+626321
+N
+84H
+848543 *
+1r' r(1210:7B$
+
+
+13
+14
+
+
+15
+86
+
+
+17
+87
+N
+41H
+414243 *
+1! (+210:7B$
+
+
+13
+14
+
+
+15
+44
+
+
+17
+45
+
+66
+666721
+N
+78H
+787943 *
+1k' k(4210:7B$
+
+
+13
+14
+
+
+15
+80
+
+
+17
+81
+R
+98L
+989943 *
+1ó' ó(6210:7B&
+
+
+13
+14
+
+15
+100
+
+17
+101
+
+60
+606121
+P
+76J
+767743 *
+1â" â(%210:7B$
+
+
+13
+29
+
+
+15
+96
+
+
+17
+97
+
+82
+828321
+
+88
+888921
+N
+35H
+353628 *
+1, (D210:7B$
+
+
+13
+29
+
+
+15
+37
+
+
+17
+38
+
+58
+585921
+
+49
+495021
+N
+90H
+909143 *
+1y! y(*210:7B$
+
+
+13
+14
+
+
+15
+92
+
+
+17
+93
+
+64
+646521
+
+52
+525321
+
+55
+555621rÕ
+
+101922*
+1 (	
+
+101923*
+1 (	
+
+102422*
+1 (
+
+102423*
+1 (
+
+263234*
+1 ()
+
+263223*
+1 ()
+
+263223*
+1* (4
+
+353934*
+1 (+
+
+353923*
+1 (+
+
+353923*
+1, (D
+
+414648*
+1 ( 
+
+414951*
+1, (E
+
+414623*
+1 ( 
+
+414934*
+1F (M
+
+414923*
+1, (E
+
+415234*
+1 (!
+
+415223*
+1	 (
+
+415248*
+1 (8
+
+413954*
+1 (8
+
+415557*
+1' (8
+
+413554*
+1 (&
+
+413923*
+1 (&
+
+413554*
+1 (&
+
+415857*
+1 (#
+
+416023*
+1< (F
+
+416023*
+1G (R
+
+416254*
+1G (R
+
+415857*
+1$ $(#
+
+416023*
+1& &(
+
+416023*
+1& &(%
+
+416454*
+1& &(%
+
+415857*
+1, ,(#
+
+416023*
+1. .(
+
+416023*
+1. .('
+
+416254*
+1. .('
+
+415857*
+14 4(#
+
+416023*
+16 6(
+
+416023*
+16 6('
+
+416254*
+16 6('
+
+413254*
+1: :(I
+
+416657*
+1: :(I
+
+412654*
+1: :(
+
+413223*
+1: :(
+
+412654*
+1: :(
+
+415857*
+1? ?(#
+
+416023*
+1A A(
+
+416023*
+1A  A(+
+
+416254*
+1A  A(+
+
+413254*
+1E  F(M
+
+416857*
+1F F(M
+
+412654*
+1E  E(*
+
+413223*
+1E  E(*
+
+412654*
+1E  E(*
+
+417023*
+1I I("
+
+415857*
+1M M(#
+
+416023*
+1O O(
+
+416023*
+1O  O(+
+
+416254*
+1O  O(+
+
+417034*
+1V V(
+
+417023*
+1V	 V(
+
+417057*
+1V$ V(0
+
+417048*
+1f	 f(
+
+417254*
+1f	 f(
+
+417457*
+1f f(
+
+412654*
+1f	 f(
+
+413223*
+1f	 f(
+
+412654*
+1f	 f(
+
+414648*
+1h h(
+
+411054*
+1h h(
+
+417657*
+1h h(
+
+784623*
+1k k(%
+
+783254*
+1l l(+
+
+788257*
+1l l(+
+
+782654*
+1l l(
+
+783223*
+1l l(
+
+782654*
+1l l(
+
+781023*
+1n n(
+
+781054*
+1n n(
+
+844623*
+1r r(%
+
+843254*
+1s s(;
+
+848857*
+1s s(;
+
+842654*
+1s s(
+
+843223*
+1s s(
+
+842654*
+1s s(
+
+841023*
+1u u(
+
+841054*
+1u u(
+
+904648*
+1y y( 
+
+904623*
+1y y( 
+
+907034*
+1{ {(
+
+907023*
+1{	 {(
+
+907048*
+1{  (
+
+903254*
+1{  |(M
+
+906857*
+1| |(M
+
+902654*
+1{  {(*
+
+903223*
+1{  {(*
+
+902654*
+1{  {(*
+
+905857*
+1Ä Ä()
+
+906023*
+1Ç! Ç(+
+
+906023*
+1Ç, Ç(5
+
+909454*
+1Ç, Ç(5
+
+904648*
+1Ü Ü(
+
+901054*
+1Ü Ü(
+
+907657*
+1Ü Ü(
+
+764648*
+1â â(!
+
+767051*
+1â& â(2
+
+764623*
+1â â(!
+
+767034*
+1â3 â(4
+
+767023*
+1â& â(2
+
+764634*
+1ä ä("
+
+764623*
+1ä	 ä(
+
+764657*
+1ä) ä(=
+
+984623*
+1ó ó(%
+
+987023*
+1ô ô(
+
+983254*
+1ö ö(.
+
+9810257*
+1ö ö(.
+
+982654*
+1ö ö(
+
+983223*
+1ö ö(
+
+982654*
+1ö ö(
+
+985857*
+1ù ù(#
+
+986023*
+1ü ü(
+
+986023*
+1ü  ü()
+
+989454*
+1ü  ü()
+
+981023*
+1§ §(
+
+981054*
+1§ §(

@@ -1,0 +1,7 @@
+organization=ananya1174
+projectKey=Ananya1174_utility-backend
+serverUrl=https://sonarcloud.io
+serverVersion=8.0.0.78092
+dashboardUrl=https://sonarcloud.io/dashboard?id=Ananya1174_utility-backend
+ceTaskId=AZuRdichxbCUjCendqAr
+ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AZuRdichxbCUjCendqAr

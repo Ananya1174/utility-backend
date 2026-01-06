@@ -1,0 +1,242 @@
+
+1.0Ananya1174_utility-backendJavaFrontend"1767671991271*java2.B•
+W
+Rbilling-service/src/main/java/com/utility/billing/config/FeignAuthInterceptor.java2
+	
+type3
+	
+MAIN4
+
+
+module-key5
+
+billing-service6
+
+package8
+/
+*billing-service:com.utility.billing.config9
+5
+/com.utility.billing.config.FeignAuthInterceptor11
+
+class12
+
+access13
+
+public14
+
+
+full-range15
+
+(11:1)-(32:2)16
+
+simple-name17
+
+FeignAuthInterceptor18
+:
+4org.springframework.context.annotation.Configuration20
+
+unknown21
+
+annotated by22
+
+
+uses23
+d
+^com.utility.billing.config.FeignAuthInterceptor#requestInterceptor()Lfeign/RequestInterceptor;25
+
+method26
+
+(14:5)-(31:6)27
+
+requestInterceptor28
+
+feign.RequestInterceptor30
+
+returns31
+1
++org.springframework.context.annotation.Bean33
+
+feign.RequestTemplate35
+
+is type36
+6
+0org.springframework.security.core.Authentication38
+?
+9org.springframework.security.core.context.SecurityContext40
+
+
+references41
+…
+org.springframework.security.core.context.SecurityContext#getAuthentication()Lorg/springframework/security/core/Authentication;43
+
+calls44
+E
+?org.springframework.security.core.context.SecurityContextHolder46
+Ž
+‡org.springframework.security.core.context.SecurityContextHolder#getContext()Lorg/springframework/security/core/context/SecurityContext;48
+U
+Oorg.springframework.security.authentication.UsernamePasswordAuthenticationToken50
+M
+Gorg.springframework.security.authentication.AbstractAuthenticationToken52
+l
+forg.springframework.security.authentication.AbstractAuthenticationToken#getDetails()Ljava/lang/Object;54
+`
+Zfeign.RequestTemplate#header(Ljava/lang/String;[Ljava/lang/String;)Lfeign/RequestTemplate;56J%
+#
+1
+12
+
+3
+4
+
+5
+6 Z
+
+7
+7982
+
+
+5
+68j 
+
+55
+555621
+
+29
+293021
+
+47
+474821
+J
+10D
+101112 *
+1 (":7B$
+
+
+13
+14
+
+
+15
+16
+
+
+17
+18
+
+19
+192021
+
+39
+394021
+
+51
+515221
+N
+24H
+242526 *
+1 (1210:7B$
+
+
+13
+14
+
+
+15
+27
+
+
+17
+28
+
+53
+535421
+
+32
+323321
+
+49
+495021
+
+37
+373821
+
+42
+424321
+
+45
+454621
+
+34
+343521rí
+
+101922*
+1 (
+
+101923*
+1 (
+
+242931*
+1 (
+
+243222*
+1 (
+
+
+243223*
+1 (
+
+
+242923*
+1 (
+
+243436*
+1 (
+
+243736*
+1 (*
+
+243723*
+1 (
+
+243731*
+1 (I
+
+243941*
+1 (I
+
+244244*
+18 (I
+
+243931*
+1 (5
+
+244541*
+1 (5
+
+244744*
+1+ (5
+
+244523*
+1 (*
+
+244936*
+1O (S
+
+244923*
+1+ (N
+
+245141*
+1" (1
+
+245344*
+1' (1
+
+243431*
+1 ($
+
+243441*
+1 ($
+
+245544*
+1 ($

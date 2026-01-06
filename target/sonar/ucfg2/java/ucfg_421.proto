@@ -1,0 +1,47 @@
+
+zcom.utility.meter.controller.MeterReadingController#latest(Ljava/lang/String;)Lcom/utility/meter/dto/MeterReadingResponse;‘
+†/Users/ananyaarisenapalli/utility-backend/meter-reading-service/src/main/java/com/utility/meter/controller/MeterReadingController.javaF  F(&"startingBlock*¸
+startingBlockF& G(8µ
+²
+G G(#
+%2"
+__annotate*T
+
+__unknown_file (86
+4org.springframework.web.bind.annotation.PathVariable*>
+
+__unknown_file ("
+ 
+connectionIdjava.lang.String`
+^
+G+ G(7 
+connectionIdjava.lang.String"__annotation*"
+
+__unknown_file (
+
+%2*
+1*ç
+1I I(ª
+§
+I I(3
+%0-com.utility.meter.service.MeterReadingService"__id*`
+
+__unknown_file (D*B5
+3com.utility.meter.controller.MeterReadingController"	
+serviceêç
+I I(.0
+%1*com.utility.meter.dto.MeterReadingResponse"wcom.utility.meter.service.MeterReadingService#getLatest(Ljava/lang/String;)Lcom/utility/meter/dto/MeterReadingResponse;*Q
+
+__unknown_file (5
+3
+%0-com.utility.meter.service.MeterReadingService*>
+
+__unknown_file ("
+ 
+connectionIdjava.lang.String2getLatest(Ljava/lang/String;)">
+I I(/2
+0
+%1*com.utility.meter.dto.MeterReadingResponse:,
+G G(7 
+connectionIdjava.lang.StringB75
+3com.utility.meter.controller.MeterReadingControllerH

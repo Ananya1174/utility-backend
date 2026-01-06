@@ -1,0 +1,26 @@
+
+;__sonar_lambda_3$com.utility.consumer.config.SecurityConfig‚
+x/Users/ananyaarisenapalli/utility-backend/consumer-service/src/main/java/com/utility/consumer/config/SecurityConfig.java (N"1*Á
+1 (|
+z
+. (MD
+%2>org.springframework.security.config.http.SessionCreationPolicy"__id*"
+
+__unknown_file (
+""ÃÀ
+ (N`
+%3Zorg.springframework.security.config.annotation.web.configurers.SessionManagementConfigurer"Žorg.springframework.security.config.annotation.web.configurers.SessionManagementConfigurer#sessionCreationPolicy(Lorg/springframework/security/config/http/SessionCreationPolicy;)Lorg/springframework/security/config/annotation/web/configurers/SessionManagementConfigurer;*ƒ
+
+__unknown_file (g
+e
+sessionZorg.springframework.security.config.annotation.web.configurers.SessionManagementConfigurer*b
+
+__unknown_file (F
+D
+%2>org.springframework.security.config.http.SessionCreationPolicy2WsessionCreationPolicy(Lorg/springframework/security/config/http/SessionCreationPolicy;)"n
+ (Nb
+`
+%3Zorg.springframework.security.config.annotation.web.configurers.SessionManagementConfigurer:q
+ (&e
+sessionZorg.springframework.security.config.annotation.web.configurers.SessionManagementConfigurerB20
+.org.springframework.security.config.Customizer

@@ -1,0 +1,47 @@
+
+†com.utility.billing.service.BillingService#fetchLatestMeterReading(Ljava/lang/String;)Lcom/utility/billing/feign/MeterReadingResponse;
+w/Users/ananyaarisenapalli/utility-backend/billing-service/src/main/java/com/utility/billing/service/BillingService.java,  ,(7"startingBlock*Ã
+startingBlock,7 .(À
+½
+( +(
+%2"
+__annotate*_
+
+__unknown_file (CA
+?io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker*>
+
+__unknown_file ("
+ 
+connectionIdjava.lang.String`
+^
+- -( 
+connectionIdjava.lang.String"__annotation*"
+
+__unknown_file (
+
+%2*
+1*ë
+1/ /(¤
+¡
+/ /(2
+%0,com.utility.billing.feign.MeterReadingClient"__id*[
+
+__unknown_file (?*=,
+*com.utility.billing.service.BillingService"
+meterClientðí
+/ /(24
+%1.com.utility.billing.feign.MeterReadingResponse"zcom.utility.billing.feign.MeterReadingClient#getLatest(Ljava/lang/String;)Lcom/utility/billing/feign/MeterReadingResponse;*P
+
+__unknown_file (4
+2
+%0,com.utility.billing.feign.MeterReadingClient*>
+
+__unknown_file ("
+ 
+connectionIdjava.lang.String2getLatest(Ljava/lang/String;)"B
+/ /(36
+4
+%1.com.utility.billing.feign.MeterReadingResponse:,
+- -( 
+connectionIdjava.lang.StringB.,
+*com.utility.billing.service.BillingServiceH

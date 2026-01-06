@@ -1,0 +1,327 @@
+
+1.0Ananya1174_utility-backendJavaFrontend"1767671990840*java2.BÕ
+V
+Qbilling-service/src/main/java/com/utility/billing/feign/MeterReadingResponse.java2
+	
+type3
+	
+MAIN4
+
+
+module-key5
+
+billing-service6
+
+package8
+.
+)billing-service:com.utility.billing.feign9
+4
+.com.utility.billing.feign.MeterReadingResponse11
+
+class12
+
+access13
+
+public14
+
+
+full-range15
+
+(6:1)-(22:2)16
+
+simple-name17
+
+MeterReadingResponse18
+
+lombok.Data20
+
+unknown21
+
+annotated by22
+
+
+uses23
+7
+1com.utility.billing.feign.MeterReadingResponse.id25
+
+field26
+
+private27
+
+(9:5)-(9:23)28
+
+id29
+?
+9com.utility.billing.feign.MeterReadingResponse.consumerId31
+
+(10:5)-(10:31)32
+
+
+consumerId33
+A
+;com.utility.billing.feign.MeterReadingResponse.connectionId35
+
+(11:5)-(11:33)36
+
+connectionId37
+@
+:com.utility.billing.feign.MeterReadingResponse.utilityType39
+
+(13:5)-(13:37)40
+
+utilityType41
++
+%com.utility.billing.model.UtilityType43
+
+is type44
+@
+:com.utility.billing.feign.MeterReadingResponse.meterNumber46
+
+(14:5)-(14:32)47
+
+meterNumber48
+D
+>com.utility.billing.feign.MeterReadingResponse.previousReading50
+
+(16:5)-(16:34)51
+
+previousReading52
+C
+=com.utility.billing.feign.MeterReadingResponse.currentReading54
+
+(17:5)-(17:33)55
+
+currentReading56
+E
+?com.utility.billing.feign.MeterReadingResponse.consumptionUnits58
+
+(18:5)-(18:35)59
+
+consumptionUnits60
+A
+;com.utility.billing.feign.MeterReadingResponse.readingMonth62
+
+(20:5)-(20:30)63
+
+readingMonth64
+@
+:com.utility.billing.feign.MeterReadingResponse.readingYear66
+
+(21:5)-(21:29)67
+
+readingYear68J%
+#
+1
+12
+
+3
+4
+
+5
+6 Z
+
+7
+7982
+
+
+5
+68j”
+N
+53H
+535426 *
+1 ( 210:7B$
+
+
+13
+27
+
+
+15
+55
+
+
+17
+56
+N
+30H
+303126 *
+1
+ 
+(210:7B$
+
+
+13
+27
+
+
+15
+32
+
+
+17
+33
+N
+61H
+616226 *
+1 (210:7B$
+
+
+13
+27
+
+
+15
+63
+
+
+17
+64
+N
+49H
+495026 *
+1 (!210:7B$
+
+
+13
+27
+
+
+15
+51
+
+
+17
+52
+N
+24H
+242526 *
+1	 	(210:7B$
+
+
+13
+27
+
+
+15
+28
+
+
+17
+29
+N
+45H
+454626 *
+1 (210:7B$
+
+
+13
+27
+
+
+15
+47
+
+
+17
+48
+N
+65H
+656626 *
+1 (210:7B$
+
+
+13
+27
+
+
+15
+67
+
+
+17
+68
+N
+38H
+383926 *
+1 ($210:7B$
+
+
+13
+27
+
+
+15
+40
+
+
+17
+41
+N
+57H
+575826 *
+1 ("210:7B$
+
+
+13
+27
+
+
+15
+59
+
+
+17
+60
+
+42
+424321
+
+19
+192021
+N
+34H
+343526 *
+1 ( 210:7B$
+
+
+13
+27
+
+
+15
+36
+
+
+17
+37
+J
+10D
+101112 *
+1 (":7B$
+
+
+13
+14
+
+
+15
+16
+
+
+17
+18r‡
+
+101922*
+1 (
+
+101923*
+1 (
+
+384244*
+1 (
+
+384223*
+1 (
+
+384223*
+1 ($

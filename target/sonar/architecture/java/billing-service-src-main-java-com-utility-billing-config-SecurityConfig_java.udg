@@ -1,0 +1,1000 @@
+
+1.0Ananya1174_utility-backendJavaFrontend"1767671990762*java2.BÃ-
+Q
+Lbilling-service/src/main/java/com/utility/billing/config/SecurityConfig.java2
+	
+type3
+	
+MAIN4
+
+
+module-key5
+
+billing-service6
+
+package8
+/
+*billing-service:com.utility.billing.config9
+/
+)com.utility.billing.config.SecurityConfig11
+
+class12
+
+access13
+
+public14
+
+
+full-range15
+
+(15:1)-(125:2)16
+
+simple-name17
+
+SecurityConfig18
+:
+4org.springframework.context.annotation.Configuration20
+
+unknown21
+
+annotated by22
+
+
+uses23
+^
+Xorg.springframework.security.config.annotation.method.configuration.EnableMethodSecurity25
+5
+/com.utility.billing.config.SecurityConfig.BILLS27
+
+field28
+
+private29
+
+(19:5)-(19:50)30
+
+BILLS31
+5
+/com.utility.billing.config.SecurityConfig.ADMIN33
+
+(20:5)-(20:49)34
+
+ADMIN35
+?
+9com.utility.billing.config.SecurityConfig.BILLING_OFFICER37
+
+(21:5)-(21:69)38
+
+BILLING_OFFICER39
+8
+2com.utility.billing.config.SecurityConfig.CONSUMER41
+
+(22:5)-(22:55)42
+
+CONSUMER43
+@
+:com.utility.billing.config.SecurityConfig.ACCOUNTS_OFFICER45
+
+(23:5)-(23:71)46
+
+ACCOUNTS_OFFICER47
+‰
+›com.utility.billing.config.SecurityConfig#filterChain(Lorg/springframework/security/config/annotation/web/builders/HttpSecurity;Lcom/utility/billing/security/JwtUtil;)Lorg/springframework/security/web/SecurityFilterChain;49
+
+method50
+
+(25:5)-(124:6)51
+
+filterChain52
+:
+4org.springframework.security.web.SecurityFilterChain54
+
+returns55
+N
+Horg.springframework.security.config.annotation.web.builders.HttpSecurity57
+
+	has param58
+*
+$com.utility.billing.security.JwtUtil60
+1
++org.springframework.context.annotation.Bean62
+
+is type63
+
+
+references64
+‘
+Õorg.springframework.security.config.annotation.web.builders.HttpSecurity#addFilterBefore(Ljakarta/servlet/Filter;Ljava/lang/Class;)Lorg/springframework/security/config/annotation/web/builders/HttpSecurity;66
+
+calls67
+·
+⁄org.springframework.security.config.annotation.web.builders.HttpSecurity#authorizeHttpRequests(Lorg/springframework/security/config/Customizer;)Lorg/springframework/security/config/annotation/web/builders/HttpSecurity;69
+›
+÷org.springframework.security.config.annotation.web.builders.HttpSecurity#sessionManagement(Lorg/springframework/security/config/Customizer;)Lorg/springframework/security/config/annotation/web/builders/HttpSecurity;71
+–
+…org.springframework.security.config.annotation.web.builders.HttpSecurity#csrf(Lorg/springframework/security/config/Customizer;)Lorg/springframework/security/config/annotation/web/builders/HttpSecurity;73
+S
+Morg.springframework.security.config.annotation.web.configurers.CsrfConfigurer75
+[
+Uorg.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer77
+Æ
+ßorg.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer#disable()Lorg/springframework/security/config/annotation/web/HttpSecurityBuilder;79
+`
+Zorg.springframework.security.config.annotation.web.configurers.SessionManagementConfigurer81
+ï
+éorg.springframework.security.config.annotation.web.configurers.SessionManagementConfigurer#sessionCreationPolicy(Lorg/springframework/security/config/http/SessionCreationPolicy;)Lorg/springframework/security/config/annotation/web/configurers/SessionManagementConfigurer;83
+D
+>org.springframework.security.config.http.SessionCreationPolicy85
+N
+Horg.springframework.security.config.http.SessionCreationPolicy.STATELESS87
+ê
+âorg.springframework.security.config.annotation.web.configurers.AuthorizeHttpRequestsConfigurer$AuthorizationManagerRequestMatcherRegistry89
+r
+lorg.springframework.security.config.annotation.web.configurers.AuthorizeHttpRequestsConfigurer$AuthorizedUrl91
+é
+áorg.springframework.security.config.annotation.web.configurers.AuthorizeHttpRequestsConfigurer$AuthorizedUrl#authenticated()Lorg/springframework/security/config/annotation/web/configurers/AuthorizeHttpRequestsConfigurer$AuthorizationManagerRequestMatcherRegistry;93
+W
+Qorg.springframework.security.config.annotation.web.AbstractRequestMatcherRegistry95
+v
+porg.springframework.security.config.annotation.web.AbstractRequestMatcherRegistry#anyRequest()Ljava/lang/Object;97
+û
+óorg.springframework.security.config.annotation.web.configurers.AuthorizeHttpRequestsConfigurer$AuthorizedUrl#hasAnyRole([Ljava/lang/String;)Lorg/springframework/security/config/annotation/web/configurers/AuthorizeHttpRequestsConfigurer$AuthorizationManagerRequestMatcherRegistry;99
+µ
+≠org.springframework.security.config.annotation.web.AbstractRequestMatcherRegistry#requestMatchers(Lorg/springframework/http/HttpMethod;[Ljava/lang/String;)Ljava/lang/Object;101
+õ
+ìorg.springframework.security.config.annotation.web.configurers.AuthorizeHttpRequestsConfigurer$AuthorizedUrl#hasRole(Ljava/lang/String;)Lorg/springframework/security/config/annotation/web/configurers/AuthorizeHttpRequestsConfigurer$AuthorizationManagerRequestMatcherRegistry;103
+ã
+Éorg.springframework.security.config.annotation.web.configurers.AuthorizeHttpRequestsConfigurer$AuthorizedUrl#permitAll()Lorg/springframework/security/config/annotation/web/configurers/AuthorizeHttpRequestsConfigurer$AuthorizationManagerRequestMatcherRegistry;105
+*
+#org.springframework.http.HttpMethod107
+/
+(org.springframework.http.HttpMethod.POST109
+.
+'org.springframework.http.HttpMethod.PUT111
+.
+'org.springframework.http.HttpMethod.GET113
+;
+4com.utility.billing.security.JwtAuthenticationFilter115
+[
+Torg.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter117
+B
+;org.springframework.security.web.DefaultSecurityFilterChain119
+M
+Forg.springframework.security.config.annotation.AbstractSecurityBuilder121
+g
+`org.springframework.security.config.annotation.AbstractSecurityBuilder#build()Ljava/lang/Object;123J%
+#
+1
+12
+
+3
+4
+
+5
+6 Z
+
+7
+7982
+
+
+5
+68jå
+
+N
+26H
+262728 *
+1! (&210:7B$
+
+
+13
+29
+
+
+15
+30
+
+
+17
+31
+
+59
+596021
+
+90
+909121
+
+72
+727321
+
+94
+949521
+
+112
+11211321
+
+118
+11811921
+
+56
+565721
+
+76
+767721
+
+100
+10010121
+N
+40H
+404128 *
+1! ()210:7B$
+
+
+13
+29
+
+
+15
+42
+
+
+17
+43
+
+70
+707121
+
+74
+747521
+
+24
+242521
+
+96
+969721
+
+104
+10410521
+
+114
+11411521
+
+98
+989921
+
+110
+11011121
+
+92
+929321
+J
+10D
+101112 *
+1 (:7B$
+
+
+13
+14
+
+
+15
+16
+
+
+17
+18
+
+108
+10810921
+
+80
+808121
+
+106
+10610721
+
+86
+868721
+
+122
+12212321
+N
+36H
+363728 *
+1! (0210:7B$
+
+
+13
+29
+
+
+15
+38
+
+
+17
+39
+
+65
+656621
+
+102
+10210321
+N
+44H
+444528 *
+1! (1210:7B$
+
+
+13
+29
+
+
+15
+46
+
+
+17
+47
+
+53
+535421
+
+19
+192021
+
+116
+11611721
+
+88
+888921
+N
+32H
+323328 *
+1! (&210:7B$
+
+
+13
+29
+
+
+15
+34
+
+
+17
+35
+
+68
+686921
+
+84
+848521
+
+82
+828321
+
+120
+12012121
+
+61
+616221
+N
+48H
+484950 *
+1  (+210:7B$
+
+
+13
+14
+
+
+15
+51
+
+
+17
+52
+
+78
+787921r‹*
+
+101922*
+1 (
+
+101923*
+1 (
+
+102422*
+1 (
+
+102423*
+1 (
+
+485355*
+1 (
+
+485658*
+1 (
+
+485958*
+1 (
+
+486122*
+1 (
+
+
+486123*
+1 (
+
+
+485323*
+1 (
+
+485663*
+1 (
+
+485623*
+1 (
+
+485963*
+1 (
+
+485923*
+1 (
+
+485655*
+1	 v(!
+
+485664*
+1	 v(!
+
+486567*
+1v v(!
+
+485655*
+1	 &('
+
+485664*
+1	 &('
+
+486867*
+1& &('
+
+485655*
+1	 !(#
+
+485664*
+1	 !(#
+
+487067*
+1! !(#
+
+485655*
+1	  (
+
+485664*
+1	  (
+
+487267*
+1   (
+
+487463*
+1   (
+
+485655*
+1   (+
+
+487664*
+1   (+
+
+487867*
+1 $  (+
+
+488063*
+1!$ !(+
+
+488055*
+1" "(6
+
+488064*
+1" "(6
+
+488267*
+1"! "(6
+
+488423*
+1#! #(6
+
+488423*
+1#7 #(@
+
+488664*
+1#7 #(@
+
+488863*
+1&( &(,
+
+488855*
+1&0 t('
+
+489064*
+1&0 t('
+
+489267*
+1t t('
+
+489055*
+1&0 s($
+
+489464*
+1&0 s($
+
+489667*
+1s s($
+
+488855*
+1&0 q(%
+
+489064*
+1&0 q(%
+
+489867*
+1q q(%
+
+489055*
+1&0 n()
+
+489464*
+1&0 n()
+
+4810067*
+1n n()
+
+488855*
+1&0 l("
+
+489064*
+1&0 l("
+
+4810267*
+1l l("
+
+489055*
+1&0 i()
+
+489464*
+1&0 i()
+
+4810067*
+1i i()
+
+488855*
+1&0 g(%
+
+489064*
+1&0 g(%
+
+489867*
+1g g(%
+
+489055*
+1&0 d()
+
+489464*
+1&0 d()
+
+4810067*
+1d d()
+
+488855*
+1&0 b("
+
+489064*
+1&0 b("
+
+4810267*
+1b b("
+
+489055*
+1&0 _()
+
+489464*
+1&0 _()
+
+4810067*
+1_ _()
+
+488855*
+1&0 ](%
+
+489064*
+1&0 ](%
+
+489867*
+1] ](%
+
+489055*
+1&0 Z()
+
+489464*
+1&0 Z()
+
+4810067*
+1Z Z()
+
+488855*
+1&0 X(%
+
+489064*
+1&0 X(%
+
+489867*
+1X X(%
+
+489055*
+1&0 U()
+
+489464*
+1&0 U()
+
+4810067*
+1U U()
+
+488855*
+1&0 N(%
+
+489064*
+1&0 N(%
+
+489867*
+1N N(%
+
+489055*
+1&0 K()
+
+489464*
+1&0 K()
+
+4810067*
+1K K()
+
+488855*
+1&0 I($
+
+489064*
+1&0 I($
+
+4810467*
+1I I($
+
+489055*
+1&0 F()
+
+489464*
+1&0 F()
+
+4810067*
+1F F()
+
+488855*
+1&0 D("
+
+489064*
+1&0 D("
+
+4810267*
+1D D("
+
+489055*
+1&0 A()
+
+489464*
+1&0 A()
+
+4810067*
+1A A()
+
+488855*
+1&0 ?(%
+
+489064*
+1&0 ?(%
+
+489867*
+1? ?(%
+
+489055*
+1&0 <()
+
+489464*
+1&0 <()
+
+4810067*
+1< <()
+
+488855*
+1&0 :(%
+
+489064*
+1&0 :(%
+
+489867*
+1: :(%
+
+489055*
+1&0 7()
+
+489464*
+1&0 7()
+
+4810067*
+17 7()
+
+488855*
+1&0 5("
+
+489064*
+1&0 5("
+
+4810267*
+15 5("
+
+489055*
+1&0 2()
+
+489464*
+1&0 2()
+
+4810067*
+12 2()
+
+488855*
+1&0 0("
+
+489064*
+1&0 0("
+
+4810267*
+10 0("
+
+489055*
+1&0 -()
+
+489464*
+1&0 -()
+
+4810067*
+1- -()
+
+488855*
+1&0 +("
+
+489064*
+1&0 +("
+
+4810267*
+1+ +("
+
+489055*
+1&0 (()
+
+489464*
+1&0 (()
+
+4810067*
+1( (()
+
+4810623*
+1)! )(+
+
+4810623*
+1), )(0
+
+4810864*
+1), )(0
+
+483264*
+1+# +((
+
+4810623*
+1.! .(+
+
+4810623*
+1., .(/
+
+4811064*
+1., .(/
+
+483264*
+10# 0((
+
+4810623*
+13! 3(+
+
+4810623*
+13, 3(0
+
+4810864*
+13, 3(0
+
+483264*
+15# 5((
+
+4810623*
+18! 8(+
+
+4810623*
+18, 8(/
+
+4811264*
+18, 8(/
+
+483264*
+1:& :(+
+
+483664*
+1:- :(<
+
+4810623*
+1=! =(+
+
+4810623*
+1=, =(/
+
+4811264*
+1=, =(/
+
+483264*
+1?& ?(+
+
+483664*
+1?- ?(<
+
+484064*
+1?> ?(F
+
+4810623*
+1B! B(+
+
+4810623*
+1B, B(0
+
+4810864*
+1B, B(0
+
+482664*
+1C! C(&
+
+483664*
+1D# D(2
+
+4810623*
+1G! G(+
+
+4810623*
+1G, G(/
+
+4811264*
+1G, G(/
+
+482664*
+1H! H(&
+
+4810623*
+1L! L(+
+
+4810623*
+1L, L(/
+
+4811264*
+1L, L(/
+
+484064*
+1O! O()
+
+484464*
+1P! P(1
+
+483664*
+1Q! Q(0
+
+483264*
+1R! R(&
+
+4810623*
+1V! V(+
+
+4810623*
+1V, V(/
+
+4811264*
+1V, V(/
+
+483264*
+1X& X(+
+
+483664*
+1X- X(<
+
+4810623*
+1[! [(+
+
+4810623*
+1[, [(/
+
+4811264*
+1[, [(/
+
+483264*
+1]& ](+
+
+483664*
+1]- ](<
+
+4810623*
+1`! `(+
+
+4810623*
+1`, `(/
+
+4811264*
+1`, `(/
+
+483264*
+1b# b((
+
+4810623*
+1e! e(+
+
+4810623*
+1e, e(/
+
+4811264*
+1e, e(/
+
+483264*
+1g& g(+
+
+483664*
+1g- g(<
+
+4810623*
+1j! j(+
+
+4810623*
+1j, j(/
+
+4811264*
+1j, j(/
+
+483264*
+1l# l((
+
+4810623*
+1o! o(+
+
+4810623*
+1o, o(/
+
+4811264*
+1o, o(/
+
+483264*
+1q& q(+
+
+483664*
+1q- q(<
+
+4811467*
+1w w(4
+
+4811623*
+1x x(=
+
+4811855*
+1{ {(
+
+4812064*
+1{ {(
+
+4812267*
+1{ {(

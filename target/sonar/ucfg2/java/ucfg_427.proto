@@ -1,0 +1,63 @@
+
+wcom.utility.meter.service.MeterReadingService#getLatest(Ljava/lang/String;)Lcom/utility/meter/dto/MeterReadingResponse;ã
+Ä/Users/ananyaarisenapalli/utility-backend/meter-reading-service/src/main/java/com/utility/meter/service/MeterReadingService.javay  y()"1*Ñ
+1{ {()≠
+™
+{ {()9
+%03com.utility.meter.repository.MeterReadingRepository"__id*]
+
+__unknown_file (A*?/
+-com.utility.meter.service.MeterReadingService"
+
+repository´®
+{ ~(
+%1java.util.Optional"ócom.utility.meter.repository.MeterReadingRepository#findTopByConnectionIdOrderByReadingYearDescReadingMonthDesc(Ljava/lang/String;)Ljava/util/Optional;*W
+
+__unknown_file (;
+9
+%03com.utility.meter.repository.MeterReadingRepository*>
+
+__unknown_file ("
+ 
+connectionIdjava.lang.String2OfindTopByConnectionIdOrderByReadingYearDescReadingMonthDesc(Ljava/lang/String;)•
+¢
+	 É(!
+%2java.util.function.Supplier"__declareFunction*_
+
+__unknown_file (CA
+?__sonar_lambda_85$com.utility.meter.service.MeterReadingService∞≠
+	{ Ñ(*
+%6$com.utility.meter.model.MeterReading"Ojava.util.Optional#orElseThrow(Ljava/util/function/Supplier;)Ljava/lang/Object;*6
+
+__unknown_file (
+
+%1java.util.Optional*?
+
+__unknown_file (#
+!
+%2java.util.function.Supplier2*orElseThrow(Ljava/util/function/Supplier;)è
+å
+	{ Ñ(/
+reading$com.utility.meter.model.MeterReading"__id*H
+
+__unknown_file (,
+*
+%6$com.utility.meter.model.MeterReadingÁ
+‰
+
+Ü Ü(0
+%7*com.utility.meter.dto.MeterReadingResponse"Öcom.utility.meter.service.MeterReadingService#map(Lcom/utility/meter/model/MeterReading;)Lcom/utility/meter/dto/MeterReadingResponse;*M
+
+__unknown_file (1/
+-com.utility.meter.service.MeterReadingService*M
+
+__unknown_file (1
+/
+reading$com.utility.meter.model.MeterReading"@
+
+Ü Ü(2
+0
+%7*com.utility.meter.dto.MeterReadingResponse:,
+y* y(= 
+connectionIdjava.lang.StringB1/
+-com.utility.meter.service.MeterReadingServiceH

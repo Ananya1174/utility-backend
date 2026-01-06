@@ -1,0 +1,355 @@
+
+1.0Ananya1174_utility-backendJavaFrontend"1767671987426*java2.Bå
+g
+bconsumer-service/src/main/java/com/utility/consumer/dto/dashboard/ConsumerDashboardSummaryDto.java2
+	
+type3
+	
+MAIN4
+
+
+module-key5
+
+consumer-service6
+
+package8
+8
+3consumer-service:com.utility.consumer.dto.dashboard9
+D
+>com.utility.consumer.dto.dashboard.ConsumerDashboardSummaryDto11
+
+record12
+
+access13
+
+public14
+
+
+full-range15
+
+(5:1)-(13:5)16
+
+simple-name17
+!
+ConsumerDashboardSummaryDto18
+T
+Ncom.utility.consumer.dto.dashboard.ConsumerDashboardSummaryDto.activeUtilities20
+
+field21
+
+	protected22
+
+(6:9)-(6:29)23
+
+activeUtilities24
+W
+Qcom.utility.consumer.dto.dashboard.ConsumerDashboardSummaryDto#activeUtilities()I26
+
+method27
+
+
+references28
+T
+Ncom.utility.consumer.dto.dashboard.ConsumerDashboardSummaryDto.pendingRequests30
+
+(7:9)-(7:29)31
+
+pendingRequests32
+W
+Qcom.utility.consumer.dto.dashboard.ConsumerDashboardSummaryDto#pendingRequests()I34
+O
+Icom.utility.consumer.dto.dashboard.ConsumerDashboardSummaryDto.totalBills36
+
+(8:9)-(8:24)37
+
+
+totalBills38
+R
+Lcom.utility.consumer.dto.dashboard.ConsumerDashboardSummaryDto#totalBills()I40
+P
+Jcom.utility.consumer.dto.dashboard.ConsumerDashboardSummaryDto.unpaidBills42
+
+(9:9)-(9:25)43
+
+unpaidBills44
+S
+Mcom.utility.consumer.dto.dashboard.ConsumerDashboardSummaryDto#unpaidBills()I46
+U
+Ocom.utility.consumer.dto.dashboard.ConsumerDashboardSummaryDto.totalOutstanding48
+
+(10:9)-(10:33)49
+
+totalOutstanding50
+X
+Rcom.utility.consumer.dto.dashboard.ConsumerDashboardSummaryDto#totalOutstanding()D52
+V
+Pcom.utility.consumer.dto.dashboard.ConsumerDashboardSummaryDto.lastPaymentAmount54
+
+(11:9)-(11:34)55
+
+lastPaymentAmount56
+j
+dcom.utility.consumer.dto.dashboard.ConsumerDashboardSummaryDto#lastPaymentAmount()Ljava/lang/Double;58
+T
+Ncom.utility.consumer.dto.dashboard.ConsumerDashboardSummaryDto.lastPaymentDate60
+
+(12:9)-(12:38)61
+
+lastPaymentDate62
+o
+icom.utility.consumer.dto.dashboard.ConsumerDashboardSummaryDto#lastPaymentDate()Ljava/time/LocalDateTime;64J%
+#
+1
+12
+
+3
+4
+
+5
+6 Z
+
+7
+7982
+
+
+5
+68jÿ
+B
+51<
+515227 *
+1
+ 
+( 210:7B
+
+
+15
+49
+
+
+17
+50
+N
+53H
+535421 *
+1 (!210:7B$
+
+
+13
+22
+
+
+15
+55
+
+
+17
+56
+B
+57<
+575827 *
+1 (!210:7B
+
+
+15
+55
+
+
+17
+56
+N
+59H
+596021 *
+1 (&210:7B$
+
+
+13
+22
+
+
+15
+61
+
+
+17
+62
+B
+39<
+394027 *
+1 (210:7B
+
+
+15
+37
+
+
+17
+38
+N
+19H
+192021 *
+1 (210:7B$
+
+
+13
+22
+
+
+15
+23
+
+
+17
+24
+B
+63<
+636427 *
+1 (&210:7B
+
+
+15
+61
+
+
+17
+62
+B
+33<
+333427 *
+1 (210:7B
+
+
+15
+31
+
+
+17
+32
+N
+35H
+353621 *
+1 (210:7B$
+
+
+13
+22
+
+
+15
+37
+
+
+17
+38
+N
+41H
+414221 *
+1	 	(210:7B$
+
+
+13
+22
+
+
+15
+43
+
+
+17
+44
+J
+10D
+101112 *
+1 (*:7B$
+
+
+13
+14
+
+
+15
+16
+
+
+17
+18
+B
+25<
+252627 *
+1 (210:7B
+
+
+15
+23
+
+
+17
+24
+B
+45<
+454627 *
+1	 	(210:7B
+
+
+15
+43
+
+
+17
+44
+N
+29H
+293021 *
+1 (210:7B$
+
+
+13
+22
+
+
+15
+31
+
+
+17
+32
+N
+47H
+474821 *
+1
+ 
+( 210:7B$
+
+
+13
+22
+
+
+15
+49
+
+
+17
+50rΩ
+
+251928*
+1 (
+
+332928*
+1 (
+
+393528*
+1 (
+
+454128*
+1	 	(
+
+514728*
+1
+ 
+( 
+
+575328*
+1 (!
+
+635928*
+1 (&

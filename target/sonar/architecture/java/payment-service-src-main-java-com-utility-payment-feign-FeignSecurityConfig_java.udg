@@ -1,0 +1,243 @@
+
+1.0Ananya1174_utility-backendJavaFrontend"1767671988258*java2.B‘
+U
+Ppayment-service/src/main/java/com/utility/payment/feign/FeignSecurityConfig.java2
+	
+type3
+	
+MAIN4
+
+
+module-key5
+
+payment-service6
+
+package8
+.
+)payment-service:com.utility.payment.feign9
+3
+-com.utility.payment.feign.FeignSecurityConfig11
+
+class12
+
+access13
+
+public14
+
+
+full-range15
+
+(11:1)-(35:2)16
+
+simple-name17
+
+FeignSecurityConfig18
+:
+4org.springframework.context.annotation.Configuration20
+
+unknown21
+
+annotated by22
+
+
+uses23
+b
+\com.utility.payment.feign.FeignSecurityConfig#requestInterceptor()Lfeign/RequestInterceptor;25
+
+method26
+
+(14:5)-(34:6)27
+
+requestInterceptor28
+
+feign.RequestInterceptor30
+
+returns31
+1
++org.springframework.context.annotation.Bean33
+
+feign.RequestTemplate35
+
+is type36
+F
+@org.springframework.web.context.request.ServletRequestAttributes38
+?
+9org.springframework.web.context.request.RequestAttributes40
+B
+<org.springframework.web.context.request.RequestContextHolder42
+
+
+references43
+•
+Žorg.springframework.web.context.request.RequestContextHolder#getRequestAttributes()Lorg/springframework/web/context/request/RequestAttributes;45
+
+calls46
+-
+'jakarta.servlet.http.HttpServletRequest48
+|
+vorg.springframework.web.context.request.ServletRequestAttributes#getRequest()Ljakarta/servlet/http/HttpServletRequest;50
+]
+Wjakarta.servlet.http.HttpServletRequest#getHeader(Ljava/lang/String;)Ljava/lang/String;52
+`
+Zfeign.RequestTemplate#header(Ljava/lang/String;[Ljava/lang/String;)Lfeign/RequestTemplate;54J%
+#
+1
+12
+
+3
+4
+
+5
+6 Z
+
+7
+7982
+
+
+5
+68jŒ
+
+53
+535421
+
+47
+474821
+N
+24H
+242526 *
+1 (1210:7B$
+
+
+13
+14
+
+
+15
+27
+
+
+17
+28
+
+29
+293021
+
+37
+373821
+
+49
+495021
+
+19
+192021
+
+44
+444521
+
+41
+414221
+
+39
+394021
+J
+10D
+101112 *
+1 (!:7B$
+
+
+13
+14
+
+
+15
+16
+
+
+17
+18
+
+32
+323321
+
+34
+343521
+
+51
+515221r£
+
+101922*
+1 (
+
+101923*
+1 (
+
+242931*
+1 (
+
+243222*
+1 (
+
+
+243223*
+1 (
+
+
+242923*
+1 (
+
+243436*
+1! ()
+
+243423*
+1 ( 
+
+243736*
+1& (0
+
+243723*
+1 (%
+
+243723*
+1 (.
+
+243931*
+10 (Y
+
+244143*
+10 (Y
+
+244446*
+1E (Y
+
+244123*
+10 (D
+
+244736*
+1  ('
+
+244723*
+1 (
+
+244731*
+1* (?
+
+243743*
+1* (?
+
+244946*
+15 (?
+
+244743*
+1! (2
+
+245146*
+1) (2
+
+243431*
+1 ( 
+
+243443*
+1 ( 
+
+245346*
+1 ( 

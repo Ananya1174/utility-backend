@@ -1,0 +1,79 @@
+
+Òcom.utility.billing.config.TariffDataLoader#loadTariffData(Lcom/utility/billing/repository/TariffPlanRepository;Lcom/utility/billing/repository/TariffSlabRepository;)Lorg/springframework/boot/CommandLineRunner;‚
+x/Users/ananyaarisenapalli/utility-backend/billing-service/src/main/java/com/utility/billing/config/TariffDataLoader.java ($"startingBlock*Æ
+startingBlock$ (Í
+Ê
+ (	
+%176"
+__annotate*K
+
+__unknown_file (/-
++org.springframework.context.annotation.Bean*]
+
+__unknown_file (A
+?
+planRepo3com.utility.billing.repository.TariffPlanRepository
+
+! ()?
+planRepo3com.utility.billing.repository.TariffPlanRepository"__annotation*$
+
+__unknown_file (
+
+%176Í
+Ê
+ (	
+%177"
+__annotate*K
+
+__unknown_file (/-
++org.springframework.context.annotation.Bean*]
+
+__unknown_file (A
+?
+slabRepo3com.utility.billing.repository.TariffSlabRepository
+
+! ()?
+slabRepo3com.utility.billing.repository.TariffSlabRepository"__annotation*$
+
+__unknown_file (
+
+%177*
+1*Ž
+1	! Ã(	²
+¯
+	! Ã(	0
+%0*org.springframework.boot.CommandLineRunner"__declareFunction*]
+
+__unknown_file (A?
+=__sonar_lambda_73$com.utility.billing.config.TariffDataLoaderÂ
+¿
+
+__unknown_file (>
+0
+%0*org.springframework.boot.CommandLineRunner"
+
+planRepo"__id*]
+
+__unknown_file (A
+?
+planRepo3com.utility.billing.repository.TariffPlanRepositoryÂ
+¿
+
+__unknown_file (>
+0
+%0*org.springframework.boot.CommandLineRunner"
+
+slabRepo"__id*]
+
+__unknown_file (A
+?
+slabRepo3com.utility.billing.repository.TariffSlabRepository"?
+	! Ã(
+2
+0
+%0*org.springframework.boot.CommandLineRunner:K
+ (*?
+planRepo3com.utility.billing.repository.TariffPlanRepository:K
+ ()?
+slabRepo3com.utility.billing.repository.TariffSlabRepositoryB/-
++com.utility.billing.config.TariffDataLoader

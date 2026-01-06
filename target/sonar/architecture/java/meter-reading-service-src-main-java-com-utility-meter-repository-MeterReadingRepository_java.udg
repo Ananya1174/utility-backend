@@ -1,0 +1,245 @@
+
+1.0Ananya1174_utility-backendJavaFrontend"1767671991747*java2.BÛ
+a
+\meter-reading-service/src/main/java/com/utility/meter/repository/MeterReadingRepository.java2
+	
+type3
+	
+MAIN4
+
+
+module-key5
+
+meter-reading-service6
+
+package8
+7
+2meter-reading-service:com.utility.meter.repository9
+9
+3com.utility.meter.repository.MeterReadingRepository11
+
+	interface12
+
+access13
+
+public14
+
+
+full-range15
+
+(9:1)-(31:2)16
+
+simple-name17
+
+MeterReadingRepository18
+A
+;org.springframework.data.mongodb.repository.MongoRepository20
+
+unknown21
+
+
+implements22
+
+
+uses23
+*
+$com.utility.meter.model.MeterReading25
+û
+ócom.utility.meter.repository.MeterReadingRepository#findTopByConnectionIdOrderByReadingYearDescReadingMonthDesc(Ljava/lang/String;)Ljava/util/Optional;27
+
+method28
+
+(11:5)-(13:7)29
+A
+;findTopByConnectionIdOrderByReadingYearDescReadingMonthDesc30
+Ç
+|com.utility.meter.repository.MeterReadingRepository#existsByConnectionIdAndReadingMonthAndReadingYear(Ljava/lang/String;II)Z32
+
+(15:5)-(19:7)33
+7
+1existsByConnectionIdAndReadingMonthAndReadingYear34
+n
+hcom.utility.meter.repository.MeterReadingRepository#findByConsumerId(Ljava/lang/String;)Ljava/util/List;36
+
+(21:5)-(21:60)37
+
+findByConsumerId38
+î
+çcom.utility.meter.repository.MeterReadingRepository#findByConnectionIdAndReadingMonthAndReadingYear(Ljava/lang/String;II)Ljava/util/Optional;40
+
+(23:5)-(27:7)41
+5
+/findByConnectionIdAndReadingMonthAndReadingYear42
+n
+hcom.utility.meter.repository.MeterReadingRepository#findByReadingMonthAndReadingYear(II)Ljava/util/List;44
+
+(28:5)-(29:73)45
+&
+ findByReadingMonthAndReadingYear46
+p
+jcom.utility.meter.repository.MeterReadingRepository#findByConnectionId(Ljava/lang/String;)Ljava/util/List;48
+
+(30:5)-(30:64)49
+
+findByConnectionId50J%
+#
+1
+12
+
+3
+4
+
+5
+6 Z
+
+7
+7982
+
+
+5
+68j‘
+N
+26H
+262728 *
+1 (W210:7B$
+
+
+13
+14
+
+
+15
+29
+
+
+17
+30
+N
+47H
+474828 *
+1 (*210:7B$
+
+
+13
+14
+
+
+15
+49
+
+
+17
+50
+J
+10D
+101112 *
+1	 	((:7B$
+
+
+13
+14
+
+
+15
+16
+
+
+17
+18
+N
+35H
+353628 *
+1 ((210:7B$
+
+
+13
+14
+
+
+15
+37
+
+
+17
+38
+N
+43H
+434428 *
+1 (%210:7B$
+
+
+13
+14
+
+
+15
+45
+
+
+17
+46
+N
+39H
+394028 *
+1 (K210:7B$
+
+
+13
+14
+
+
+15
+41
+
+
+17
+42
+
+19
+192021
+
+24
+242521
+N
+31H
+313228 *
+1 (>210:7B$
+
+
+13
+14
+
+
+15
+33
+
+
+17
+34rÿ
+
+101922*
+1	1 	(V
+
+101923*
+1	1 	(@
+
+102423*
+1	A 	(M
+
+262423*
+1 (
+
+352423*
+1
+ (
+
+392423*
+1 (
+
+432423*
+1
+ (
+
+472423*
+1
+ (

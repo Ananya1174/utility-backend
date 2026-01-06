@@ -1,0 +1,33 @@
+
+`com.utility.billing.controller.BillingDashboardController#averageConsumption(II)Ljava/util/List;‘
+†/Users/ananyaarisenapalli/utility-backend/billing-service/src/main/java/com/utility/billing/controller/BillingDashboardController.java($ ((6"1*´
+1+	 +(¿
+¼
++	 +(9
+%03com.utility.billing.service.BillingDashboardService"__id*o
+
+__unknown_file (S*Q;
+9com.utility.billing.controller.BillingDashboardController"
+dashboardService¾»
++	 +(<
+%1java.util.List"]com.utility.billing.service.BillingDashboardService#getAverageConsumption(II)Ljava/util/List;*W
+
+__unknown_file (;
+9
+%03com.utility.billing.service.BillingDashboardService*"
+
+__unknown_file (
+""*"
+
+__unknown_file (
+""2getAverageConsumption(II)""
++ +(=
+
+%1java.util.List: 
+
+__unknown_file (
+"": 
+
+__unknown_file (
+""B=;
+9com.utility.billing.controller.BillingDashboardControllerH

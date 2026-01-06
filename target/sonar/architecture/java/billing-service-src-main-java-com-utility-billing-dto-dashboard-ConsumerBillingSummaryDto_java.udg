@@ -1,0 +1,214 @@
+
+1.0Ananya1174_utility-backendJavaFrontend"1767671991131*java2.Bý
+c
+^billing-service/src/main/java/com/utility/billing/dto/dashboard/ConsumerBillingSummaryDto.java2
+	
+type3
+	
+MAIN4
+
+
+module-key5
+
+billing-service6
+
+package8
+6
+1billing-service:com.utility.billing.dto.dashboard9
+A
+;com.utility.billing.dto.dashboard.ConsumerBillingSummaryDto11
+
+class12
+
+access13
+
+public14
+
+
+full-range15
+
+(5:1)-(13:2)16
+
+simple-name17
+
+ConsumerBillingSummaryDto18
+
+lombok.Data20
+
+unknown21
+
+annotated by22
+
+
+uses23
+
+lombok.AllArgsConstructor25
+L
+Fcom.utility.billing.dto.dashboard.ConsumerBillingSummaryDto.consumerId27
+
+field28
+
+private29
+
+(8:5)-(8:31)30
+
+
+consumerId31
+L
+Fcom.utility.billing.dto.dashboard.ConsumerBillingSummaryDto.totalBills33
+
+(9:5)-(9:29)34
+
+
+totalBills35
+M
+Gcom.utility.billing.dto.dashboard.ConsumerBillingSummaryDto.totalAmount37
+
+(10:5)-(10:32)38
+
+totalAmount39
+L
+Fcom.utility.billing.dto.dashboard.ConsumerBillingSummaryDto.paidAmount41
+
+(11:5)-(11:31)42
+
+
+paidAmount43
+N
+Hcom.utility.billing.dto.dashboard.ConsumerBillingSummaryDto.unpaidAmount45
+
+(12:5)-(12:33)46
+
+unpaidAmount47J%
+#
+1
+12
+
+3
+4
+
+5
+6 Z
+
+7
+7982
+
+
+5
+68j„
+N
+44H
+444528 *
+1 ( 210:7B$
+
+
+13
+29
+
+
+15
+46
+
+
+17
+47
+N
+26H
+262728 *
+1 (210:7B$
+
+
+13
+29
+
+
+15
+30
+
+
+17
+31
+N
+32H
+323328 *
+1	 	(210:7B$
+
+
+13
+29
+
+
+15
+34
+
+
+17
+35
+N
+36H
+363728 *
+1
+ 
+(210:7B$
+
+
+13
+29
+
+
+15
+38
+
+
+17
+39
+N
+40H
+404128 *
+1 (210:7B$
+
+
+13
+29
+
+
+15
+42
+
+
+17
+43
+
+19
+192021
+
+24
+242521
+J
+10D
+101112 *
+1 (':7B$
+
+
+13
+14
+
+
+15
+16
+
+
+17
+18rl
+
+101922*
+1 (
+
+101923*
+1 (
+
+102422*
+1 (
+
+102423*
+1 (

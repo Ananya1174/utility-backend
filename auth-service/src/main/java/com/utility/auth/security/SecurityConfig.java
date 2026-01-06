@@ -56,9 +56,9 @@ public class SecurityConfig {
 	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 
 	    http
-	        // CSRF is disabled because this is a stateless JWT-based REST API
-	        // Tokens are sent via Authorization header, not cookies
-	        .csrf(csrf -> csrf.disable())
+	 // CSRF is disabled because this application uses JWT-based stateless authentication.
+	 // Tokens are sent via Authorization headers and no cookies or HTTP sessions are used.
+	 .csrf(csrf -> csrf.disable())
 
 	        .sessionManagement(session ->
 	            session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)

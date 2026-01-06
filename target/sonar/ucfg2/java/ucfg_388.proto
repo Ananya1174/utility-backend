@@ -1,0 +1,92 @@
+
+@__sonar_lambda_79$com.utility.billing.service.TariffQueryService…
+{/Users/ananyaarisenapalli/utility-backend/billing-service/src/main/java/com/utility/billing/service/TariffQueryService.java!4 +("startingBlock*¹
+startingBlock!4 +(º
+·
+
+__unknown_file (4
+utilityType%com.utility.billing.model.UtilityType"__id*_
+
+__unknown_file (C*A0
+.com.utility.billing.service.TariffQueryService"
+utilityTypeÛ
+Ø
+
+__unknown_file (I
+TariffQueryService.this.com.utility.billing.service.TariffQueryService"__id*k
+
+__unknown_file (O*M0
+.com.utility.billing.service.TariffQueryService"
+TariffQueryService.this*
+1*»
+1# #($Å
+Â
+# #($9
+%73com.utility.billing.repository.TariffSlabRepository"__id*u
+
+__unknown_file (Y*W
+I
+TariffQueryService.this.com.utility.billing.service.TariffQueryService"
+
+slabRepoÿü
+# $(
+%8"­com.utility.billing.repository.TariffSlabRepository#findByUtilityTypeAndPlanCodeOrderByMinUnitsAsc(Lcom/utility/billing/model/UtilityType;Ljava/lang/String;)Ljava/util/List;*W
+
+__unknown_file (;
+9
+%73com.utility.billing.repository.TariffSlabRepository*R
+
+__unknown_file (6
+4
+utilityType%com.utility.billing.model.UtilityType*"
+
+__unknown_file (
+""2ifindByUtilityTypeAndPlanCodeOrderByMinUnitsAsc(Lcom/utility/billing/model/UtilityType;Ljava/lang/String;)O
+M
+# $(
+slabsjava.util.List"__id*"
+
+__unknown_file (
+
+%8¥¢
+&" &(0
+%9java.util.stream.Stream"6java.util.Collection#stream()Ljava/util/stream/Stream;*5
+
+__unknown_file (
+
+slabsjava.util.List2stream()¦
+£
+'
+ '(["
+%10java.util.function.Function"__declareFunction*`
+
+__unknown_file (DB
+@__sonar_lambda_80$com.utility.billing.service.TariffQueryService¥¢
+&" '(\
+%11java.util.stream.Stream"Sjava.util.stream.Stream#map(Ljava/util/function/Function;)Ljava/util/stream/Stream;*;
+
+__unknown_file (
+
+%9java.util.stream.Stream*@
+
+__unknown_file ($
+"
+%10java.util.function.Function2"map(Ljava/util/function/Function;)ž›
+&" ((
+%12java.util.List"0java.util.stream.Stream#toList()Ljava/util/List;*<
+
+__unknown_file ( 
+
+%11java.util.stream.Stream2toList()c
+a
+& ((
+slabDtosjava.util.List"__id*3
+
+__unknown_file (
+
+%12java.util.List"
+* *(:
+"":8
+!4 !(8,
+plan$com.utility.billing.model.TariffPlanB
+java.util.function.Function

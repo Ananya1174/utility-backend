@@ -1,0 +1,1397 @@
+
+1.0Ananya1174_utility-backendJavaFrontend"1767671991521*java2.Bµ,
+_
+Zbilling-service/src/test/java/com/utility/billing/service/BillingDashboardServiceTest.java2
+	
+type3
+	
+TEST4
+
+
+module-key5
+
+billing-service6
+
+package8
+0
++billing-service:com.utility.billing.service9
+=
+7com.utility.billing.service.BillingDashboardServiceTest11
+
+class12
+
+access13
+
+	protected14
+
+
+full-range15
+
+(21:1)-(126:2)16
+
+simple-name17
+!
+BillingDashboardServiceTest18
+0
+*org.junit.jupiter.api.extension.ExtendWith20
+
+unknown21
+
+annotated by22
+
+
+uses23
+0
+*org.mockito.junit.jupiter.MockitoExtension25
+L
+Fcom.utility.billing.service.BillingDashboardServiceTest.billRepository27
+
+field28
+
+private29
+
+(24:5)-(25:43)30
+
+billRepository31
+3
+-com.utility.billing.repository.BillRepository33
+
+is type34
+
+org.mockito.Mock36
+L
+Fcom.utility.billing.service.BillingDashboardServiceTest.billingService38
+
+(27:5)-(28:43)39
+
+billingService40
+0
+*com.utility.billing.service.BillingService42
+E
+?com.utility.billing.service.BillingDashboardServiceTest.service44
+
+(30:5)-(31:45)45
+
+service46
+9
+3com.utility.billing.service.BillingDashboardService48
+
+org.mockito.InjectMocks50
+Æ
+¿com.utility.billing.service.BillingDashboardServiceTest#bill(Ljava/lang/String;Lcom/utility/billing/model/UtilityType;Lcom/utility/billing/model/BillStatus;DJ)Lcom/utility/billing/model/Bill;52
+
+method53
+
+(33:5)-(41:6)54
+
+
+bill55
+$
+com.utility.billing.model.Bill57
+
+returns58
++
+%com.utility.billing.model.UtilityType60
+
+	has param61
+*
+$com.utility.billing.model.BillStatus63
+
+calls64
+
+
+references65
+G
+Acom.utility.billing.model.Bill#setConsumerId(Ljava/lang/String;)V67
+]
+Wcom.utility.billing.model.Bill#setUtilityType(Lcom/utility/billing/model/UtilityType;)V69
+W
+Qcom.utility.billing.model.Bill#setStatus(Lcom/utility/billing/model/BillStatus;)V71
+7
+1com.utility.billing.model.Bill#setTotalAmount(D)V73
+<
+6com.utility.billing.model.Bill#setConsumptionUnits(J)V75
+X
+Rcom.utility.billing.service.BillingDashboardServiceTest#getBillsSummary_success()V77
+
+(43:5)-(56:6)78
+
+getBillsSummary_success79
+ 
+org.junit.jupiter.api.Test81
+*
+$org.mockito.stubbing.OngoingStubbing83
+o
+iorg.mockito.stubbing.OngoingStubbing#thenReturn(Ljava/lang/Object;)Lorg/mockito/stubbing/OngoingStubbing;85
+
+org.mockito.Mockito87
+X
+Rorg.mockito.Mockito#when(Ljava/lang/Object;)Lorg/mockito/stubbing/OngoingStubbing;89
+Z
+Tcom.utility.billing.repository.BillRepository#countByBillingMonthAndBillingYear(II)J91
+Š
+ƒcom.utility.billing.repository.BillRepository#countByBillingMonthAndBillingYearAndStatus(IILcom/utility/billing/model/BillStatus;)J93
+/
+)com.utility.billing.model.BillStatus.PAID95
+7
+1com.utility.billing.dto.dashboard.BillsSummaryDto97
+€
+zcom.utility.billing.service.BillingDashboardService#getBillsSummary(II)Lcom/utility/billing/dto/dashboard/BillsSummaryDto;99
+'
+ org.junit.jupiter.api.Assertions101
+9
+2org.junit.jupiter.api.Assertions#assertEquals(JJ)V103
+I
+Bcom.utility.billing.dto.dashboard.BillsSummaryDto#getTotalBills()J105
+H
+Acom.utility.billing.dto.dashboard.BillsSummaryDto#getPaidBills()J107
+J
+Ccom.utility.billing.dto.dashboard.BillsSummaryDto#getUnpaidBills()J109
+_
+Xcom.utility.billing.service.BillingDashboardServiceTest#getConsumptionSummary_success()V111
+
+(58:5)-(72:6)112
+$
+getConsumptionSummary_success113
+i
+bcom.utility.billing.repository.BillRepository#findByBillingMonthAndBillingYear(II)Ljava/util/List;115
+8
+1com.utility.billing.model.UtilityType.ELECTRICITY117
+>
+7com.utility.billing.dto.dashboard.ConsumptionSummaryDto119
+d
+]com.utility.billing.service.BillingDashboardService#getConsumptionSummary(II)Ljava/util/List;121
+9
+2org.junit.jupiter.api.Assertions#assertEquals(II)V123
+O
+Hcom.utility.billing.dto.dashboard.ConsumptionSummaryDto#getTotalUnits()J125
+_
+Xcom.utility.billing.service.BillingDashboardServiceTest#getAverageConsumption_success()V127
+
+(74:5)-(88:6)128
+$
+getAverageConsumption_success129
+2
++com.utility.billing.model.UtilityType.WATER131
+>
+7com.utility.billing.dto.dashboard.AverageConsumptionDto133
+d
+]com.utility.billing.service.BillingDashboardService#getAverageConsumption(II)Ljava/util/List;135
+9
+2org.junit.jupiter.api.Assertions#assertEquals(DD)V137
+Q
+Jcom.utility.billing.dto.dashboard.AverageConsumptionDto#getAverageUnits()D139
+c
+\com.utility.billing.service.BillingDashboardServiceTest#getConsumerBillingSummary_success()V141
+
+(90:5)-(105:6)142
+(
+!getConsumerBillingSummary_success143
+/
+(com.utility.billing.model.BillStatus.DUE145
+B
+;com.utility.billing.dto.dashboard.ConsumerBillingSummaryDto147
+h
+acom.utility.billing.service.BillingDashboardService#getConsumerBillingSummary(II)Ljava/util/List;149
+T
+Mcom.utility.billing.dto.dashboard.ConsumerBillingSummaryDto#getTotalAmount()D151
+S
+Lcom.utility.billing.dto.dashboard.ConsumerBillingSummaryDto#getPaidAmount()D153
+c
+\com.utility.billing.service.BillingDashboardServiceTest#getConsumerBillingHistory_success()V155
+
+(107:5)-(114:6)156
+(
+!getConsumerBillingHistory_success157
+h
+acom.utility.billing.service.BillingService#getBillsByConsumer(Ljava/lang/String;)Ljava/util/List;159
++
+$com.utility.billing.dto.BillResponse161
+x
+qcom.utility.billing.service.BillingDashboardService#getConsumerBillingHistory(Ljava/lang/String;)Ljava/util/List;163
+`
+Ycom.utility.billing.service.BillingDashboardServiceTest#getTotalBilledForMonth_success()V165
+
+(116:5)-(125:6)166
+%
+getTotalBilledForMonth_success167
+0
+)com.utility.billing.model.UtilityType.GAS169
+V
+Ocom.utility.billing.service.BillingDashboardService#getTotalBilledForMonth(II)D171J%
+#
+1
+12
+
+3
+4
+
+5
+6 Z
+
+7
+7982
+
+
+5
+68jÏ
+
+158
+15815921
+
+90
+909121
+
+118
+11811921
+
+116
+11611721
+
+98
+989921
+
+144
+14414521
+
+94
+949521
+
+146
+14614721
+
+19
+192021
+
+68
+686921
+
+41
+414221
+
+122
+12212321
+
+59
+596021
+
+104
+10410521
+N
+76H
+767753 *
+1,
+ ,(!210:7B$
+
+
+13
+14
+
+
+15
+78
+
+
+17
+79
+S
+140L
+14014153 *
+1[
+ [(+210:7B&
+
+
+13
+14
+
+15
+142
+
+17
+143
+
+160
+16016121
+
+24
+242521
+S
+164L
+16416553 *
+1u
+ u((210:7B&
+
+
+13
+14
+
+15
+166
+
+17
+167
+
+162
+16216321
+
+74
+747521
+S
+154L
+15415553 *
+1l
+ l(+210:7B&
+
+
+13
+14
+
+15
+156
+
+17
+157
+
+66
+666721
+
+84
+848521
+
+47
+474821
+
+80
+808121
+
+114
+11411521
+
+92
+929321
+
+152
+15215321
+
+96
+969721
+
+132
+13213321
+
+136
+13613721
+
+170
+17017121
+
+88
+888921
+
+134
+13413521
+
+70
+707121
+
+56
+565721
+
+150
+15015121
+
+35
+353621
+
+62
+626321
+J
+10D
+101112 *
+1 (":7B$
+
+
+13
+14
+
+
+15
+16
+
+
+17
+18
+
+32
+323321
+
+148
+14814921
+
+168
+16816921
+
+124
+12412521
+
+49
+495021
+S
+110L
+11011153 *
+1;
+ ;('210:7B&
+
+
+13
+14
+
+15
+112
+
+17
+113
+S
+126L
+12612753 *
+1K
+ K('210:7B&
+
+
+13
+14
+
+15
+128
+
+17
+129
+N
+37H
+373828 *
+1 (*210:7B$
+
+
+13
+29
+
+
+15
+39
+
+
+17
+40
+N
+51H
+515253 *
+1! !(210:7B$
+
+
+13
+29
+
+
+15
+54
+
+
+17
+55
+
+82
+828321
+
+108
+10810921
+
+120
+12012121
+
+130
+13013121
+
+72
+727321
+
+86
+868721
+
+106
+10610721
+
+102
+10210321
+
+100
+10010121
+N
+43H
+434428 *
+1% (,210:7B$
+
+
+13
+29
+
+
+15
+45
+
+
+17
+46
+
+138
+13813921
+N
+26H
+262728 *
+1 (*210:7B$
+
+
+13
+29
+
+
+15
+30
+
+
+17
+31rÃ;
+
+101922*
+1 ($
+
+101923*
+1 (
+
+102423*
+1 (
+
+263234*
+1 (
+
+263522*
+1 (
+
+
+263523*
+1 (
+
+
+263223*
+1 (
+
+263223*
+1 (*
+
+374134*
+1 (
+
+373522*
+1 (
+
+
+373523*
+1 (
+
+
+374123*
+1 (
+
+374123*
+1 (*
+
+434734*
+1 ($
+
+434922*
+1 (
+
+434923*
+1 (
+
+434723*
+1 ($
+
+434723*
+1% (,
+
+515658*
+1! !(
+
+515961*
+1!( !(3
+
+516261*
+1!: !(D
+
+515623*
+1! !(
+
+515934*
+1!4 !(8
+
+515923*
+1!( !(3
+
+516234*
+1!E !(K
+
+516223*
+1!: !(D
+
+515634*
+1" "(
+
+515623*
+1"	 "(
+
+515664*
+1" "(
+
+515665*
+1#	 #(
+
+516664*
+1# #(
+
+515665*
+1$	 $(
+
+516864*
+1$ $(
+
+515665*
+1%	 %(
+
+517064*
+1% %(
+
+515665*
+1&	 &(
+
+517264*
+1& &(
+
+515665*
+1'	 '(
+
+517464*
+1' '(
+
+768022*
+1+ +(
+
+
+768023*
+1+ +(
+
+
+768258*
+1.	 /(
+
+768265*
+1.	 /(
+
+768464*
+1/ /(
+
+768258*
+1.	 .(
+
+768665*
+1.	 .(
+
+768864*
+1.	 .(
+
+763265*
+1. .(>
+
+769064*
+1. .(>
+
+762665*
+1. .(
+
+763223*
+1. .(
+
+762665*
+1. .(
+
+768258*
+10	 1(
+
+768265*
+10	 1(
+
+768464*
+11 1(
+
+768258*
+10	 0(
+
+768665*
+10	 0(
+
+768864*
+10	 0(
+
+763265*
+10 0(G
+
+769264*
+10 0(G
+
+762665*
+10 0(
+
+763223*
+10 0(
+
+762665*
+10 0(
+
+766223*
+10Q 0([
+
+766223*
+10\ 0(`
+
+769465*
+10\ 0(`
+
+769634*
+13 3(
+
+769623*
+13	 3(
+
+769658*
+13 3(6
+
+764765*
+13 3(6
+
+769864*
+13' 3(6
+
+764365*
+13 3(&
+
+764723*
+13 3(&
+
+764365*
+13 3(&
+
+7610065*
+15	 5(
+
+7610264*
+15	 5(
+
+769665*
+15 5(+
+
+7610464*
+15 5(+
+
+7610065*
+16	 6(
+
+7610264*
+16	 6(
+
+769665*
+16 6()
+
+7610664*
+16 6()
+
+7610065*
+17	 7(
+
+7610264*
+17	 7(
+
+769665*
+17 7(+
+
+7610864*
+17 7(+
+
+1108022*
+1: :(
+
+
+1108023*
+1: :(
+
+
+1108258*
+1=	 >(
+
+1108265*
+1=	 >(
+
+1108464*
+1> >(
+
+1108258*
+1=	 =(
+
+1108665*
+1=	 =(
+
+1108864*
+1=	 =(
+
+1103265*
+1= =(=
+
+11011464*
+1= =(=
+
+1102665*
+1= =(
+
+1103223*
+1= =(
+
+1102665*
+1= =(
+
+1105658*
+1? ?(
+
+1101065*
+1? ?(
+
+1105164*
+1? ?(
+
+1105923*
+1?$ ?(/
+
+1105923*
+1?0 ?(;
+
+11011665*
+1?0 ?(;
+
+1106223*
+1?= ?(G
+
+1106223*
+1?H ?(L
+
+1109465*
+1?H ?(L
+
+1105658*
+1@ @(
+
+1101065*
+1@ @(
+
+1105164*
+1@ @(
+
+1105923*
+1@$ @(/
+
+1105923*
+1@0 @(;
+
+11011665*
+1@0 @(;
+
+1106223*
+1@= @(G
+
+1106223*
+1@H @(L
+
+1109465*
+1@H @(L
+
+11011823*
+1C C(#
+
+1104765*
+1D D(.
+
+11012064*
+1D D(.
+
+1104365*
+1D D(
+
+1104723*
+1D D(
+
+1104365*
+1D D(
+
+11010065*
+1F	 F(
+
+11012264*
+1F	 F(
+
+11010065*
+1G	 G(
+
+11010264*
+1G	 G(
+
+11011865*
+1G G(7
+
+11012464*
+1G* G(7
+
+11011858*
+1G G(&
+
+1268022*
+1J J(
+
+
+1268023*
+1J J(
+
+
+1268258*
+1M	 N(
+
+1268265*
+1M	 N(
+
+1268464*
+1N N(
+
+1268258*
+1M	 M(
+
+1268665*
+1M	 M(
+
+1268864*
+1M	 M(
+
+1263265*
+1M M(=
+
+12611464*
+1M M(=
+
+1262665*
+1M M(
+
+1263223*
+1M M(
+
+1262665*
+1M M(
+
+1265658*
+1O O(
+
+1261065*
+1O O(
+
+1265164*
+1O O(
+
+1265923*
+1O$ O(/
+
+1265923*
+1O0 O(5
+
+12613065*
+1O0 O(5
+
+1266223*
+1O7 O(A
+
+1266223*
+1OB O(F
+
+1269465*
+1OB O(F
+
+1265658*
+1P P(
+
+1261065*
+1P P(
+
+1265164*
+1P P(
+
+1265923*
+1P$ P(/
+
+1265923*
+1P0 P(5
+
+12613065*
+1P0 P(5
+
+1266223*
+1P7 P(A
+
+1266223*
+1PB P(F
+
+1269465*
+1PB P(F
+
+12613223*
+1S S(#
+
+1264765*
+1T T(.
+
+12613464*
+1T T(.
+
+1264365*
+1T T(
+
+1264723*
+1T T(
+
+1264365*
+1T T(
+
+12610065*
+1V	 V(
+
+12612264*
+1V	 V(
+
+12610065*
+1W	 W(
+
+12613664*
+1W	 W(
+
+12613265*
+1W W(:
+
+12613864*
+1W+ W(:
+
+12613258*
+1W W('
+
+1408022*
+1Z Z(
+
+
+1408023*
+1Z Z(
+
+
+1408258*
+1]	 ^(
+
+1408265*
+1]	 ^(
+
+1408464*
+1^ ^(
+
+1408258*
+1]	 ](
+
+1408665*
+1]	 ](
+
+1408864*
+1]	 ](
+
+1403265*
+1] ](=
+
+14011464*
+1] ](=
+
+1402665*
+1] ](
+
+1403223*
+1] ](
+
+1402665*
+1] ](
+
+1405658*
+1_ _(
+
+1401065*
+1_ _(
+
+1405164*
+1_ _(
+
+1405923*
+1_$ _(/
+
+1405923*
+1_0 _(;
+
+14011665*
+1_0 _(;
+
+1406223*
+1_= _(G
+
+1406223*
+1_H _(L
+
+1409465*
+1_H _(L
+
+1405658*
+1` `(
+
+1401065*
+1` `(
+
+1405164*
+1` `(
+
+1405923*
+1`$ `(/
+
+1405923*
+1`0 `(;
+
+14011665*
+1`0 `(;
+
+1406223*
+1`= `(G
+
+1406223*
+1`H `(K
+
+14014465*
+1`H `(K
+
+14014623*
+1c c('
+
+1404765*
+1d d(2
+
+14014864*
+1d d(2
+
+1404365*
+1d d(
+
+1404723*
+1d d(
+
+1404365*
+1d d(
+
+14010065*
+1f	 f(
+
+14012264*
+1f	 f(
+
+14010065*
+1g	 g(
+
+14013664*
+1g	 g(
+
+14014665*
+1g g(7
+
+14015064*
+1g) g(7
+
+14014658*
+1g g(%
+
+14010065*
+1h	 h(
+
+14013664*
+1h	 h(
+
+14014665*
+1h h(6
+
+14015264*
+1h) h(6
+
+14014658*
+1h h(%
+
+1548022*
+1k k(
+
+
+1548023*
+1k k(
+
+
+1548258*
+1n	 o(
+
+1548265*
+1n	 o(
+
+1548464*
+1o o(
+
+1548258*
+1n	 n(
+
+1548665*
+1n	 n(
+
+1548864*
+1n	 n(
+
+1544165*
+1n n(/
+
+15415864*
+1n n(/
+
+1543765*
+1n n(
+
+1544123*
+1n n(
+
+1543765*
+1n n(
+
+15416064*
+1o) o(5
+
+15410065*
+1q	 q(
+
+15412264*
+1q	 q(
+
+1544765*
+1q q(:
+
+15416264*
+1q! q(:
+
+1544365*
+1q q( 
+
+1544723*
+1q q( 
+
+1544365*
+1q q( 
+
+1648022*
+1t t(
+
+
+1648023*
+1t t(
+
+
+1648258*
+1w	 x(
+
+1648265*
+1w	 x(
+
+1648464*
+1x x(
+
+1648258*
+1w	 w(
+
+1648665*
+1w	 w(
+
+1648864*
+1w	 w(
+
+1643265*
+1w w(=
+
+16411464*
+1w w(=
+
+1642665*
+1w w(
+
+1643223*
+1w w(
+
+1642665*
+1w w(
+
+1645658*
+1y y(
+
+1641065*
+1y y(
+
+1645164*
+1y y(
+
+1645923*
+1y$ y(/
+
+1645923*
+1y0 y(3
+
+16416865*
+1y0 y(3
+
+1646223*
+1y5 y(?
+
+1646223*
+1y@ y(D
+
+1649465*
+1y@ y(D
+
+16410065*
+1|	 |(
+
+16413664*
+1|	 |(
+
+1644765*
+1| |(9
+
+16417064*
+1|# |(9
+
+1644365*
+1| |("
+
+1644723*
+1| |("
+
+1644365*
+1| |("

@@ -1,0 +1,843 @@
+
+1.0Ananya1174_utility-backendJavaFrontend"1767671989448*java2.Bã9
+M
+Hauth-service/src/main/java/com/utility/auth/security/SecurityConfig.java2
+	
+type3
+	
+MAIN4
+
+
+module-key5
+
+auth-service6
+
+package8
++
+&auth-service:com.utility.auth.security9
+.
+(com.utility.auth.security.SecurityConfig11
+
+class12
+
+access13
+
+public14
+
+
+full-range15
+
+(20:1)-(83:2)16
+
+simple-name17
+
+SecurityConfig18
+:
+4org.springframework.context.annotation.Configuration20
+
+unknown21
+
+annotated by22
+
+
+uses23
+^
+Xorg.springframework.security.config.annotation.method.configuration.EnableMethodSecurity25
+$
+lombok.RequiredArgsConstructor27
+=
+7com.utility.auth.security.SecurityConfig.userRepository29
+
+field30
+
+private31
+
+(25:2)-(25:46)32
+
+userRepository33
+0
+*com.utility.auth.repository.UserRepository35
+
+is type36
+>
+8com.utility.auth.security.SecurityConfig.passwordEncoder38
+
+(26:2)-(26:48)39
+
+passwordEncoder40
+B
+<org.springframework.security.crypto.password.PasswordEncoder42
+6
+0com.utility.auth.security.SecurityConfig.jwtUtil44
+
+(27:2)-(27:32)45
+
+jwtUtil46
+'
+!com.utility.auth.security.JwtUtil48
+…
+com.utility.auth.security.SecurityConfig#userDetailsService()Lorg/springframework/security/core/userdetails/UserDetailsService;50
+
+method51
+
+(29:2)-(35:3)52
+
+userDetailsService53
+F
+@org.springframework.security.core.userdetails.UserDetailsService55
+
+returns56
+1
++org.springframework.context.annotation.Bean58
+
+
+references59
+g
+acom.utility.auth.repository.UserRepository#findByUsername(Ljava/lang/String;)Ljava/util/Optional;61
+
+calls62
+!
+com.utility.auth.model.User64
+D
+>org.springframework.security.core.userdetails.User$UserBuilder66
+8
+2org.springframework.security.core.userdetails.User68
+š
+“org.springframework.security.core.userdetails.User#withUsername(Ljava/lang/String;)Lorg/springframework/security/core/userdetails/User$UserBuilder;70
+“
+Œcom.utility.auth.security.SecurityConfig#authenticationProvider()Lorg/springframework/security/authentication/dao/DaoAuthenticationProvider;72
+
+(37:2)-(43:3)73
+
+authenticationProvider74
+O
+Iorg.springframework.security.authentication.dao.DaoAuthenticationProvider76
+«
+¤org.springframework.security.authentication.dao.DaoAuthenticationProvider#setUserDetailsService(Lorg/springframework/security/core/userdetails/UserDetailsService;)V78
+¤
+org.springframework.security.authentication.dao.DaoAuthenticationProvider#setPasswordEncoder(Lorg/springframework/security/crypto/password/PasswordEncoder;)V80
+ó
+ìcom.utility.auth.security.SecurityConfig#authenticationManager(Lorg/springframework/security/config/annotation/authentication/configuration/AuthenticationConfiguration;)Lorg/springframework/security/authentication/AuthenticationManager;82
+
+(45:2)-(48:3)83
+
+authenticationManager84
+G
+Aorg.springframework.security.authentication.AuthenticationManager86
+m
+gorg.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration88
+
+	has param89
+Ì
+Åorg.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration#getAuthenticationManager()Lorg/springframework/security/authentication/AuthenticationManager;91
+{
+ucom.utility.auth.security.SecurityConfig#jwtAuthenticationFilter()Lcom/utility/auth/security/JwtAuthenticationFilter;93
+
+(50:2)-(53:3)94
+
+jwtAuthenticationFilter95
+7
+1com.utility.auth.security.JwtAuthenticationFilter97
+Å
+¾com.utility.auth.security.SecurityConfig#securityFilterChain(Lorg/springframework/security/config/annotation/web/builders/HttpSecurity;)Lorg/springframework/security/web/SecurityFilterChain;99
+
+(55:2)-(82:3)100
+
+securityFilterChain101
+;
+4org.springframework.security.web.SecurityFilterChain103
+O
+Horg.springframework.security.config.annotation.web.builders.HttpSecurity105
+Õ
+Íorg.springframework.security.config.annotation.web.builders.HttpSecurity#addFilterBefore(Ljakarta/servlet/Filter;Ljava/lang/Class;)Lorg/springframework/security/config/annotation/web/builders/HttpSecurity;107
+÷
+ïorg.springframework.security.config.annotation.web.builders.HttpSecurity#authenticationProvider(Lorg/springframework/security/authentication/AuthenticationProvider;)Lorg/springframework/security/config/annotation/web/builders/HttpSecurity;109
+â
+Úorg.springframework.security.config.annotation.web.builders.HttpSecurity#authorizeHttpRequests(Lorg/springframework/security/config/Customizer;)Lorg/springframework/security/config/annotation/web/builders/HttpSecurity;111
+Þ
+Öorg.springframework.security.config.annotation.web.builders.HttpSecurity#sessionManagement(Lorg/springframework/security/config/Customizer;)Lorg/springframework/security/config/annotation/web/builders/HttpSecurity;113
+Ñ
+Éorg.springframework.security.config.annotation.web.builders.HttpSecurity#csrf(Lorg/springframework/security/config/Customizer;)Lorg/springframework/security/config/annotation/web/builders/HttpSecurity;115
+T
+Morg.springframework.security.config.annotation.web.configurers.CsrfConfigurer117
+\
+Uorg.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer119
+¯
+§org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer#disable()Lorg/springframework/security/config/annotation/web/HttpSecurityBuilder;121
+a
+Zorg.springframework.security.config.annotation.web.configurers.SessionManagementConfigurer123
+–
+Žorg.springframework.security.config.annotation.web.configurers.SessionManagementConfigurer#sessionCreationPolicy(Lorg/springframework/security/config/http/SessionCreationPolicy;)Lorg/springframework/security/config/annotation/web/configurers/SessionManagementConfigurer;125
+E
+>org.springframework.security.config.http.SessionCreationPolicy127
+O
+Horg.springframework.security.config.http.SessionCreationPolicy.STATELESS129
+‘
+‰org.springframework.security.config.annotation.web.configurers.AuthorizeHttpRequestsConfigurer$AuthorizationManagerRequestMatcherRegistry131
+s
+lorg.springframework.security.config.annotation.web.configurers.AuthorizeHttpRequestsConfigurer$AuthorizedUrl133
+
+‡org.springframework.security.config.annotation.web.configurers.AuthorizeHttpRequestsConfigurer$AuthorizedUrl#authenticated()Lorg/springframework/security/config/annotation/web/configurers/AuthorizeHttpRequestsConfigurer$AuthorizationManagerRequestMatcherRegistry;135
+X
+Qorg.springframework.security.config.annotation.web.AbstractRequestMatcherRegistry137
+w
+porg.springframework.security.config.annotation.web.AbstractRequestMatcherRegistry#anyRequest()Ljava/lang/Object;139
+‹
+ƒorg.springframework.security.config.annotation.web.configurers.AuthorizeHttpRequestsConfigurer$AuthorizedUrl#permitAll()Lorg/springframework/security/config/annotation/web/configurers/AuthorizeHttpRequestsConfigurer$AuthorizationManagerRequestMatcherRegistry;141
+
+ˆorg.springframework.security.config.annotation.web.AbstractRequestMatcherRegistry#requestMatchers([Ljava/lang/String;)Ljava/lang/Object;143
+[
+Torg.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter145
+B
+;org.springframework.security.web.DefaultSecurityFilterChain147
+M
+Forg.springframework.security.config.annotation.AbstractSecurityBuilder149
+g
+`org.springframework.security.config.annotation.AbstractSecurityBuilder#build()Ljava/lang/Object;151J%
+#
+1
+12
+
+3
+4
+
+5
+6 Z
+
+7
+7982
+
+
+5
+68j
+
+47
+474821
+N
+71H
+717251 *
+1&# &(9210:7B$
+
+
+13
+14
+
+
+15
+73
+
+
+17
+74
+
+26
+262721
+
+54
+545521
+
+67
+676821
+
+146
+14614721
+
+104
+10410521
+
+112
+11211321
+N
+43H
+434430 *
+1 (210:7B$
+
+
+13
+31
+
+
+15
+45
+
+
+17
+46
+
+24
+242521
+
+138
+13813921
+
+79
+798021
+
+77
+777821
+
+134
+13413521
+
+65
+656621
+
+87
+878821
+
+63
+636421
+
+19
+192021
+N
+81H
+818251 *
+1. .(4210:7B$
+
+
+13
+14
+
+
+15
+83
+
+
+17
+84
+
+144
+14414521
+N
+92H
+929351 *
+13! 3(8210:7B$
+
+
+13
+14
+
+
+15
+94
+
+
+17
+95
+
+60
+606121
+
+110
+11011121
+
+126
+12612721
+
+124
+12412521
+
+132
+13213321
+
+114
+11411521
+
+136
+13613721
+
+118
+11811921
+
+116
+11611721
+P
+98J
+989951 *
+18 8(0210:7B&
+
+
+13
+14
+
+15
+100
+
+17
+101
+N
+28H
+282930 *
+1 (-210:7B$
+
+
+13
+31
+
+
+15
+32
+
+
+17
+33
+N
+37H
+373830 *
+1  (/210:7B$
+
+
+13
+31
+
+
+15
+39
+
+
+17
+40
+
+90
+909121
+
+140
+14014121
+J
+10D
+101112 *
+1 (:7B$
+
+
+13
+14
+
+
+15
+16
+
+
+17
+18
+
+34
+343521
+
+69
+697021
+
+85
+858621
+
+122
+12212321
+
+128
+12812921
+
+150
+15015121
+N
+49H
+495051 *
+1 (.210:7B$
+
+
+13
+14
+
+
+15
+52
+
+
+17
+53
+
+106
+10610721
+
+102
+10210321
+
+108
+10810921
+
+75
+757621
+
+41
+414221
+
+130
+13013121
+
+148
+14814921
+
+57
+575821
+
+142
+14214321
+
+96
+969721
+
+120
+12012121r‡
+
+101922*
+1 (
+
+101923*
+1 (
+
+102422*
+1 (
+
+102423*
+1 (
+
+102622*
+1 (
+
+102623*
+1 (
+
+283436*
+1 (
+
+283423*
+1 (
+
+283423*
+1 (-
+
+374136*
+1 (
+
+374123*
+1 (
+
+374123*
+1  (/
+
+434736*
+1 (
+
+434723*
+1 (
+
+434723*
+1 (
+
+495456*
+1	 (
+
+495722*
+1 (
+
+495723*
+1 (
+
+495423*
+1	 (
+
+493459*
+1 (3
+
+496062*
+1% (3
+
+492859*
+1 ($
+
+493423*
+1 ($
+
+492859*
+1 ($
+
+496336*
+1 
+  (
+
+496556*
+1   (Q
+
+496759*
+1   (Q
+
+496962*
+1 E  (Q
+
+496723*
+1 @  (D
+
+717556*
+1&	 &("
+
+715722*
+1% %(
+
+715723*
+1% %(
+
+717523*
+1&	 &("
+
+717536*
+1' '(%
+
+717523*
+1' '(
+
+717562*
+1', '(E
+
+717559*
+1( ((!
+
+717762*
+1( ((!
+
+715456*
+1(" ((4
+
+711059*
+1(" ((4
+
+714962*
+1(" ((4
+
+717559*
+1) )(
+
+717962*
+1) )(
+
+714123*
+1) )(.
+
+713759*
+1) )(.
+
+818556*
+1.	 .(
+
+818789*
+1.5 .(P
+
+815722*
+1- -(
+
+815723*
+1- -(
+
+818523*
+1.	 .(
+
+818736*
+1.Q .(^
+
+818723*
+1.5 .(P
+
+818556*
+1/
+ /(0
+
+818759*
+1/
+ /(0
+
+819062*
+1/ /(0
+
+929656*
+13	 3( 
+
+925722*
+12 2(
+
+925723*
+12 2(
+
+929623*
+13	 3( 
+
+924723*
+14) 4(0
+
+924359*
+14) 4(0
+
+9810256*
+18	 8(
+
+9810489*
+181 8(=
+
+985722*
+17 7(
+
+985723*
+17 7(
+
+9810223*
+18	 8(
+
+9810436*
+18> 8(B
+
+9810423*
+181 8(=
+
+9810456*
+1: O(
+
+9810459*
+1: O(
+
+9810662*
+1O O(
+
+9810456*
+1: N(!
+
+9810459*
+1: N(!
+
+9810862*
+1N N(!
+
+9810456*
+1: C( 
+
+9810459*
+1: C( 
+
+9811062*
+1C C( 
+
+9810456*
+1: ?(
+
+9810459*
+1: ?(
+
+9811262*
+1? ?(
+
+9810456*
+1: =(
+
+9810459*
+1: =(
+
+9811462*
+1= =(
+
+9811636*
+1= =(
+
+9810456*
+1= =($
+
+9811859*
+1= =($
+
+9812062*
+1= =($
+
+9812236*
+1? ?($
+
+9812256*
+1@ @(+
+
+9812259*
+1@ @(+
+
+9812462*
+1@ @(+
+
+9812623*
+1@, @(A
+
+9812623*
+1@B @(K
+
+9812859*
+1@B @(K
+
+9813036*
+1C! C(%
+
+9813056*
+1C) K()
+
+9813259*
+1C) K()
+
+9813462*
+1K K()
+
+9813256*
+1C) K(
+
+9813659*
+1C) K(
+
+9813862*
+1K K(
+
+9813056*
+1C) J(
+
+9813259*
+1C) J(
+
+9814062*
+1J J(
+
+9813256*
+1C) D(
+
+9813659*
+1C) D(
+
+9814262*
+1D D(
+
+987556*
+1N" N(8
+
+981059*
+1N" N(8
+
+987162*
+1N" N(8
+
+989656*
+1O O(2
+
+981059*
+1O O(2
+
+989262*
+1O O(2
+
+9814423*
+1O6 O(Z
+
+9814656*
+1Q Q(
+
+9814859*
+1Q Q(
+
+9815062*
+1Q Q(

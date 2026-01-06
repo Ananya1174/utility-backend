@@ -1,0 +1,313 @@
+
+1.0Ananya1174_utility-backendJavaFrontend"1767671990714*java2.B’	
+L
+Gbilling-service/src/main/java/com/utility/billing/model/TariffPlan.java2
+	
+type3
+	
+MAIN4
+
+
+module-key5
+
+billing-service6
+
+package8
+.
+)billing-service:com.utility.billing.model9
+*
+$com.utility.billing.model.TariffPlan11
+
+class12
+
+access13
+
+public14
+
+
+full-range15
+
+(9:1)-(28:2)16
+
+simple-name17
+
+
+TariffPlan18
+
+lombok.Data20
+
+unknown21
+
+annotated by22
+
+
+uses23
+
+lombok.AllArgsConstructor25
+
+lombok.NoArgsConstructor27
+<
+6org.springframework.data.mongodb.core.mapping.Document29
+-
+'com.utility.billing.model.TariffPlan.id31
+
+field32
+
+private33
+
+(16:5)-(17:23)34
+
+id35
+,
+&org.springframework.data.annotation.Id37
+6
+0com.utility.billing.model.TariffPlan.utilityType39
+
+(19:5)-(19:37)40
+
+utilityType41
++
+%com.utility.billing.model.UtilityType43
+
+is type44
+3
+-com.utility.billing.model.TariffPlan.planCode46
+
+(20:5)-(20:29)47
+
+planCode48
+1
++com.utility.billing.model.TariffPlan.active50
+
+(22:5)-(22:28)51
+
+active52
+n
+hcom.utility.billing.model.TariffPlan#<init>(Lcom/utility/billing/model/UtilityType;Ljava/lang/String;Z)V54
+
+method55
+
+(23:5)-(27:6)56
+
+	has param57
+
+calls58
+
+
+references59J%
+#
+1
+12
+
+3
+4
+
+5
+6 Z
+
+7
+7982
+
+
+5
+68j‘
+J
+10D
+101112 *
+1 (:7B$
+
+
+13
+14
+
+
+15
+16
+
+
+17
+18
+N
+30H
+303132 *
+1 (210:7B$
+
+
+13
+33
+
+
+15
+34
+
+
+17
+35
+N
+49H
+495032 *
+1 (210:7B$
+
+
+13
+33
+
+
+15
+51
+
+
+17
+52
+
+42
+424321
+
+19
+192021
+N
+53H
+535455 *
+1 (210:7B$
+
+
+13
+14
+
+
+15
+56
+
+
+17
+18
+N
+45H
+454632 *
+1 (210:7B$
+
+
+13
+33
+
+
+15
+47
+
+
+17
+48
+
+24
+242521
+
+36
+363721
+
+26
+262721
+
+28
+282921
+N
+38H
+383932 *
+1 ($210:7B$
+
+
+13
+33
+
+
+15
+40
+
+
+17
+41rŸ
+
+101922*
+1	 	(
+
+101923*
+1	 	(
+
+102422*
+1
+ 
+(
+
+102423*
+1
+ 
+(
+
+102622*
+1 (
+
+102623*
+1 (
+
+102822*
+1 ('
+
+102823*
+1 (
+
+
+303622*
+1 (
+
+303623*
+1 (
+
+384244*
+1 (
+
+384223*
+1 (
+
+384223*
+1 ($
+
+534257*
+1 ("
+
+531058*
+1 (
+
+534244*
+1# (.
+
+534223*
+1 ("
+
+531023*
+1	 (
+
+531059*
+1	 (
+
+534223*
+1 (
+
+533859*
+1 (
+
+531023*
+1	 (
+
+531059*
+1	 (
+
+534559*
+1 (
+
+531023*
+1	 (
+
+531059*
+1	 (
+
+534959*
+1 (

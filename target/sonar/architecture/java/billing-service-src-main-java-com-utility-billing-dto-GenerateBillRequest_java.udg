@@ -1,0 +1,227 @@
+
+1.0Ananya1174_utility-backendJavaFrontend"1767671991374*java2.B×
+S
+Nbilling-service/src/main/java/com/utility/billing/dto/GenerateBillRequest.java2
+	
+type3
+	
+MAIN4
+
+
+module-key5
+
+billing-service6
+
+package8
+,
+'billing-service:com.utility.billing.dto9
+1
++com.utility.billing.dto.GenerateBillRequest11
+
+class12
+
+access13
+
+public14
+
+
+full-range15
+
+(7:1)-(23:2)16
+
+simple-name17
+
+GenerateBillRequest18
+
+lombok.Data20
+
+unknown21
+
+annotated by22
+
+
+uses23
+<
+6com.utility.billing.dto.GenerateBillRequest.consumerId25
+
+field26
+
+private27
+
+(10:5)-(11:31)28
+
+
+consumerId29
+-
+'jakarta.validation.constraints.NotBlank31
+>
+8com.utility.billing.dto.GenerateBillRequest.connectionId33
+
+(13:5)-(14:33)34
+
+connectionId35
+>
+8com.utility.billing.dto.GenerateBillRequest.billingMonth37
+
+(16:5)-(18:30)38
+
+billingMonth39
+(
+"jakarta.validation.constraints.Min41
+=
+7com.utility.billing.dto.GenerateBillRequest.billingYear43
+
+(20:5)-(22:29)44
+
+billingYear45J%
+#
+1
+12
+
+3
+4
+
+5
+6 Z
+
+7
+7982
+
+
+5
+68jÈ
+N
+24H
+242526 *
+1 (210:7B$
+
+
+13
+27
+
+
+15
+28
+
+
+17
+29
+N
+32H
+323326 *
+1 ( 210:7B$
+
+
+13
+27
+
+
+15
+34
+
+
+17
+35
+
+30
+303121
+N
+36H
+363726 *
+1 (210:7B$
+
+
+13
+27
+
+
+15
+38
+
+
+17
+39
+J
+10D
+101112 *
+1 (!:7B$
+
+
+13
+14
+
+
+15
+16
+
+
+17
+18
+
+19
+192021
+N
+42H
+424326 *
+1 (210:7B$
+
+
+13
+27
+
+
+15
+44
+
+
+17
+45
+
+40
+404121rú
+
+101922*
+1 (
+
+101923*
+1 (
+
+243022*
+1
+ 
+(
+
+243023*
+1
+ 
+(
+
+323022*
+1 (
+
+323023*
+1 (
+
+364022*
+1 (
+
+364023*
+1 (	
+
+363022*
+1 (
+
+363023*
+1 (
+
+424022*
+1 (
+
+424023*
+1 (	
+
+423022*
+1 (
+
+423023*
+1 (

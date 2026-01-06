@@ -1,0 +1,121 @@
+
+1.0Ananya1174_utility-backendJavaFrontend"1767671990585*java2.BÚ
+i
+dnotification-service/src/test/java/com/utility/notification/NotificationServiceApplicationTests.java2
+	
+type3
+	
+TEST4
+
+
+module-key5
+
+notification-service6
+
+package8
+2
+-notification-service:com.utility.notification9
+B
+<com.utility.notification.NotificationServiceApplicationTests11
+
+class12
+
+access13
+
+	protected14
+
+
+full-range15
+
+(6:1)-(13:2)16
+
+simple-name17
+)
+#NotificationServiceApplicationTests18
+:
+4org.springframework.boot.test.context.SpringBootTest20
+
+unknown21
+
+annotated by22
+
+
+uses23
+R
+Lcom.utility.notification.NotificationServiceApplicationTests#contextLoads()V25
+
+method26
+
+(9:2)-(11:3)27
+
+contextLoads28
+ 
+org.junit.jupiter.api.Test30J%
+#
+1
+12
+
+3
+4
+
+5
+6 Z
+
+7
+7982
+
+
+5
+68jÄ
+J
+10D
+101112 *
+1 (*:7B$
+
+
+13
+14
+
+
+15
+16
+
+
+17
+18
+
+29
+293021
+
+19
+192021
+N
+24H
+242526 *
+1
+ 
+(210:7B$
+
+
+13
+14
+
+
+15
+27
+
+
+17
+28rl
+
+101922*
+1 (
+
+101923*
+1 (
+
+242922*
+1	 	(
+
+242923*
+1	 	(

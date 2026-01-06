@@ -1,0 +1,204 @@
+
+1.0Ananya1174_utility-backendJavaFrontend"1767671987309*java2.Bè
+O
+Jconsumer-service/src/main/java/com/utility/consumer/enums/UtilityType.java2
+	
+type3
+	
+MAIN4
+
+
+module-key5
+
+consumer-service6
+
+package8
+0
++consumer-service:com.utility.consumer.enums9
+,
+&com.utility.consumer.enums.UtilityType11
+
+
+enum12
+
+access13
+
+public14
+
+
+full-range15
+
+(3:1)-(8:2)16
+
+simple-name17
+
+UtilityType18
+^
+Xcom.utility.consumer.enums.UtilityType#values()[Lcom/utility/consumer/enums/UtilityType;20
+
+method21
+
+values22
+p
+jcom.utility.consumer.enums.UtilityType#valueOf(Ljava/lang/String;)Lcom/utility/consumer/enums/UtilityType;24
+
+valueOf25
+8
+2com.utility.consumer.enums.UtilityType.ELECTRICITY27
+
+field28
+
+(4:5)-(4:17)29
+
+ELECTRICITY30
+
+calls31
+2
+,com.utility.consumer.enums.UtilityType.WATER33
+
+(5:5)-(5:11)34
+
+WATER35
+0
+*com.utility.consumer.enums.UtilityType.GAS37
+
+(6:5)-(6:9)38
+	
+GAS39
+5
+/com.utility.consumer.enums.UtilityType.INTERNET41
+
+(7:5)-(7:13)42
+
+INTERNET43J%
+#
+1
+12
+
+3
+4
+
+5
+6 Z
+
+7
+7982
+
+
+5
+68jä
+B
+19<
+192021 *
+1 (210:7B
+
+
+15
+16
+
+
+17
+22
+B
+26<
+262728 *
+1 (210:7B
+
+
+15
+29
+
+
+17
+30
+J
+10D
+101112 *
+1 (:7B$
+
+
+13
+14
+
+
+15
+16
+
+
+17
+18
+B
+40<
+404128 *
+1 (210:7B
+
+
+15
+42
+
+
+17
+43
+B
+23<
+232421 *
+1 (210:7B
+
+
+15
+16
+
+
+17
+25
+B
+32<
+323328 *
+1 (
+210:7B
+
+
+15
+34
+
+
+17
+35
+B
+36<
+363728 *
+1 (210:7B
+
+
+15
+38
+
+
+17
+39rØ
+
+261031*
+1 (
+
+261031*
+1 (
+
+321031*
+1 (
+
+
+321031*
+1 (
+
+
+361031*
+1 (
+
+361031*
+1 (
+
+401031*
+1 (
+
+401031*
+1 (

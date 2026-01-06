@@ -1,0 +1,151 @@
+
+1.0Ananya1174_utility-backendJavaFrontend"1767671989625*java2.BÊ
+Q
+Lauth-service/src/main/java/com/utility/auth/dto/request/LoginRequestDto.java2
+	
+type3
+	
+MAIN4
+
+
+module-key5
+
+auth-service6
+
+package8
+.
+)auth-service:com.utility.auth.dto.request9
+2
+,com.utility.auth.dto.request.LoginRequestDto11
+
+class12
+
+access13
+
+public14
+
+
+full-range15
+
+(6:1)-(14:2)16
+
+simple-name17
+
+LoginRequestDto18
+
+lombok.Data20
+
+unknown21
+
+annotated by22
+
+
+uses23
+;
+5com.utility.auth.dto.request.LoginRequestDto.username25
+
+field26
+
+private27
+
+(9:5)-(10:29)28
+
+username29
+-
+'jakarta.validation.constraints.NotBlank31
+;
+5com.utility.auth.dto.request.LoginRequestDto.password33
+
+(12:5)-(13:29)34
+
+password35J%
+#
+1
+12
+
+3
+4
+
+5
+6 Z
+
+7
+7982
+
+
+5
+68j”
+N
+32H
+323326 *
+1 (210:7B$
+
+
+13
+27
+
+
+15
+34
+
+
+17
+35
+N
+24H
+242526 *
+1
+ 
+(210:7B$
+
+
+13
+27
+
+
+15
+28
+
+
+17
+29
+
+30
+303121
+J
+10D
+101112 *
+1 (:7B$
+
+
+13
+14
+
+
+15
+16
+
+
+17
+18
+
+19
+192021r¢
+
+101922*
+1 (
+
+101923*
+1 (
+
+243022*
+1	 	(0
+
+243023*
+1	 	(
+
+323022*
+1 (0
+
+323023*
+1 (

@@ -1,0 +1,605 @@
+
+1.0Ananya1174_utility-backendJavaFrontend"1767671991227*java2.Bê
+U
+Pbilling-service/src/main/java/com/utility/billing/service/TariffPlanService.java2
+	
+type3
+	
+MAIN4
+
+
+module-key5
+
+billing-service6
+
+package8
+0
++billing-service:com.utility.billing.service9
+3
+-com.utility.billing.service.TariffPlanService11
+
+class12
+
+access13
+
+public14
+
+
+full-range15
+
+(16:1)-(115:2)16
+
+simple-name17
+
+TariffPlanService18
+,
+&org.springframework.stereotype.Service20
+
+unknown21
+
+annotated by22
+
+
+uses23
+$
+lombok.RequiredArgsConstructor25
+>
+8com.utility.billing.service.TariffPlanService.repository27
+
+field28
+
+private29
+
+(20:5)-(20:51)30
+
+
+repository31
+9
+3com.utility.billing.repository.TariffPlanRepository33
+
+is type34
+•
+Žcom.utility.billing.service.TariffPlanService#createTariffPlan(Lcom/utility/billing/dto/TariffPlanDto;)Lcom/utility/billing/dto/TariffPlanDto;36
+
+method37
+
+(22:5)-(42:6)38
+
+createTariffPlan39
++
+%com.utility.billing.dto.TariffPlanDto41
+
+returns42
+
+	has param43
+*
+$com.utility.billing.model.TariffPlan45
+
+
+references46
+Œ
+…com.utility.billing.service.TariffPlanService#toEntity(Lcom/utility/billing/dto/TariffPlanDto;)Lcom/utility/billing/model/TariffPlan;48
+
+calls49
+•
+Žcom.utility.billing.repository.TariffPlanRepository#existsByUtilityTypeAndPlanCode(Lcom/utility/billing/model/UtilityType;Ljava/lang/String;)Z51
+0
+*com.utility.billing.exception.ApiException53
+)
+#org.springframework.http.HttpStatus55
+2
+,org.springframework.http.HttpStatus.CONFLICT57
+8
+2org.springframework.data.repository.CrudRepository59
+c
+]org.springframework.data.repository.CrudRepository#save(Ljava/lang/Object;)Ljava/lang/Object;61
+‰
+‚com.utility.billing.service.TariffPlanService#toDto(Lcom/utility/billing/model/TariffPlan;)Lcom/utility/billing/dto/TariffPlanDto;63
+k
+ecom.utility.billing.service.TariffPlanService#deactivateTariffPlan(Ljava/lang/String;)Ljava/util/Map;65
+
+(44:5)-(71:6)66
+
+deactivateTariffPlan67
+i
+corg.springframework.data.repository.CrudRepository#findById(Ljava/lang/Object;)Ljava/util/Optional;69
+3
+-org.springframework.http.HttpStatus.NOT_FOUND71
+T
+Ncom.utility.billing.service.TariffPlanService#getActivePlans()Ljava/util/List;73
+
+(73:5)-(79:6)74
+
+getActivePlans75
+\
+Vcom.utility.billing.repository.TariffPlanRepository#findByActiveTrue()Ljava/util/List;77
+a
+[com.utility.billing.service.TariffPlanService#getPlans(Ljava/lang/Boolean;)Ljava/util/List;79
+
+(81:5)-(99:6)80
+
+getPlans81
+S
+Mcom.utility.billing.repository.TariffPlanRepository#findAll()Ljava/util/List;83
+
+(101:5)-(106:6)84
+
+toEntity85
+
+(108:5)-(114:6)86
+
+toDto87J%
+#
+1
+12
+
+3
+4
+
+5
+6 Z
+
+7
+7982
+
+
+5
+68j¨
+
+60
+606121
+N
+78H
+787937 *
+1Q  Q((210:7B$
+
+
+13
+14
+
+
+15
+80
+
+
+17
+81
+N
+64H
+646537 *
+1,  ,(4210:7B$
+
+
+13
+14
+
+
+15
+66
+
+
+17
+67
+N
+72H
+727337 *
+1I  I(.210:7B$
+
+
+13
+14
+
+
+15
+74
+
+
+17
+75
+
+70
+707121
+N
+47H
+474837 *
+1e e( 210:7B$
+
+
+13
+29
+
+
+15
+84
+
+
+17
+85
+N
+62H
+626337 *
+1l l( 210:7B$
+
+
+13
+29
+
+
+15
+86
+
+
+17
+87
+
+52
+525321
+
+82
+828321
+
+24
+242521
+J
+10D
+101112 *
+1 (:7B$
+
+
+13
+14
+
+
+15
+16
+
+
+17
+18
+
+40
+404121
+
+58
+585921
+
+50
+505121
+
+54
+545521
+
+44
+444521
+
+32
+323321
+
+56
+565721
+
+19
+192021
+
+76
+767721
+N
+35H
+353637 *
+1 (*210:7B$
+
+
+13
+14
+
+
+15
+38
+
+
+17
+39
+
+68
+686921
+N
+26H
+262728 *
+1( (2210:7B$
+
+
+13
+29
+
+
+15
+30
+
+
+17
+31r…
+
+101922*
+1 (	
+
+101923*
+1 (	
+
+102422*
+1 (
+
+102423*
+1 (
+
+263234*
+1 ('
+
+263223*
+1 ('
+
+263223*
+1( (2
+
+354042*
+1 (
+
+354043*
+1+ (8
+
+354023*
+1 (
+
+354034*
+19 (<
+
+354023*
+1+ (8
+
+354434*
+1 (
+
+354423*
+1	 (
+
+354442*
+1 (#
+
+351046*
+1 (#
+
+354749*
+1 (#
+
+353246*
+1 (:
+
+355049*
+1 (:
+
+352646*
+1 (
+
+353223*
+1 (
+
+352646*
+1 (
+
+355249*
+1! !(#
+
+355423*
+1# #(
+
+355423*
+1#  #((
+
+355646*
+1#  #((
+
+354434*
+1( ((
+
+354423*
+1(	 ((
+
+354442*
+1( ((+
+
+355846*
+1( ((+
+
+356049*
+1(' ((+
+
+352646*
+1( ((&
+
+353223*
+1( ((&
+
+352646*
+1( ((&
+
+354042*
+1) )(
+
+351046*
+1) )(
+
+356249*
+1) )(
+
+644434*
+1. .(
+
+644423*
+1.	 .(
+
+644442*
+1/ 0(%
+
+645846*
+1/ /($
+
+646849*
+1/ /($
+
+642646*
+1/ /(
+
+643223*
+1/ /(
+
+642646*
+1/ /(
+
+645249*
+11% 1(1
+
+645423*
+13) 3(3
+
+645423*
+134 3(=
+
+647046*
+134 3(=
+
+644442*
+1?	 ?(
+
+645846*
+1?	 ?(
+
+646049*
+1? ?(
+
+642646*
+1?	 ?(
+
+643223*
+1?	 ?(
+
+642646*
+1?	 ?(
+
+724023*
+1I I(
+
+723246*
+1K K(+
+
+727649*
+1K K(+
+
+722646*
+1K K(
+
+723223*
+1K K(
+
+722646*
+1K K(
+
+721023*
+1M M(
+
+721046*
+1M M(
+
+784023*
+1Q Q(
+
+784423*
+1S S(
+
+783246*
+1V V('
+
+788249*
+1V  V('
+
+782646*
+1V V(
+
+783223*
+1V V(
+
+782646*
+1V V(
+
+783246*
+1X X(0
+
+787649*
+1X  X(0
+
+782646*
+1X X(
+
+783223*
+1X X(
+
+782646*
+1X X(
+
+783246*
+1Z Z('
+
+788249*
+1Z  Z('
+
+782646*
+1Z Z(
+
+783223*
+1Z Z(
+
+782646*
+1Z Z(
+
+784434*
+1\ \(!
+
+781023*
+1a a(
+
+781046*
+1a a(
+
+474442*
+1e e(
+
+474043*
+1e! e(.
+
+474423*
+1e e(
+
+474034*
+1e/ e(2
+
+474023*
+1e! e(.
+
+474434*
+1g g(
+
+474423*
+1g	 g(
+
+624042*
+1l l(
+
+624443*
+1l! l(+
+
+624023*
+1l l(
+
+624434*
+1l, l(0
+
+624423*
+1l! l(+

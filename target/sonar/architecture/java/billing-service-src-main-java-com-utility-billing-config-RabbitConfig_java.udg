@@ -1,0 +1,300 @@
+
+1.0Ananya1174_utility-backendJavaFrontend"1767671991169*java2.Bÿ
+O
+Jbilling-service/src/main/java/com/utility/billing/config/RabbitConfig.java2
+	
+type3
+	
+MAIN4
+
+
+module-key5
+
+billing-service6
+
+package8
+/
+*billing-service:com.utility.billing.config9
+-
+'com.utility.billing.config.RabbitConfig11
+
+class12
+
+access13
+
+public14
+
+
+full-range15
+
+(9:1)-(31:2)16
+
+simple-name17
+
+RabbitConfig18
+:
+4org.springframework.context.annotation.Configuration20
+
+unknown21
+
+annotated by22
+
+
+uses23
+6
+0com.utility.billing.config.RabbitConfig.EXCHANGE25
+
+field26
+
+(12:5)-(12:67)27
+
+EXCHANGE28
+>
+8com.utility.billing.config.RabbitConfig.BILL_ROUTING_KEY30
+
+(13:5)-(13:68)31
+
+BILL_ROUTING_KEY32
+?
+9com.utility.billing.config.RabbitConfig.BILL_REMINDER_KEY34
+
+(14:5)-(14:72)35
+
+BILL_REMINDER_KEY36
+Ž
+‡com.utility.billing.config.RabbitConfig#jsonMessageConverter()Lorg/springframework/amqp/support/converter/Jackson2JsonMessageConverter;38
+
+method39
+
+(17:5)-(20:6)40
+
+jsonMessageConverter41
+M
+Gorg.springframework.amqp.support.converter.Jackson2JsonMessageConverter43
+
+returns44
+1
++org.springframework.context.annotation.Bean46
+
+calls47
+û
+ôcom.utility.billing.config.RabbitConfig#rabbitTemplate(Lorg/springframework/amqp/rabbit/connection/ConnectionFactory;Lorg/springframework/amqp/support/converter/Jackson2JsonMessageConverter;)Lorg/springframework/amqp/rabbit/core/RabbitTemplate;49
+
+(22:5)-(30:6)50
+
+rabbitTemplate51
+9
+3org.springframework.amqp.rabbit.core.RabbitTemplate53
+B
+<org.springframework.amqp.rabbit.connection.ConnectionFactory55
+
+	has param56
+
+is type57
+
+
+references58
+Ž
+‡org.springframework.amqp.rabbit.core.RabbitTemplate#setMessageConverter(Lorg/springframework/amqp/support/converter/MessageConverter;)V60J%
+#
+1
+12
+
+3
+4
+
+5
+6 Z
+
+7
+7982
+
+
+5
+68jÔ
+
+19
+192021
+N
+24H
+242526 *
+1  ((210:7B$
+
+
+13
+14
+
+
+15
+27
+
+
+17
+28
+N
+37H
+373839 *
+1) (=210:7B$
+
+
+13
+14
+
+
+15
+40
+
+
+17
+41
+
+42
+424321
+
+54
+545521
+N
+29H
+293026 *
+1  (0210:7B$
+
+
+13
+14
+
+
+15
+31
+
+
+17
+32
+J
+10D
+101112 *
+1
+ 
+(:7B$
+
+
+13
+14
+
+
+15
+16
+
+
+17
+18
+
+45
+454621
+
+52
+525321
+
+59
+596021
+N
+33H
+333426 *
+1  (1210:7B$
+
+
+13
+14
+
+
+15
+35
+
+
+17
+36
+N
+48H
+484939 *
+1 ()210:7B$
+
+
+13
+14
+
+
+15
+50
+
+
+17
+51rÒ
+
+101922*
+1	 	(
+
+101923*
+1	 	(
+
+374244*
+1 ((
+
+374522*
+1 (
+
+
+374523*
+1 (
+
+
+374223*
+1 ((
+
+374247*
+1 (0
+
+485244*
+1 (
+
+485456*
+1 (
+
+484256*
+1 ()
+
+484522*
+1 (
+
+
+484523*
+1 (
+
+
+485223*
+1 (
+
+485457*
+1 (0
+
+485423*
+1 (
+
+484257*
+1* (3
+
+484223*
+1 ()
+
+485257*
+1 ( 
+
+485223*
+1	 (
+
+485247*
+1' (5
+
+485258*
+1	 (%
+
+485947*
+1 (%

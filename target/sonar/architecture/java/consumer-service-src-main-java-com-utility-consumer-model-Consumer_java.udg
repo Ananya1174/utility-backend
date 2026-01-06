@@ -1,0 +1,322 @@
+
+1.0Ananya1174_utility-backendJavaFrontend"1767671987318*java2.BÓ
+
+L
+Gconsumer-service/src/main/java/com/utility/consumer/model/Consumer.java2
+	
+type3
+	
+MAIN4
+
+
+module-key5
+
+consumer-service6
+
+package8
+0
++consumer-service:com.utility.consumer.model9
+)
+#com.utility.consumer.model.Consumer11
+
+class12
+
+access13
+
+public14
+
+
+full-range15
+
+(13:1)-(36:2)16
+
+simple-name17
+
+Consumer18
+<
+6org.springframework.data.mongodb.core.mapping.Document20
+
+unknown21
+
+annotated by22
+
+
+uses23
+
+lombok.Data25
+,
+&com.utility.consumer.model.Consumer.id27
+
+field28
+
+private29
+
+(17:5)-(18:23)30
+
+id31
+,
+&org.springframework.data.annotation.Id33
+2
+,com.utility.consumer.model.Consumer.fullName35
+
+(20:5)-(21:29)36
+
+fullName37
+-
+'jakarta.validation.constraints.NotBlank39
+/
+)com.utility.consumer.model.Consumer.email41
+
+(23:5)-(24:26)42
+
+email43
+*
+$jakarta.validation.constraints.Email45
+6
+0com.utility.consumer.model.Consumer.mobileNumber47
+
+(26:5)-(27:33)48
+
+mobileNumber49
+1
++com.utility.consumer.model.Consumer.address51
+
+(29:5)-(30:28)52
+
+address53
+0
+*com.utility.consumer.model.Consumer.active55
+
+(32:5)-(32:35)56
+
+active57
+3
+-com.utility.consumer.model.Consumer.createdAt59
+
+(34:5)-(34:37)60
+
+	createdAt61
+3
+-com.utility.consumer.model.Consumer.updatedAt63
+
+(35:5)-(35:37)64
+
+	updatedAt65J%
+#
+1
+12
+
+3
+4
+
+5
+6 Z
+
+7
+7982
+
+
+5
+68j°
+N
+54H
+545528 *
+1   (210:7B$
+
+
+13
+29
+
+
+15
+56
+
+
+17
+57
+N
+34H
+343528 *
+1 (210:7B$
+
+
+13
+29
+
+
+15
+36
+
+
+17
+37
+
+44
+444521
+J
+10D
+101112 *
+1 (:7B$
+
+
+13
+14
+
+
+15
+16
+
+
+17
+18
+
+19
+192021
+N
+26H
+262728 *
+1 (210:7B$
+
+
+13
+29
+
+
+15
+30
+
+
+17
+31
+N
+62H
+626328 *
+1# #($210:7B$
+
+
+13
+29
+
+
+15
+64
+
+
+17
+65
+
+38
+383921
+N
+50H
+505128 *
+1 (210:7B$
+
+
+13
+29
+
+
+15
+52
+
+
+17
+53
+
+24
+242521
+
+32
+323321
+N
+40H
+404128 *
+1 (210:7B$
+
+
+13
+29
+
+
+15
+42
+
+
+17
+43
+N
+46H
+464728 *
+1 ( 210:7B$
+
+
+13
+29
+
+
+15
+48
+
+
+17
+49
+N
+58H
+585928 *
+1" "($210:7B$
+
+
+13
+29
+
+
+15
+60
+
+
+17
+61rú
+
+101922*
+1 ($
+
+101923*
+1 (
+
+
+102422*
+1 (
+
+102423*
+1 (
+
+263222*
+1 (
+
+263223*
+1 (
+
+343822*
+1 (
+
+343823*
+1 (
+
+404422*
+1 (
+
+404423*
+1 (
+
+463822*
+1 (
+
+463823*
+1 (
+
+503822*
+1 (
+
+503823*
+1 (

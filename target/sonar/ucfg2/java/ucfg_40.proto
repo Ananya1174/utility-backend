@@ -1,0 +1,82 @@
+
+ com.utility.consumer.exception.GlobalExceptionHandler#handleApiException(Lcom/utility/consumer/exception/ApiException;)Lorg/springframework/http/ResponseEntity;Ž
+ƒ/Users/ananyaarisenapalli/utility-backend/consumer-service/src/main/java/com/utility/consumer/exception/GlobalExceptionHandler.java/ (A"startingBlock*Þ
+startingBlockA (RÊ
+Ç
+ ()
+%6"
+__annotate*X
+
+__unknown_file (<:
+8org.springframework.web.bind.annotation.ExceptionHandler*O
+
+__unknown_file (3
+1
+ex+com.utility.consumer.exception.ApiExceptionq
+o
+O (Q1
+ex+com.utility.consumer.exception.ApiException"__annotation*"
+
+__unknown_file (
+
+%6*
+1*¢
+1 (ôñ
+% (3)
+%0#org.springframework.http.HttpStatus"\com.utility.consumer.exception.ApiException#getStatus()Lorg/springframework/http/HttpStatus;*O
+
+__unknown_file (3
+1
+ex+com.utility.consumer.exception.ApiException2getStatus()ë
+è
+ (49
+%13org.springframework.http.ResponseEntity$BodyBuilder"Žorg.springframework.http.ResponseEntity#status(Lorg/springframework/http/HttpStatusCode;)Lorg/springframework/http/ResponseEntity$BodyBuilder;*G
+
+__unknown_file (+")
+'org.springframework.http.ResponseEntity*G
+
+__unknown_file (+
+)
+%0#org.springframework.http.HttpStatusS
+Q
+ ($
+%2java.lang.String"__id*'
+
+__unknown_file (	
+message¸µ
+& (5
+%3java.lang.String"2java.lang.Throwable#getMessage()Ljava/lang/String;*O
+
+__unknown_file (3
+1
+ex+com.utility.consumer.exception.ApiException2getMessage()„
+
+ (6
+%4java.util.Map"Ejava.util.Map#of(Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/Map;*-
+
+__unknown_file ("
+java.util.Map*4
+
+__unknown_file (
+
+%2java.lang.String*4
+
+__unknown_file (
+
+%3java.lang.StringÙÖ
+ (7-
+%5'org.springframework.http.ResponseEntity"uorg.springframework.http.ResponseEntity$BodyBuilder#body(Ljava/lang/Object;)Lorg/springframework/http/ResponseEntity;*W
+
+__unknown_file (;
+9
+%13org.springframework.http.ResponseEntity$BodyBuilder*1
+
+__unknown_file (
+
+%4java.util.Map2body(Ljava/lang/Object;)";
+ (8/
+-
+%5'org.springframework.http.ResponseEntity:=
+B (Q1
+ex+com.utility.consumer.exception.ApiExceptionB97
+5com.utility.consumer.exception.GlobalExceptionHandlerH

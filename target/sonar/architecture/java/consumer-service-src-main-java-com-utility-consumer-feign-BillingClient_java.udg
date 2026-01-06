@@ -1,0 +1,143 @@
+
+1.0Ananya1174_utility-backendJavaFrontend"1767671987465*java2.B°
+Q
+Lconsumer-service/src/main/java/com/utility/consumer/feign/BillingClient.java2
+	
+type3
+	
+MAIN4
+
+
+module-key5
+
+consumer-service6
+
+package8
+0
++consumer-service:com.utility.consumer.feign9
+.
+(com.utility.consumer.feign.BillingClient11
+
+	interface12
+
+access13
+
+public14
+
+
+full-range15
+
+(10:1)-(15:2)16
+
+simple-name17
+
+BillingClient18
+5
+/org.springframework.cloud.openfeign.FeignClient20
+
+unknown21
+
+annotated by22
+
+
+uses23
+e
+_com.utility.consumer.feign.BillingClient#getBillsByConsumer(Ljava/lang/String;)Ljava/util/List;25
+
+method26
+
+(13:5)-(14:79)27
+
+getBillsByConsumer28
+8
+2org.springframework.web.bind.annotation.GetMapping30
+0
+*com.utility.consumer.feign.BillResponseDto32
+:
+4org.springframework.web.bind.annotation.PathVariable34J%
+#
+1
+12
+
+3
+4
+
+5
+6 Z
+
+7
+7982
+
+
+5
+68jì
+
+33
+333421
+N
+24H
+242526 *
+1 (-210:7B$
+
+
+13
+14
+
+
+15
+27
+
+
+17
+28
+J
+10D
+101112 *
+1 (:7B$
+
+
+13
+14
+
+
+15
+16
+
+
+17
+18
+
+29
+293021
+
+31
+313221
+
+19
+192021r½
+
+101922*
+1
+ 
+('
+
+101923*
+1
+ 
+(
+
+242922*
+1 (0
+
+242923*
+1 (
+
+243123*
+1
+ (
+
+243322*
+1. (;
+
+243323*
+1/ (;

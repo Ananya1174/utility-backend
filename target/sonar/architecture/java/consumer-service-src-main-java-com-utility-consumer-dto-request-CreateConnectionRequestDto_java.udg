@@ -1,0 +1,171 @@
+
+1.0Ananya1174_utility-backendJavaFrontend"1767671986834*java2.B—
+d
+_consumer-service/src/main/java/com/utility/consumer/dto/request/CreateConnectionRequestDto.java2
+	
+type3
+	
+MAIN4
+
+
+module-key5
+
+consumer-service6
+
+package8
+6
+1consumer-service:com.utility.consumer.dto.request9
+A
+;com.utility.consumer.dto.request.CreateConnectionRequestDto11
+
+class12
+
+access13
+
+public14
+
+
+full-range15
+
+(8:1)-(16:2)16
+
+simple-name17
+ 
+CreateConnectionRequestDto18
+
+lombok.Data20
+
+unknown21
+
+annotated by22
+
+
+uses23
+M
+Gcom.utility.consumer.dto.request.CreateConnectionRequestDto.utilityType25
+
+field26
+
+private27
+
+(11:5)-(12:37)28
+
+utilityType29
+,
+&com.utility.consumer.enums.UtilityType31
+
+is type32
+,
+&jakarta.validation.constraints.NotNull34
+L
+Fcom.utility.consumer.dto.request.CreateConnectionRequestDto.tariffPlan36
+
+(14:5)-(15:31)37
+
+
+tariffPlan38
+-
+'jakarta.validation.constraints.NotBlank40J%
+#
+1
+12
+
+3
+4
+
+5
+6 Z
+
+7
+7982
+
+
+5
+68j¼
+N
+35H
+353626 *
+1 (210:7B$
+
+
+13
+27
+
+
+15
+37
+
+
+17
+38
+
+30
+303121
+N
+24H
+242526 *
+1 ($210:7B$
+
+
+13
+27
+
+
+15
+28
+
+
+17
+29
+
+39
+394021
+
+19
+192021
+
+33
+333421
+J
+10D
+101112 *
+1	 	((:7B$
+
+
+13
+14
+
+
+15
+16
+
+
+17
+18ró
+
+101922*
+1 (
+
+101923*
+1 (
+
+243032*
+1 (
+
+243322*
+1 (
+
+243323*
+1 (
+
+243023*
+1 (
+
+243023*
+1 ($
+
+353922*
+1 (
+
+353923*
+1 (

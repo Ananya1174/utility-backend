@@ -1,0 +1,340 @@
+
+1.0Ananya1174_utility-backendJavaFrontend"1767671987590*java2.B¦
+`
+[consumer-service/src/main/java/com/utility/consumer/dto/response/ConnectionResponseDto.java2
+	
+type3
+	
+MAIN4
+
+
+module-key5
+
+consumer-service6
+
+package8
+7
+2consumer-service:com.utility.consumer.dto.response9
+=
+7com.utility.consumer.dto.response.ConnectionResponseDto11
+
+class12
+
+access13
+
+public14
+
+
+full-range15
+
+(11:1)-(27:2)16
+
+simple-name17
+
+ConnectionResponseDto18
+
+lombok.Data20
+
+unknown21
+
+annotated by22
+
+
+uses23
+
+lombok.NoArgsConstructor25
+
+lombok.AllArgsConstructor27
+@
+:com.utility.consumer.dto.response.ConnectionResponseDto.id29
+
+field30
+
+private31
+
+(17:5)-(17:23)32
+
+id33
+I
+Ccom.utility.consumer.dto.response.ConnectionResponseDto.utilityType35
+
+(18:5)-(18:37)36
+
+utilityType37
+,
+&com.utility.consumer.enums.UtilityType39
+
+is type40
+H
+Bcom.utility.consumer.dto.response.ConnectionResponseDto.consumerId42
+
+(19:5)-(19:31)43
+
+
+consumerId44
+I
+Ccom.utility.consumer.dto.response.ConnectionResponseDto.meterNumber46
+
+(20:5)-(20:32)47
+
+meterNumber48
+D
+>com.utility.consumer.dto.response.ConnectionResponseDto.status50
+
+(21:5)-(21:44)51
+
+status52
+8
+2com.utility.consumer.enums.ConnectionRequestStatus54
+H
+Bcom.utility.consumer.dto.response.ConnectionResponseDto.tariffPlan56
+
+(22:5)-(22:31)57
+
+
+tariffPlan58
+D
+>com.utility.consumer.dto.response.ConnectionResponseDto.active60
+
+(23:5)-(23:28)61
+
+active62
+I
+Ccom.utility.consumer.dto.response.ConnectionResponseDto.activatedAt64
+
+(24:5)-(24:39)65
+
+activatedAt66
+I
+Ccom.utility.consumer.dto.response.ConnectionResponseDto.requestedAt68
+
+(25:5)-(25:39)69
+
+requestedAt70J%
+#
+1
+12
+
+3
+4
+
+5
+6 Z
+
+7
+7982
+
+
+5
+68j€
+N
+55H
+555630 *
+1 (210:7B$
+
+
+13
+31
+
+
+15
+57
+
+
+17
+58
+N
+45H
+454630 *
+1 (210:7B$
+
+
+13
+31
+
+
+15
+47
+
+
+17
+48
+
+38
+383921
+N
+34H
+343530 *
+1 ($210:7B$
+
+
+13
+31
+
+
+15
+36
+
+
+17
+37
+J
+10D
+101112 *
+1 (#:7B$
+
+
+13
+14
+
+
+15
+16
+
+
+17
+18
+N
+59H
+596030 *
+1 (210:7B$
+
+
+13
+31
+
+
+15
+61
+
+
+17
+62
+N
+28H
+282930 *
+1 (210:7B$
+
+
+13
+31
+
+
+15
+32
+
+
+17
+33
+N
+49H
+495030 *
+1% (+210:7B$
+
+
+13
+31
+
+
+15
+51
+
+
+17
+52
+
+53
+535421
+N
+67H
+676830 *
+1 (&210:7B$
+
+
+13
+31
+
+
+15
+69
+
+
+17
+70
+
+19
+192021
+N
+41H
+414230 *
+1 (210:7B$
+
+
+13
+31
+
+
+15
+43
+
+
+17
+44
+N
+63H
+636430 *
+1 (&210:7B$
+
+
+13
+31
+
+
+15
+65
+
+
+17
+66
+
+26
+262721
+
+24
+242521rÄ
+
+101922*
+1 (
+
+101923*
+1 (
+
+102422*
+1 (
+
+102423*
+1 (
+
+102622*
+1 (
+
+102623*
+1 (
+
+343840*
+1 (
+
+343823*
+1 (
+
+343823*
+1 ($
+
+495340*
+1 ($
+
+495323*
+1 ($
+
+495323*
+1% (+

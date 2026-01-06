@@ -1,0 +1,93 @@
+
+1.0Ananya1174_utility-backendJavaFrontend"1767671989338*java2.Bù
+Z
+Uauth-service/src/main/java/com/utility/auth/exception/UserAlreadyExistsException.java2
+	
+type3
+	
+MAIN4
+
+
+module-key5
+
+auth-service6
+
+package8
+,
+'auth-service:com.utility.auth.exception9
+;
+5com.utility.auth.exception.UserAlreadyExistsException11
+
+	exception12
+
+access13
+
+public14
+
+
+full-range15
+
+(3:1)-(8:2)16
+
+simple-name17
+ 
+UserAlreadyExistsException18
+W
+Qcom.utility.auth.exception.UserAlreadyExistsException#<init>(Ljava/lang/String;)V20
+
+method21
+
+(5:5)-(7:6)22
+
+calls23J%
+#
+1
+12
+
+3
+4
+
+5
+6 Z
+
+7
+7982
+
+
+5
+68jú
+J
+10D
+101112 *
+1 ((:7B$
+
+
+13
+14
+
+
+15
+16
+
+
+17
+18
+N
+19H
+192021 *
+1 (&210:7B$
+
+
+13
+14
+
+
+15
+22
+
+
+17
+18r
+
+191023*
+1 (&

@@ -1,5 +1,6 @@
 package com.utility.payment.service;
 
+import java.security.SecureRandom;
 import java.time.Instant;
 import java.time.LocalDateTime;
 import java.util.List;
@@ -36,7 +37,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class PaymentService {
 
-    private static final Random RANDOM = new Random(); // ✅ reused Random
+	private static final SecureRandom RANDOM = new SecureRandom(); // ✅ reused Random
 
     private final PaymentRepository repository;
     private final BillingClient billingClient;

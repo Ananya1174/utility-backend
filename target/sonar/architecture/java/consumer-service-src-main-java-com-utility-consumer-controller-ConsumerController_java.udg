@@ -1,0 +1,693 @@
+
+1.0Ananya1174_utility-backendJavaFrontend"1767671987177*java2.Bâ
+[
+Vconsumer-service/src/main/java/com/utility/consumer/controller/ConsumerController.java2
+	
+type3
+	
+MAIN4
+
+
+module-key5
+
+consumer-service6
+
+package8
+5
+0consumer-service:com.utility.consumer.controller9
+8
+2com.utility.consumer.controller.ConsumerController11
+
+class12
+
+access13
+
+public14
+
+
+full-range15
+
+(24:1)-(64:2)16
+
+simple-name17
+
+ConsumerController18
+<
+6org.springframework.web.bind.annotation.RestController20
+
+unknown21
+
+annotated by22
+
+
+uses23
+$
+lombok.RequiredArgsConstructor25
+<
+6org.springframework.web.bind.annotation.RequestMapping27
+H
+Bcom.utility.consumer.controller.ConsumerController.consumerService29
+
+field30
+
+private31
+
+(29:5)-(29:51)32
+
+consumerService33
+2
+,com.utility.consumer.service.ConsumerService35
+
+is type36
+ 
+™com.utility.consumer.controller.ConsumerController#create(Lcom/utility/consumer/dto/request/ConsumerRequestDTO;)Lorg/springframework/http/ResponseEntity;38
+
+method39
+
+(31:5)-(38:6)40
+
+create41
+-
+'org.springframework.http.ResponseEntity43
+
+returns44
+9
+3com.utility.consumer.dto.request.ConsumerRequestDTO46
+
+	has param47
+9
+3org.springframework.web.bind.annotation.PostMapping49
+>
+8org.springframework.security.access.prepost.PreAuthorize51
+;
+5com.utility.consumer.dto.response.ConsumerResponseDTO53
+
+jakarta.validation.Valid55
+9
+3org.springframework.web.bind.annotation.RequestBody57
+9
+3org.springframework.http.ResponseEntity$BodyBuilder59
+
+
+references60
+{
+uorg.springframework.http.ResponseEntity$BodyBuilder#body(Ljava/lang/Object;)Lorg/springframework/http/ResponseEntity;62
+
+calls63
+•
+Žorg.springframework.http.ResponseEntity#status(Lorg/springframework/http/HttpStatusCode;)Lorg/springframework/http/ResponseEntity$BodyBuilder;65
+)
+#org.springframework.http.HttpStatus67
+1
++org.springframework.http.HttpStatus.CREATED69
+°
+©com.utility.consumer.service.ConsumerService#createConsumer(Lcom/utility/consumer/dto/request/ConsumerRequestDTO;)Lcom/utility/consumer/dto/response/ConsumerResponseDTO;71
+y
+scom.utility.consumer.controller.ConsumerController#get(Ljava/lang/String;)Lorg/springframework/http/ResponseEntity;73
+
+(40:5)-(43:6)74
+	
+get75
+8
+2org.springframework.web.bind.annotation.GetMapping77
+:
+4org.springframework.web.bind.annotation.PathVariable79
+m
+gorg.springframework.http.ResponseEntity#ok(Ljava/lang/Object;)Lorg/springframework/http/ResponseEntity;81
+Š
+ƒcom.utility.consumer.service.ConsumerService#getConsumer(Ljava/lang/String;)Lcom/utility/consumer/dto/response/ConsumerResponseDTO;83
+j
+dcom.utility.consumer.controller.ConsumerController#getAll()Lorg/springframework/http/ResponseEntity;85
+
+(45:5)-(49:6)86
+
+getAll87
+T
+Ncom.utility.consumer.service.ConsumerService#getAllConsumers()Ljava/util/List;89
+²
+«com.utility.consumer.controller.ConsumerController#update(Ljava/lang/String;Lcom/utility/consumer/dto/request/ConsumerRequestDTO;)Lorg/springframework/http/ResponseEntity;91
+
+(51:5)-(57:6)92
+
+update93
+8
+2org.springframework.web.bind.annotation.PutMapping95
+Â
+»com.utility.consumer.service.ConsumerService#updateConsumer(Ljava/lang/String;Lcom/utility/consumer/dto/request/ConsumerRequestDTO;)Lcom/utility/consumer/dto/response/ConsumerResponseDTO;97
+€
+zcom.utility.consumer.controller.ConsumerController#deactivate(Ljava/lang/String;)Lorg/springframework/http/ResponseEntity;99
+
+(59:5)-(63:6)100
+
+
+deactivate101
+<
+5org.springframework.web.bind.annotation.DeleteMapping103
+[
+Tcom.utility.consumer.service.ConsumerService#deactivateConsumer(Ljava/lang/String;)V105
+=
+6org.springframework.http.ResponseEntity$HeadersBuilder107
+n
+gorg.springframework.http.ResponseEntity$HeadersBuilder#build()Lorg/springframework/http/ResponseEntity;109
+r
+korg.springframework.http.ResponseEntity#noContent()Lorg/springframework/http/ResponseEntity$HeadersBuilder;111J%
+#
+1
+12
+
+3
+4
+
+5
+6 Z
+
+7
+7982
+
+
+5
+68j	
+
+78
+787921
+
+68
+686921
+
+96
+969721
+
+50
+505121
+
+24
+242521
+
+104
+10410521
+
+26
+262721
+
+108
+10810921
+
+54
+545521
+
+58
+585921
+
+45
+454621
+
+56
+565721
+
+80
+808121
+
+94
+949521
+
+110
+11011121
+
+70
+707121
+J
+10D
+101112 *
+1 ( :7B$
+
+
+13
+14
+
+
+15
+16
+
+
+17
+18
+
+61
+616221
+
+76
+767721
+N
+72H
+727339 *
+1)0 )(3210:7B$
+
+
+13
+14
+
+
+15
+74
+
+
+17
+75
+
+102
+10210321
+
+64
+646521
+
+48
+484921
+N
+37H
+373839 *
+1!0 !(6210:7B$
+
+
+13
+14
+
+
+15
+40
+
+
+17
+41
+N
+84H
+848539 *
+1/6 /(<210:7B$
+
+
+13
+14
+
+
+15
+86
+
+
+17
+87
+P
+98J
+989939 *
+1<! <(+210:7B&
+
+
+13
+14
+
+15
+100
+
+17
+101
+
+19
+192021
+
+34
+343521
+
+52
+525321
+
+66
+666721
+
+88
+888921
+
+82
+828321
+N
+90H
+909139 *
+140 4(6210:7B$
+
+
+13
+14
+
+
+15
+92
+
+
+17
+93
+N
+28H
+282930 *
+1# (2210:7B$
+
+
+13
+31
+
+
+15
+32
+
+
+17
+33
+
+42
+424321
+
+106
+10610721r†
+
+101922*
+1 (
+
+101923*
+1 (
+
+102422*
+1 (
+
+102423*
+1 (
+
+102622*
+1 (
+
+102623*
+1 (
+
+283436*
+1 ("
+
+283423*
+1 ("
+
+283423*
+1# (2
+
+374244*
+1! !(/
+
+374547*
+1"! "(3
+
+374822*
+1 (
+
+374823*
+1 (
+
+375022*
+1   (&
+
+375023*
+1   (
+
+374223*
+1! !(
+
+375223*
+1! !(.
+
+374536*
+1"4 "(7
+
+375422*
+1" "(
+
+375423*
+1" "(
+
+375622*
+1" "( 
+
+375623*
+1" "( 
+
+374523*
+1"! "(3
+
+374244*
+1$ %(
+
+375860*
+1$ %(
+
+376163*
+1% %(
+
+375844*
+1$ $(%
+
+374260*
+1$ $(%
+
+376463*
+1$ $(%
+
+376623*
+1$& $(0
+
+376623*
+1$1 $(8
+
+376860*
+1$1 $(8
+
+375244*
+1% %(5
+
+373460*
+1% %(5
+
+377063*
+1%' %(5
+
+372860*
+1% %(&
+
+373423*
+1% %(&
+
+372860*
+1% %(&
+
+724244*
+1) )(/
+
+727622*
+1( ((
+
+727623*
+1( ((
+
+724223*
+1) )(
+
+725223*
+1) )(.
+
+727822*
+1)4 )(G
+
+727823*
+1)5 )(A
+
+724244*
+1* *(!
+
+724260*
+1* *(!
+
+728063*
+1* *(!
+
+725244*
+1*" *(=
+
+723460*
+1*" *(=
+
+728263*
+1*2 *(=
+
+722860*
+1*" *(1
+
+723423*
+1*" *(1
+
+722860*
+1*" *(1
+
+844244*
+1/ /(5
+
+847622*
+1- -(
+
+847623*
+1- -(
+
+845022*
+1. .(&
+
+845023*
+1. .(
+
+844223*
+1/ /(
+
+845223*
+1/  /(3
+
+844244*
+10 0(!
+
+844260*
+10 0(!
+
+848063*
+10 0(!
+
+843460*
+10" 0(A
+
+848863*
+102 0(A
+
+842860*
+10" 0(1
+
+843423*
+10" 0(1
+
+842860*
+10" 0(1
+
+904244*
+14 4(/
+
+904547*
+16! 6(3
+
+909422*
+13 3(
+
+909423*
+13 3(
+
+904223*
+14 4(
+
+905223*
+14 4(.
+
+907822*
+15 5(
+
+907823*
+15 5(
+
+904536*
+164 6(7
+
+905422*
+16 6(
+
+905423*
+16 6(
+
+905622*
+16 6( 
+
+905623*
+16 6( 
+
+904523*
+16! 6(3
+
+904244*
+18 8(!
+
+904260*
+18 8(!
+
+908063*
+18 8(!
+
+905244*
+18" 8(@
+
+903460*
+18" 8(@
+
+909663*
+182 8(@
+
+902860*
+18" 8(1
+
+903423*
+18" 8(1
+
+902860*
+18" 8(1
+
+984244*
+1< <( 
+
+9810222*
+1; ;(
+
+9810223*
+1; ;(
+
+984223*
+1< <(
+
+987822*
+1<, <(?
+
+987823*
+1<- <(9
+
+983460*
+1=	 =(+
+
+9810463*
+1= =(+
+
+982860*
+1=	 =(
+
+983423*
+1=	 =(
+
+982860*
+1=	 =(
+
+984244*
+1> >(0
+
+9810660*
+1> >(0
+
+9810863*
+1>+ >(0
+
+9810644*
+1> >((
+
+984260*
+1> >((
+
+9811063*
+1> >((

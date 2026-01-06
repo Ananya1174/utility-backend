@@ -1,0 +1,174 @@
+
+1.0Ananya1174_utility-backendJavaFrontend"1767671991190*java2.B˜
+R
+Mbilling-service/src/main/java/com/utility/billing/feign/ConnectionClient.java2
+	
+type3
+	
+MAIN4
+
+
+module-key5
+
+billing-service6
+
+package8
+.
+)billing-service:com.utility.billing.feign9
+0
+*com.utility.billing.feign.ConnectionClient11
+
+	interface12
+
+access13
+
+public14
+
+
+full-range15
+
+(9:1)-(22:3)16
+
+simple-name17
+
+ConnectionClient18
+5
+/org.springframework.cloud.openfeign.FeignClient20
+
+unknown21
+
+annotated by22
+
+
+uses23
+ç
+Ücom.utility.billing.feign.ConnectionClient#getConnectionById(Ljava/lang/String;)Lcom/utility/billing/feign/ConsumerConnectionResponse;25
+
+method26
+
+(16:6)-(19:8)27
+
+getConnectionById28
+:
+4com.utility.billing.feign.ConsumerConnectionResponse30
+
+returns31
+8
+2org.springframework.web.bind.annotation.GetMapping33
+:
+4org.springframework.web.bind.annotation.PathVariable35
+T
+Ncom.utility.billing.feign.ConnectionClient#getAllConnections()Ljava/util/List;37
+
+(20:6)-(21:59)38
+
+getAllConnections39J%
+#
+1
+12
+
+3
+4
+
+5
+6 Z
+
+7
+7982
+
+
+5
+68jº
+
+34
+343521
+
+29
+293021
+J
+10D
+101112 *
+1 (#:7B$
+
+
+13
+14
+
+
+15
+16
+
+
+17
+18
+
+32
+323321
+N
+36H
+363726 *
+1' (8210:7B$
+
+
+13
+14
+
+
+15
+38
+
+
+17
+39
+
+19
+192021
+N
+24H
+242526 *
+1! (2210:7B$
+
+
+13
+14
+
+
+15
+27
+
+
+17
+28r©
+
+101922*
+1	 (
+
+101923*
+1	 	(
+
+242931*
+1 ( 
+
+243222*
+1 (
+
+243223*
+1 (
+
+242923*
+1 ( 
+
+243422*
+1 (
+
+243423*
+1	 (
+
+363222*
+1 ("
+
+363223*
+1 (
+
+362923*
+1 (%

@@ -1,0 +1,121 @@
+
+1.0Ananya1174_utility-backendJavaFrontend"1767671990528*java2.Bý
+^
+Ynotification-service/src/main/java/com/utility/common/dto/event/AccountRejectedEvent.java2
+	
+type3
+	
+MAIN4
+
+
+module-key5
+
+notification-service6
+
+package8
+6
+1notification-service:com.utility.common.dto.event9
+7
+1com.utility.common.dto.event.AccountRejectedEvent11
+
+class12
+
+access13
+
+public14
+
+
+full-range15
+
+(6:1)-(10:2)16
+
+simple-name17
+
+AccountRejectedEvent18
+
+lombok.Data20
+
+unknown21
+
+annotated by22
+
+
+uses23
+
+lombok.NoArgsConstructor25
+=
+7com.utility.common.dto.event.AccountRejectedEvent.email27
+
+field28
+
+private29
+
+(9:5)-(9:26)30
+
+email31J%
+#
+1
+12
+
+3
+4
+
+5
+6 Z
+
+7
+7982
+
+
+5
+68jÄ
+N
+26H
+262728 *
+1	 	(210:7B$
+
+
+13
+29
+
+
+15
+30
+
+
+17
+31
+J
+10D
+101112 *
+1 (":7B$
+
+
+13
+14
+
+
+15
+16
+
+
+17
+18
+
+19
+192021
+
+24
+242521rl
+
+101922*
+1 (
+
+101923*
+1 (
+
+102422*
+1 (
+
+102423*
+1 (

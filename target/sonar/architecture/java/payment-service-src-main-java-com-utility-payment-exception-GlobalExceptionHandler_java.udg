@@ -1,0 +1,214 @@
+
+1.0Ananya1174_utility-backendJavaFrontend"1767671988903*java2.Bß
+\
+Wpayment-service/src/main/java/com/utility/payment/exception/GlobalExceptionHandler.java2
+	
+type3
+	
+MAIN4
+
+
+module-key5
+
+payment-service6
+
+package8
+2
+-payment-service:com.utility.payment.exception9
+:
+4com.utility.payment.exception.GlobalExceptionHandler11
+
+class12
+
+access13
+
+public14
+
+
+full-range15
+
+(10:1)-(21:2)16
+
+simple-name17
+
+GlobalExceptionHandler18
+B
+<org.springframework.web.bind.annotation.RestControllerAdvice20
+
+unknown21
+
+annotated by22
+
+
+uses23
+ô
+ícom.utility.payment.exception.GlobalExceptionHandler#handle(Lcom/utility/payment/exception/ApiException;)Lorg/springframework/http/ResponseEntity;25
+
+method26
+
+(13:5)-(20:6)27
+
+handle28
+-
+'org.springframework.http.ResponseEntity30
+
+returns31
+0
+*com.utility.payment.exception.ApiException33
+
+	has param34
+>
+8org.springframework.web.bind.annotation.ExceptionHandler36
+
+is type37
+9
+3org.springframework.http.ResponseEntity$BodyBuilder39
+
+
+references40
+{
+uorg.springframework.http.ResponseEntity$BodyBuilder#body(Ljava/lang/Object;)Lorg/springframework/http/ResponseEntity;42
+
+calls43
+ï
+éorg.springframework.http.ResponseEntity#status(Lorg/springframework/http/HttpStatusCode;)Lorg/springframework/http/ResponseEntity$BodyBuilder;45
+)
+#org.springframework.http.HttpStatus47
+a
+[com.utility.payment.exception.ApiException#getStatus()Lorg/springframework/http/HttpStatus;49J%
+#
+1
+12
+
+3
+4
+
+5
+6 Z
+
+7
+7982
+
+
+5
+68j–
+J
+10D
+101112 *
+1 ($:7B$
+
+
+13
+14
+
+
+15
+16
+
+
+17
+18
+
+46
+464721
+
+19
+192021
+
+48
+484921
+N
+24H
+242526 *
+10 (6210:7B$
+
+
+13
+14
+
+
+15
+27
+
+
+17
+28
+
+41
+414221
+
+35
+353621
+
+29
+293021
+
+32
+323321
+
+38
+383921
+
+44
+444521rÅ
+
+101922*
+1
+ 
+(
+
+101923*
+1
+ 
+(
+
+242931*
+1 (/
+
+243234*
+17 (C
+
+243522*
+1 (*
+
+243523*
+1 (
+
+243223*
+1 (#
+
+242923*
+1 (
+
+243237*
+1D (F
+
+243223*
+17 (C
+
+242931*
+1 (
+
+243840*
+1 (
+
+244143*
+1 (
+
+243831*
+1 (%
+
+242940*
+1 (%
+
+244443*
+1 (%
+
+244631*
+1& (2
+
+243240*
+1& (2
+
+244843*
+1) (2

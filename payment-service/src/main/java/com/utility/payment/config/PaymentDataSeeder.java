@@ -74,7 +74,7 @@ public class PaymentDataSeeder {
 
     private LocalDate generatePaymentDate(LocalDate dueDate) {
         // SecureRandom instead of Random / Math.random
-        return dueDate.plusDays(RANDOM.nextInt(10) - 5);
+    	return dueDate.plusDays(RANDOM.nextInt(10) - 5L);
     }
 
     private boolean isPaymentSuccessful(long ageInDays) {

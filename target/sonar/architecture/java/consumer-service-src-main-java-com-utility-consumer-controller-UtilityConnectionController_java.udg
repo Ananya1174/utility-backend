@@ -1,0 +1,410 @@
+
+1.0Ananya1174_utility-backendJavaFrontend"1767671986667*java2.Bê
+d
+_consumer-service/src/main/java/com/utility/consumer/controller/UtilityConnectionController.java2
+	
+type3
+	
+MAIN4
+
+
+module-key5
+
+consumer-service6
+
+package8
+5
+0consumer-service:com.utility.consumer.controller9
+A
+;com.utility.consumer.controller.UtilityConnectionController11
+
+class12
+
+access13
+
+public14
+
+
+full-range15
+
+(15:1)-(42:2)16
+
+simple-name17
+!
+UtilityConnectionController18
+<
+6org.springframework.web.bind.annotation.RestController20
+
+unknown21
+
+annotated by22
+
+
+uses23
+<
+6org.springframework.web.bind.annotation.RequestMapping25
+$
+lombok.RequiredArgsConstructor27
+S
+Mcom.utility.consumer.controller.UtilityConnectionController.connectionService29
+
+field30
+
+private31
+
+(20:2)-(20:59)32
+
+connectionService33
+;
+5com.utility.consumer.service.UtilityConnectionService35
+
+is type36
+d
+^com.utility.consumer.controller.UtilityConnectionController#getMyConnections()Ljava/util/List;38
+
+method39
+
+(22:2)-(31:3)40
+
+getMyConnections41
+8
+2org.springframework.web.bind.annotation.GetMapping43
+>
+8org.springframework.security.access.prepost.PreAuthorize45
+=
+7com.utility.consumer.dto.response.ConnectionResponseDto47
+6
+0org.springframework.security.core.Authentication49
+
+returns50
+?
+9org.springframework.security.core.context.SecurityContext52
+
+
+references53
+…
+org.springframework.security.core.context.SecurityContext#getAuthentication()Lorg/springframework/security/core/Authentication;55
+
+calls56
+E
+?org.springframework.security.core.context.SecurityContextHolder58
+Ž
+‡org.springframework.security.core.context.SecurityContextHolder#getContext()Lorg/springframework/security/core/context/SecurityContext;60
+v
+pcom.utility.consumer.service.UtilityConnectionService#getConnectionsByUserId(Ljava/lang/String;)Ljava/util/List;62
+¡
+šcom.utility.consumer.controller.UtilityConnectionController#getConnectionById(Ljava/lang/String;)Lcom/utility/consumer/dto/response/ConnectionResponseDto;64
+
+(33:2)-(37:3)65
+
+getConnectionById66
+:
+4org.springframework.web.bind.annotation.PathVariable68
+›
+”com.utility.consumer.service.UtilityConnectionService#getConnectionById(Ljava/lang/String;)Lcom/utility/consumer/dto/response/ConnectionResponseDto;70
+e
+_com.utility.consumer.controller.UtilityConnectionController#getAllConnections()Ljava/util/List;72
+
+(38:2)-(41:3)73
+
+getAllConnections74
+_
+Ycom.utility.consumer.service.UtilityConnectionService#getAllConnections()Ljava/util/List;76J%
+#
+1
+12
+
+3
+4
+
+5
+6 Z
+
+7
+7982
+
+
+5
+68jÌ
+
+67
+676821
+
+44
+444521
+
+26
+262721
+
+46
+464721
+
+69
+697021
+
+24
+242521
+
+59
+596021
+
+19
+192021
+N
+28H
+282930 *
+1) (:210:7B$
+
+
+13
+31
+
+
+15
+32
+
+
+17
+33
+N
+63H
+636439 *
+1" "(0210:7B$
+
+
+13
+14
+
+
+15
+65
+
+
+17
+66
+
+34
+343521
+N
+37H
+373839 *
+1% (5210:7B$
+
+
+13
+14
+
+
+15
+40
+
+
+17
+41
+
+51
+515221
+
+61
+616221
+
+75
+757621
+
+42
+424321
+
+48
+484921
+
+54
+545521
+
+57
+575821
+N
+71H
+717239 *
+1'% '(6210:7B$
+
+
+13
+14
+
+
+15
+73
+
+
+17
+74
+J
+10D
+101112 *
+1 ():7B$
+
+
+13
+14
+
+
+15
+16
+
+
+17
+18r
+
+
+101922*
+1 (
+
+101923*
+1 (
+
+102422*
+1 ( 
+
+102423*
+1 (
+
+102622*
+1 (
+
+102623*
+1 (
+
+283436*
+1 ((
+
+283423*
+1 ((
+
+283423*
+1) (:
+
+374222*
+1 (
+
+374223*
+1 (
+
+374422*
+1 (&
+
+374423*
+1 (
+
+374623*
+1 (#
+
+374836*
+1 ( 
+
+374823*
+1 (
+
+374850*
+1# (W
+
+375153*
+1# (W
+
+375456*
+1F (W
+
+375150*
+1# (C
+
+375753*
+1# (C
+
+375956*
+19 (C
+
+375723*
+1# (8
+
+373453*
+1
+ (2
+
+376156*
+1 (2
+
+372853*
+1
+ (
+
+373423*
+1
+ (
+
+372853*
+1
+ (
+
+634650*
+1"	 "(
+
+634222*
+1! !(
+
+634223*
+1! !(
+
+634623*
+1"	 "(
+
+636722*
+1"1 "(D
+
+636723*
+1"2 "(>
+
+634650*
+1$
+ $(-
+
+633453*
+1$
+ $(-
+
+636956*
+1$ $(-
+
+632853*
+1$
+ $(
+
+633423*
+1$
+ $(
+
+632853*
+1$
+ $(
+
+714222*
+1& &(
+
+714223*
+1& &(
+
+714623*
+1' '(#
+
+713453*
+1( ((0
+
+717556*
+1( ((0
+
+712853*
+1( ((
+
+713423*
+1( ((
+
+712853*
+1( ((

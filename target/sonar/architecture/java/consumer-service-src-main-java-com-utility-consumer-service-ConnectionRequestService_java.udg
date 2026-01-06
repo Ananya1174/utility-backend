@@ -1,0 +1,775 @@
+
+1.0Ananya1174_utility-backendJavaFrontend"1767671987352*java2.BÛ
+^
+Yconsumer-service/src/main/java/com/utility/consumer/service/ConnectionRequestService.java2
+	
+type3
+	
+MAIN4
+
+
+module-key5
+
+consumer-service6
+
+package8
+2
+-consumer-service:com.utility.consumer.service9
+;
+5com.utility.consumer.service.ConnectionRequestService11
+
+class12
+
+access13
+
+public14
+
+
+full-range15
+
+(21:1)-(138:2)16
+
+simple-name17
+
+ConnectionRequestService18
+,
+&org.springframework.stereotype.Service20
+
+unknown21
+
+annotated by22
+
+
+uses23
+$
+lombok.RequiredArgsConstructor25
+G
+Acom.utility.consumer.service.ConnectionRequestService.requestRepo27
+
+field28
+
+private29
+
+(25:5)-(25:59)30
+
+requestRepo31
+A
+;com.utility.consumer.repository.ConnectionRequestRepository33
+
+is type34
+J
+Dcom.utility.consumer.service.ConnectionRequestService.connectionRepo36
+
+(26:5)-(26:55)37
+
+connectionRepo38
+:
+4com.utility.consumer.repository.ConnectionRepository40
+H
+Bcom.utility.consumer.service.ConnectionRequestService.consumerRepo42
+
+(27:5)-(27:51)43
+
+consumerRepo44
+8
+2com.utility.consumer.repository.ConsumerRepository46
+œ
+•com.utility.consumer.service.ConnectionRequestService#createRequest(Ljava/lang/String;Lcom/utility/consumer/dto/request/CreateConnectionRequestDto;)V48
+
+method49
+
+(29:5)-(73:6)50
+
+createRequest51
+A
+;com.utility.consumer.dto.request.CreateConnectionRequestDto53
+
+	has param54
+
+
+references55
+X
+Rcom.utility.consumer.repository.ConsumerRepository#existsById(Ljava/lang/String;)Z57
+
+calls58
+1
++com.utility.consumer.exception.ApiException60
+)
+#org.springframework.http.HttpStatus62
+3
+-org.springframework.http.HttpStatus.NOT_FOUND64
+ª
+£com.utility.consumer.repository.ConnectionRepository#findByConsumerIdAndUtilityType(Ljava/lang/String;Lcom/utility/consumer/enums/UtilityType;)Ljava/util/Optional;66
+2
+,org.springframework.http.HttpStatus.CONFLICT68
+»
+´com.utility.consumer.repository.ConnectionRequestRepository#existsByConsumerIdAndUtilityTypeAndStatusIn(Ljava/lang/String;Lcom/utility/consumer/enums/UtilityType;Ljava/util/List;)Z70
+8
+2com.utility.consumer.enums.ConnectionRequestStatus72
+@
+:com.utility.consumer.enums.ConnectionRequestStatus.PENDING74
+2
+,com.utility.consumer.model.ConnectionRequest76
+
+returns77
+8
+2org.springframework.data.repository.CrudRepository79
+c
+]org.springframework.data.repository.CrudRepository#save(Ljava/lang/Object;)Ljava/lang/Object;81
+`
+Zcom.utility.consumer.service.ConnectionRequestService#getPendingRequests()Ljava/util/List;83
+
+(75:5)-(77:6)84
+
+getPendingRequests85
+•
+Žcom.utility.consumer.repository.ConnectionRequestRepository#findByStatus(Lcom/utility/consumer/enums/ConnectionRequestStatus;)Ljava/util/List;87
+°
+©com.utility.consumer.service.ConnectionRequestService#approveRequest(Ljava/lang/String;Lcom/utility/consumer/dto/request/ApproveConnectionRequestDto;Ljava/lang/String;)V89
+
+(79:5)-(117:6)90
+
+approveRequest91
+B
+<com.utility.consumer.dto.request.ApproveConnectionRequestDto93
+°
+©com.utility.consumer.repository.ConnectionRequestRepository#findByIdAndStatus(Ljava/lang/String;Lcom/utility/consumer/enums/ConnectionRequestStatus;)Ljava/util/Optional;95
+c
+]com.utility.consumer.repository.ConnectionRepository#existsByMeterNumber(Ljava/lang/String;)Z97
+2
+,com.utility.consumer.model.UtilityConnection99
+B
+;com.utility.consumer.enums.ConnectionRequestStatus.APPROVED101
+q
+jcom.utility.consumer.service.ConnectionRequestService#rejectRequest(Ljava/lang/String;Ljava/lang/String;)V103
+
+(119:5)-(136:6)104
+
+rejectRequest105
+B
+;com.utility.consumer.enums.ConnectionRequestStatus.REJECTED107J%
+#
+1
+12
+
+3
+4
+
+5
+6 Z
+
+7
+7982
+
+
+5
+68jû
+
+39
+394021
+
+63
+636421
+N
+26H
+262728 *
+1/ (:210:7B$
+
+
+13
+29
+
+
+15
+30
+
+
+17
+31
+N
+35H
+353628 *
+1( (6210:7B$
+
+
+13
+29
+
+
+15
+37
+
+
+17
+38
+
+73
+737421
+
+24
+242521
+
+78
+787921
+
+52
+525321
+N
+41H
+414228 *
+1& (2210:7B$
+
+
+13
+29
+
+
+15
+43
+
+
+17
+44
+
+100
+10010121
+
+56
+565721
+
+19
+192021
+
+75
+757621
+
+96
+969721
+N
+88H
+888949 *
+1O O(210:7B$
+
+
+13
+14
+
+
+15
+90
+
+
+17
+91
+S
+102L
+10210349 *
+1w w(210:7B&
+
+
+13
+14
+
+15
+104
+
+17
+105
+J
+10D
+101112 *
+1 (&:7B$
+
+
+13
+14
+
+
+15
+16
+
+
+17
+18
+
+80
+808121
+
+59
+596021
+
+106
+10610721
+
+86
+868721
+
+45
+454621
+
+94
+949521
+N
+47H
+474849 *
+1 (210:7B$
+
+
+13
+14
+
+
+15
+50
+
+
+17
+51
+
+92
+929321
+
+61
+616221
+
+98
+989921
+
+65
+656621
+
+71
+717221
+
+67
+676821
+
+69
+697021
+N
+82H
+828349 *
+1K$ K(6210:7B$
+
+
+13
+14
+
+
+15
+84
+
+
+17
+85
+
+32
+323321r„
+
+101922*
+1 (	
+
+101923*
+1 (	
+
+102422*
+1 (
+
+102423*
+1 (
+
+263234*
+1 (.
+
+263223*
+1 (.
+
+263223*
+1/ (:
+
+353934*
+1 ('
+
+353923*
+1 ('
+
+353923*
+1( (6
+
+414534*
+1 (%
+
+414523*
+1 (%
+
+414523*
+1& (2
+
+475254*
+1 ('
+
+475234*
+1( (+
+
+475223*
+1 ('
+
+474555*
+1" "(%
+
+475658*
+1" "(%
+
+474155*
+1" "(
+
+474523*
+1" "(
+
+474155*
+1" "(
+
+475958*
+1# #(#
+
+476123*
+1$ $(
+
+476123*
+1$  $()
+
+476355*
+1$  $()
+
+473955*
+1) )(:
+
+476558*
+1) )(:
+
+473555*
+1) )(
+
+473923*
+1) )(
+
+473555*
+1) )(
+
+475958*
+1- -(#
+
+476123*
+1. .(
+
+476123*
+1.  .((
+
+476755*
+1.  .((
+
+473255*
+14 4(H
+
+476958*
+14 4(H
+
+472655*
+14 4(
+
+473223*
+14 4(
+
+472655*
+14 4(
+
+477123*
+17! 7(8
+
+477123*
+179 7(@
+
+477355*
+179 7(@
+
+475958*
+1; ;(#
+
+476123*
+1< <(
+
+476123*
+1<  <((
+
+476755*
+1<  <((
+
+477534*
+1A A("
+
+477523*
+1A	 A(
+
+477558*
+1A) A(:
+
+477123*
+1E E(2
+
+477123*
+1E3 E(:
+
+477355*
+1E3 E(:
+
+477577*
+1H	 H(
+
+477855*
+1H	 H(
+
+478058*
+1H H(
+
+472655*
+1H	 H(
+
+473223*
+1H	 H(
+
+472655*
+1H	 H(
+
+827523*
+1K K("
+
+823255*
+1L L((
+
+828658*
+1L L((
+
+822655*
+1L L(
+
+823223*
+1L L(
+
+822655*
+1L L(
+
+827123*
+1L) L(@
+
+827123*
+1LA L(H
+
+827355*
+1LA L(H
+
+889254*
+1Q Q((
+
+889234*
+1Q) Q(,
+
+889223*
+1Q Q((
+
+887534*
+1U U("
+
+887523*
+1U	 U(
+
+887577*
+1V Z(
+
+883255*
+1V V(.
+
+889458*
+1V V(.
+
+882655*
+1V V(
+
+883223*
+1V V(
+
+882655*
+1V V(
+
+887123*
+1X X(0
+
+887123*
+1X1 X(8
+
+887355*
+1X1 X(8
+
+885958*
+1Z( Z(4
+
+886123*
+1[ [(#
+
+886123*
+1[$ [(-
+
+886355*
+1[$ [(-
+
+883955*
+1_ _(/
+
+889658*
+1_ _(/
+
+883555*
+1_ _(
+
+883923*
+1_ _(
+
+883555*
+1_ _(
+
+885958*
+1` `(#
+
+886123*
+1a a(
+
+886123*
+1a  a((
+
+886755*
+1a  a((
+
+889834*
+1f f(%
+
+889823*
+1f	 f(
+
+889858*
+1f, f(=
+
+889877*
+1n	 n(
+
+887855*
+1n	 n(
+
+888058*
+1n n(
+
+883555*
+1n	 n(
+
+883923*
+1n	 n(
+
+883555*
+1n	 n(
+
+887123*
+1p p(2
+
+887123*
+1p3 p(;
+
+8810055*
+1p3 p(;
+
+887577*
+1t	 t(
+
+887855*
+1t	 t(
+
+888058*
+1t t(
+
+882655*
+1t	 t(
+
+883223*
+1t	 t(
+
+882655*
+1t	 t(
+
+1027534*
+1y y("
+
+1027523*
+1y	 y(
+
+1027577*
+1z ~(
+
+1023255*
+1z z(.
+
+1029458*
+1z z(.
+
+1022655*
+1z z(
+
+1023223*
+1z z(
+
+1022655*
+1z z(
+
+1027123*
+1| |(0
+
+1027123*
+1|1 |(8
+
+1027355*
+1|1 |(8
+
+1025958*
+1~( ~(4
+
+1026123*
+1 (#
+
+1026123*
+1$ (-
+
+1026355*
+1$ (-
+
+1027123*
+1ƒ ƒ(2
+
+1027123*
+1ƒ3 ƒ(;
+
+10210655*
+1ƒ3 ƒ(;
+
+1027577*
+1‡	 ‡(
+
+1027855*
+1‡	 ‡(
+
+1028058*
+1‡ ‡(
+
+1022655*
+1‡	 ‡(
+
+1023223*
+1‡	 ‡(
+
+1022655*
+1‡	 ‡(

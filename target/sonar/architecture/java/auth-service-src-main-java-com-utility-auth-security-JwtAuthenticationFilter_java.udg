@@ -1,0 +1,366 @@
+
+1.0Ananya1174_utility-backendJavaFrontend"1767671989270*java2.Bë
+V
+Qauth-service/src/main/java/com/utility/auth/security/JwtAuthenticationFilter.java2
+	
+type3
+	
+MAIN4
+
+
+module-key5
+
+auth-service6
+
+package8
++
+&auth-service:com.utility.auth.security9
+7
+1com.utility.auth.security.JwtAuthenticationFilter11
+
+class12
+
+access13
+
+public14
+
+
+full-range15
+
+(17:1)-(53:2)16
+
+simple-name17
+
+JwtAuthenticationFilter18
+9
+3org.springframework.web.filter.OncePerRequestFilter20
+
+unknown21
+
+extends22
+$
+lombok.RequiredArgsConstructor24
+
+annotated by25
+
+
+uses26
+?
+9com.utility.auth.security.JwtAuthenticationFilter.jwtUtil28
+
+field29
+
+private30
+
+(20:5)-(20:35)31
+
+jwtUtil32
+'
+!com.utility.auth.security.JwtUtil34
+
+is type35
+¼
+µcom.utility.auth.security.JwtAuthenticationFilter#doFilterInternal(Ljakarta/servlet/http/HttpServletRequest;Ljakarta/servlet/http/HttpServletResponse;Ljakarta/servlet/FilterChain;)V37
+
+method38
+
+	protected39
+
+(22:5)-(52:6)40
+
+doFilterInternal41
+-
+'jakarta.servlet.http.HttpServletRequest43
+
+	has param44
+.
+(jakarta.servlet.http.HttpServletResponse46
+!
+jakarta.servlet.FilterChain48
+&
+ jakarta.servlet.ServletException50
+
+
+references51
+]
+Wjakarta.servlet.http.HttpServletRequest#getHeader(Ljava/lang/String;)Ljava/lang/String;53
+
+calls54
+I
+Ccom.utility.auth.security.JwtUtil#isTokenValid(Ljava/lang/String;)Z56
+[
+Ucom.utility.auth.security.JwtUtil#extractUserId(Ljava/lang/String;)Ljava/lang/String;58
+Y
+Scom.utility.auth.security.JwtUtil#extractRole(Ljava/lang/String;)Ljava/lang/String;60
+U
+Oorg.springframework.security.authentication.UsernamePasswordAuthenticationToken62
+H
+Borg.springframework.security.core.authority.SimpleGrantedAuthority64
+?
+9org.springframework.security.core.context.SecurityContext66
+‡
+€org.springframework.security.core.context.SecurityContext#setAuthentication(Lorg/springframework/security/core/Authentication;)V68
+
+returns69
+E
+?org.springframework.security.core.context.SecurityContextHolder71
+Ž
+‡org.springframework.security.core.context.SecurityContextHolder#getContext()Lorg/springframework/security/core/context/SecurityContext;73
+n
+hjakarta.servlet.FilterChain#doFilter(Ljakarta/servlet/ServletRequest;Ljakarta/servlet/ServletResponse;)V75J%
+#
+1
+12
+
+3
+4
+
+5
+6 Z
+
+7
+7982
+
+
+5
+68jÔ
+
+42
+424321
+
+55
+555621
+
+33
+333421
+N
+36H
+363738 *
+1 ($210:7B$
+
+
+13
+39
+
+
+15
+40
+
+
+17
+41
+
+23
+232421
+
+47
+474821
+
+19
+192021
+
+63
+636421
+
+72
+727321
+
+49
+495021
+
+57
+575821
+N
+27H
+272829 *
+1 ("210:7B$
+
+
+13
+30
+
+
+15
+31
+
+
+17
+32
+
+59
+596021
+
+65
+656621
+
+67
+676821
+
+45
+454621
+
+61
+616221
+J
+10D
+101112 *
+1 (%:7B$
+
+
+13
+14
+
+
+15
+16
+
+
+17
+18
+
+70
+707121
+
+74
+747521
+
+52
+525321rÚ	
+
+101922*
+1. (B
+
+102325*
+1 (
+
+102326*
+1 (
+
+101926*
+1. (B
+
+273335*
+1 (
+
+273326*
+1 (
+
+273326*
+1 ("
+
+364244*
+1 (
+
+364544*
+1 ( 
+
+364744*
+1 (
+
+364235*
+1  ('
+
+364226*
+1 (
+
+364535*
+1! ()
+
+364526*
+1 ( 
+
+364735*
+1 ($
+
+364726*
+1 (
+
+364926*
+1 ($
+
+364251*
+1 (.
+
+365254*
+1% (.
+
+363351*
+1# #(%
+
+365554*
+1# #(%
+
+362751*
+1# #(
+
+363326*
+1# #(
+
+362751*
+1# #(
+
+363351*
+1%! %(6
+
+365754*
+1%) %(6
+
+362751*
+1%! %((
+
+363326*
+1%! %((
+
+362751*
+1%! %((
+
+363351*
+1& &(2
+
+365954*
+1&' &(2
+
+362751*
+1& &(&
+
+363326*
+1& &(&
+
+362751*
+1& &(&
+
+366135*
+1(5 ((C
+
+366126*
+1( ((4
+
+366154*
+1) )(@
+
+366354*
+1,- ,(C
+
+366551*
+1/ /(E
+
+366754*
+1/4 /(E
+
+366569*
+1/ /(1
+
+367051*
+1/ /(1
+
+367254*
+1/' /(1
+
+367026*
+1/ /(&
+
+364751*
+13	 3(
+
+367454*
+13 3(

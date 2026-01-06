@@ -1,0 +1,30 @@
+
+bcom.utility.notification.config.RabbitMQConfig#accountQueue()Lorg/springframework/amqp/core/Queue;‹
+€/Users/ananyaarisenapalli/utility-backend/notification-service/src/main/java/com/utility/notification/config/RabbitMQConfig.javaU U("1*Ó
+1V	 V(f
+d
+V V(+
+%0java.lang.String"__id*:
+
+__unknown_file (
+account.notification.queueµ
+²
+V	 V(,0
+%1*org.springframework.amqp.core.QueueBuilder"rorg.springframework.amqp.core.QueueBuilder#durable(Ljava/lang/String;)Lorg/springframework/amqp/core/QueueBuilder;*J
+
+__unknown_file (.",
+*org.springframework.amqp.core.QueueBuilder*4
+
+__unknown_file (
+
+%0java.lang.Stringêç
+V	 V(4)
+%2#org.springframework.amqp.core.Queue"Worg.springframework.amqp.core.QueueBuilder#build()Lorg/springframework/amqp/core/Queue;*N
+
+__unknown_file (2
+0
+%1*org.springframework.amqp.core.QueueBuilder2build()"7
+V V(5+
+)
+%2#org.springframework.amqp.core.QueueB20
+.com.utility.notification.config.RabbitMQConfigH

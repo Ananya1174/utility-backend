@@ -1,0 +1,143 @@
+
+1.0Ananya1174_utility-backendJavaFrontend"1767671988679*java2.BÍ
+P
+Kpayment-service/src/main/java/com/utility/payment/feign/ConsumerClient.java2
+	
+type3
+	
+MAIN4
+
+
+module-key5
+
+payment-service6
+
+package8
+.
+)payment-service:com.utility.payment.feign9
+.
+(com.utility.payment.feign.ConsumerClient11
+
+	interface12
+
+access13
+
+public14
+
+
+full-range15
+
+(9:1)-(17:2)16
+
+simple-name17
+
+ConsumerClient18
+5
+/org.springframework.cloud.openfeign.FeignClient20
+
+unknown21
+
+annotated by22
+
+
+uses23
+|
+vcom.utility.payment.feign.ConsumerClient#getConsumerById(Ljava/lang/String;)Lcom/utility/payment/dto/ConsumerResponse;25
+
+method26
+
+(15:3)-(16:86)27
+
+getConsumerById28
+.
+(com.utility.payment.dto.ConsumerResponse30
+
+returns31
+8
+2org.springframework.web.bind.annotation.GetMapping33
+:
+4org.springframework.web.bind.annotation.PathVariable35J%
+#
+1
+12
+
+3
+4
+
+5
+6 Z
+
+7
+7982
+
+
+5
+68jì
+N
+24H
+242526 *
+1 (&210:7B$
+
+
+13
+14
+
+
+15
+27
+
+
+17
+28
+
+29
+293021
+
+34
+343521
+
+32
+323321
+J
+10D
+101112 *
+1 ( :7B$
+
+
+13
+14
+
+
+15
+16
+
+
+17
+18
+
+19
+192021rØ
+
+101922*
+1	 (
+
+101923*
+1	 	(
+
+242931*
+1 (
+
+243222*
+1 (
+
+243223*
+1 (
+
+242923*
+1 (
+
+243422*
+1' (B
+
+243423*
+1( (4
