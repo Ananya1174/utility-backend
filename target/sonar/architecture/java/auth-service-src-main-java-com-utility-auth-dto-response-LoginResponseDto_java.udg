@@ -1,190 +1,0 @@
-
-1.0Ananya1174_utility-backendJavaFrontend"1767671989630*java2.B­
-S
-Nauth-service/src/main/java/com/utility/auth/dto/response/LoginResponseDto.java2
-	
-type3
-	
-MAIN4
-
-
-module-key5
-
-auth-service6
-
-package8
-/
-*auth-service:com.utility.auth.dto.response9
-4
-.com.utility.auth.dto.response.LoginResponseDto11
-
-class12
-
-access13
-
-public14
-
-
-full-range15
-
-(6:1)-(14:2)16
-
-simple-name17
-
-LoginResponseDto18
-
-lombok.Data20
-
-unknown21
-
-annotated by22
-
-
-uses23
-
-lombok.AllArgsConstructor25
-@
-:com.utility.auth.dto.response.LoginResponseDto.accessToken27
-
-field28
-
-private29
-
-(10:5)-(10:32)30
-
-accessToken31
->
-8com.utility.auth.dto.response.LoginResponseDto.tokenType33
-
-(11:5)-(11:30)34
-
-	tokenType35
-9
-3com.utility.auth.dto.response.LoginResponseDto.role37
-
-(12:5)-(12:25)38
-
-
-role39
-K
-Ecom.utility.auth.dto.response.LoginResponseDto.passwordChangeRequired41
-
-(13:5)-(13:44)42
-
-passwordChangeRequired43J%
-#
-1
-12
-
-3
-4
-
-5
-6 Z
-
-7
-7982
-
-
-5
-68j´
-N
-36H
-363728 *
-1 (210:7B$
-
-
-13
-29
-
-
-15
-38
-
-
-17
-39
-N
-26H
-262728 *
-1
- 
-(210:7B$
-
-
-13
-29
-
-
-15
-30
-
-
-17
-31
-N
-40H
-404128 *
-1 (+210:7B$
-
-
-13
-29
-
-
-15
-42
-
-
-17
-43
-
-19
-192021
-J
-10D
-101112 *
-1 (:7B$
-
-
-13
-14
-
-
-15
-16
-
-
-17
-18
-N
-32H
-323328 *
-1 (210:7B$
-
-
-13
-29
-
-
-15
-34
-
-
-17
-35
-
-24
-242521rl
-
-101922*
-1 (
-
-101923*
-1 (
-
-102422*
-1 (
-
-102423*
-1 (

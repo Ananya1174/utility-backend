@@ -1,396 +1,0 @@
-
-1.0Ananya1174_utility-backendJavaFrontend"1767671991758*java2.Bê
-R
-Mmeter-reading-service/src/main/java/com/utility/meter/model/MeterReading.java2
-	
-type3
-	
-MAIN4
-
-
-module-key5
-
-meter-reading-service6
-
-package8
-2
--meter-reading-service:com.utility.meter.model9
-*
-$com.utility.meter.model.MeterReading11
-
-class12
-
-access13
-
-public14
-
-
-full-range15
-
-(10:1)-(31:2)16
-
-simple-name17
-
-MeterReading18
-
-lombok.Data20
-
-unknown21
-
-annotated by22
-
-
-uses23
-<
-6org.springframework.data.mongodb.core.mapping.Document25
--
-'com.utility.meter.model.MeterReading.id27
-
-field28
-
-private29
-
-(14:5)-(15:23)30
-
-id31
-,
-&org.springframework.data.annotation.Id33
-5
-/com.utility.meter.model.MeterReading.consumerId35
-
-(17:5)-(17:31)36
-
-
-consumerId37
-7
-1com.utility.meter.model.MeterReading.connectionId39
-
-(18:5)-(18:33)40
-
-connectionId41
-6
-0com.utility.meter.model.MeterReading.utilityType43
-
-(19:5)-(19:37)44
-
-utilityType45
-)
-#com.utility.meter.model.UtilityType47
-
-is type48
-6
-0com.utility.meter.model.MeterReading.meterNumber50
-
-(20:5)-(20:32)51
-
-meterNumber52
-:
-4com.utility.meter.model.MeterReading.previousReading54
-
-(22:5)-(22:34)55
-
-previousReading56
-9
-3com.utility.meter.model.MeterReading.currentReading58
-
-(23:5)-(23:33)59
-
-currentReading60
-;
-5com.utility.meter.model.MeterReading.consumptionUnits62
-
-(24:5)-(24:35)63
-
-consumptionUnits64
-7
-1com.utility.meter.model.MeterReading.readingMonth66
-
-(26:5)-(26:30)67
-
-readingMonth68
-6
-0com.utility.meter.model.MeterReading.readingYear70
-
-(27:5)-(27:29)71
-
-readingYear72
-6
-0com.utility.meter.model.MeterReading.readingDate74
-
-(29:5)-(29:35)75
-
-readingDate76
-4
-.com.utility.meter.model.MeterReading.createdAt78
-
-(30:5)-(30:37)79
-
-	createdAt80J%
-#
-1
-12
-
-3
-4
-
-5
-6 Z
-
-7
-7982
-
-
-5
-68j‹
-N
-77H
-777828 *
-1 ($210:7B$
-
-
-13
-29
-
-
-15
-79
-
-
-17
-80
-N
-49H
-495028 *
-1 (210:7B$
-
-
-13
-29
-
-
-15
-51
-
-
-17
-52
-N
-65H
-656628 *
-1 (210:7B$
-
-
-13
-29
-
-
-15
-67
-
-
-17
-68
-N
-42H
-424328 *
-1 ($210:7B$
-
-
-13
-29
-
-
-15
-44
-
-
-17
-45
-N
-69H
-697028 *
-1 (210:7B$
-
-
-13
-29
-
-
-15
-71
-
-
-17
-72
-
-24
-242521
-
-46
-464721
-N
-26H
-262728 *
-1 (210:7B$
-
-
-13
-29
-
-
-15
-30
-
-
-17
-31
-N
-38H
-383928 *
-1 ( 210:7B$
-
-
-13
-29
-
-
-15
-40
-
-
-17
-41
-N
-61H
-616228 *
-1 ("210:7B$
-
-
-13
-29
-
-
-15
-63
-
-
-17
-64
-
-19
-192021
-N
-34H
-343528 *
-1 (210:7B$
-
-
-13
-29
-
-
-15
-36
-
-
-17
-37
-N
-53H
-535428 *
-1 (!210:7B$
-
-
-13
-29
-
-
-15
-55
-
-
-17
-56
-N
-73H
-737428 *
-1 ("210:7B$
-
-
-13
-29
-
-
-15
-75
-
-
-17
-76
-
-32
-323321
-J
-10D
-101112 *
-1 (:7B$
-
-
-13
-14
-
-
-15
-16
-
-
-17
-18
-N
-57H
-575828 *
-1 ( 210:7B$
-
-
-13
-29
-
-
-15
-59
-
-
-17
-60rÛ
-
-101922*
-1
- 
-(
-
-101923*
-1
- 
-(
-
-102422*
-1 ()
-
-102423*
-1 (
-
-
-263222*
-1 (
-
-263223*
-1 (
-
-424648*
-1 (
-
-424623*
-1 (
-
-424623*
-1 ($

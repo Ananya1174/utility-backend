@@ -1,219 +1,0 @@
-
-1.0Ananya1174_utility-backendJavaFrontend"1767671988674*java2.B¹
-U
-Ppayment-service/src/main/java/com/utility/payment/dto/OfflinePaymentRequest.java2
-	
-type3
-	
-MAIN4
-
-
-module-key5
-
-payment-service6
-
-package8
-,
-'payment-service:com.utility.payment.dto9
-3
--com.utility.payment.dto.OfflinePaymentRequest11
-
-record12
-
-access13
-
-public14
-
-
-full-range15
-
-(5:1)-(9:5)16
-
-simple-name17
-
-OfflinePaymentRequest18
-:
-4com.utility.payment.dto.OfflinePaymentRequest.billId20
-
-field21
-
-	protected22
-
-(6:9)-(6:33)23
-
-billId24
-N
-Hcom.utility.payment.dto.OfflinePaymentRequest#billId()Ljava/lang/String;26
-
-method27
-
-
-references28
--
-'jakarta.validation.constraints.NotBlank30
-
-unknown31
-
-annotated by32
-
-
-uses33
->
-8com.utility.payment.dto.OfflinePaymentRequest.consumerId35
-
-(7:9)-(7:37)36
-
-
-consumerId37
-R
-Lcom.utility.payment.dto.OfflinePaymentRequest#consumerId()Ljava/lang/String;39
-;
-5com.utility.payment.dto.OfflinePaymentRequest.remarks41
-
-(8:9)-(8:23)42
-
-remarks43
-O
-Icom.utility.payment.dto.OfflinePaymentRequest#remarks()Ljava/lang/String;45J%
-#
-1
-12
-
-3
-4
-
-5
-6 Z
-
-7
-7982
-
-
-5
-68jœ
-J
-10D
-101112 *
-1 ($:7B$
-
-
-13
-14
-
-
-15
-16
-
-
-17
-18
-B
-25<
-252627 *
-1 ( 210:7B
-
-
-15
-23
-
-
-17
-24
-
-29
-293031
-N
-34H
-343521 *
-1 ($210:7B$
-
-
-13
-22
-
-
-15
-36
-
-
-17
-37
-B
-44<
-444527 *
-1 (210:7B
-
-
-15
-42
-
-
-17
-43
-B
-38<
-383927 *
-1 ($210:7B
-
-
-15
-36
-
-
-17
-37
-N
-19H
-192021 *
-1 ( 210:7B$
-
-
-13
-22
-
-
-15
-23
-
-
-17
-24
-N
-40H
-404121 *
-1 (210:7B$
-
-
-13
-22
-
-
-15
-42
-
-
-17
-43r½
-
-251928*
-1 ( 
-
-192932*
-1	 (
-
-192933*
-1
- (
-
-383428*
-1 ($
-
-342932*
-1	 (
-
-342933*
-1
- (
-
-444028*
-1 (

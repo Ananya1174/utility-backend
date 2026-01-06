@@ -1,1263 +1,0 @@
-
-1.0Ananya1174_utility-backendJavaFrontend"1767671989700*java2.Bˇ+
-I
-Dauth-service/src/main/java/com/utility/auth/service/AuthService.java2
-	
-type3
-	
-MAIN4
-
-
-module-key5
-
-auth-service6
-
-package8
-*
-%auth-service:com.utility.auth.service9
-*
-$com.utility.auth.service.AuthService11
-
-class12
-
-access13
-
-public14
-
-
-full-range15
-
-(30:1)-(203:2)16
-
-simple-name17
-
-AuthService18
-,
-&org.springframework.stereotype.Service20
-
-unknown21
-
-annotated by22
-
-
-uses23
-$
-lombok.RequiredArgsConstructor25
-9
-3com.utility.auth.service.AuthService.USER_NOT_FOUND27
-
-field28
-
-private29
-
-(34:5)-(34:67)30
-
-USER_NOT_FOUND31
-@
-:com.utility.auth.service.AuthService.authenticationManager33
-
-(36:5)-(36:63)34
-
-authenticationManager35
-G
-Aorg.springframework.security.authentication.AuthenticationManager37
-
-is type38
-2
-,com.utility.auth.service.AuthService.jwtUtil40
-
-(37:5)-(37:35)41
-
-jwtUtil42
-'
-!com.utility.auth.security.JwtUtil44
-9
-3com.utility.auth.service.AuthService.userRepository46
-
-(38:5)-(38:49)47
-
-userRepository48
-0
-*com.utility.auth.repository.UserRepository50
-:
-4com.utility.auth.service.AuthService.passwordEncoder52
-
-(39:5)-(39:51)53
-
-passwordEncoder54
-B
-<org.springframework.security.crypto.password.PasswordEncoder56
-G
-Acom.utility.auth.service.AuthService.passwordResetTokenRepository58
-
-(40:5)-(40:77)59
-"
-passwordResetTokenRepository60
->
-8com.utility.auth.repository.PasswordResetTokenRepository62
-@
-:com.utility.auth.service.AuthService.notificationPublisher64
-
-(41:5)-(41:63)65
-
-notificationPublisher66
-2
-,com.utility.auth.event.NotificationPublisher68
-s
-mcom.utility.auth.service.AuthService#registerUser(Lcom/utility/auth/model/User;)Lcom/utility/auth/model/User;70
-
-method71
-
-(43:5)-(59:6)72
-
-registerUser73
-!
-com.utility.auth.model.User75
-
-returns76
-
-	has param77
-
-
-references78
-V
-Pcom.utility.auth.repository.UserRepository#existsByUsername(Ljava/lang/String;)Z80
-
-calls81
-;
-5com.utility.auth.exception.UserAlreadyExistsException83
-S
-Mcom.utility.auth.repository.UserRepository#existsByEmail(Ljava/lang/String;)Z85
-u
-oorg.springframework.security.crypto.password.PasswordEncoder#encode(Ljava/lang/CharSequence;)Ljava/lang/String;87
-8
-2org.springframework.data.repository.CrudRepository89
-c
-]org.springframework.data.repository.CrudRepository#save(Ljava/lang/Object;)Ljava/lang/Object;91
-á
-Äcom.utility.auth.service.AuthService#login(Ljava/lang/String;Ljava/lang/String;)Lcom/utility/auth/dto/response/LoginResponseDto;93
-
-(61:5)-(81:6)94
-
-login95
-4
-.com.utility.auth.dto.response.LoginResponseDto97
-6
-0org.springframework.security.core.Authentication99
-º
-¥org.springframework.security.authentication.AuthenticationManager#authenticate(Lorg/springframework/security/core/Authentication;)Lorg/springframework/security/core/Authentication;101
-V
-Oorg.springframework.security.authentication.UsernamePasswordAuthenticationToken103
-h
-acom.utility.auth.repository.UserRepository#findByUsername(Ljava/lang/String;)Ljava/util/Optional;105
-J
-Corg.springframework.security.authentication.BadCredentialsException107
-Ä
-ycom.utility.auth.security.JwtUtil#generateToken(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;109
-O
-Hcom.utility.auth.service.AuthService#forgotPassword(Ljava/lang/String;)V111
-
-(83:5)-(110:6)112
-
-forgotPassword113
-e
-^com.utility.auth.repository.UserRepository#findByEmail(Ljava/lang/String;)Ljava/util/Optional;115
-0
-)com.utility.auth.model.PasswordResetToken117
-{
-tcom.utility.auth.repository.PasswordResetTokenRepository#findByEmailAndUsedFalse(Ljava/lang/String;)Ljava/util/List;119
-=
-6org.springframework.data.repository.ListCrudRepository121
-k
-dorg.springframework.data.repository.ListCrudRepository#saveAll(Ljava/lang/Iterable;)Ljava/util/List;123
-6
-/com.utility.common.dto.event.PasswordResetEvent125
-|
-ucom.utility.auth.event.NotificationPublisher#publishPasswordReset(Lcom/utility/common/dto/event/PasswordResetEvent;)V127
-`
-Ycom.utility.auth.service.AuthService#resetPassword(Ljava/lang/String;Ljava/lang/String;)V129
-
-(112:5)-(136:6)130
-
-resetPassword131
-s
-lcom.utility.auth.repository.PasswordResetTokenRepository#findByToken(Ljava/lang/String;)Ljava/util/Optional;133
-8
-1com.utility.auth.security.PasswordPolicyValidator135
-V
-Ocom.utility.auth.security.PasswordPolicyValidator#validate(Ljava/lang/String;)V137
-s
-lcom.utility.auth.service.AuthService#changePassword(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V139
-
-(138:5)-(163:6)140
-
-changePassword141
-j
-corg.springframework.data.repository.CrudRepository#findById(Ljava/lang/Object;)Ljava/util/Optional;143
-;
-4com.utility.auth.exception.ResourceNotFoundException145
-x
-qorg.springframework.security.crypto.password.PasswordEncoder#matches(Ljava/lang/CharSequence;Ljava/lang/String;)Z147
-=
-6org.springframework.web.server.ResponseStatusException149
-*
-#org.springframework.http.HttpStatus151
-6
-/org.springframework.http.HttpStatus.BAD_REQUEST153
-I
-Bcom.utility.auth.service.AuthService#getAllUsers()Ljava/util/List;155
-
-(165:5)-(177:6)156
-
-getAllUsers157
-4
--com.utility.auth.dto.response.UserResponseDto159
-W
-Porg.springframework.data.repository.ListCrudRepository#findAll()Ljava/util/List;161
-z
-scom.utility.auth.service.AuthService#getUserById(Ljava/lang/String;)Lcom/utility/auth/dto/response/UserResponseDto;163
-
-(179:5)-(191:6)164
-
-getUserById165
-K
-Dcom.utility.auth.service.AuthService#deleteUser(Ljava/lang/String;)V167
-
-(193:5)-(202:6)168
-
-
-deleteUser169J%
-#
-1
-12
-
-3
-4
-
-5
-6 Z
-
-7
-7982
-
-
-5
-68já
-
-118
-11811921
-N
-92H
-929371 *
-1= =("210:7B$
-
-
-13
-14
-
-
-15
-94
-
-
-17
-95
-N
-69H
-697071 *
-1+ +(210:7B$
-
-
-13
-14
-
-
-15
-72
-
-
-17
-73
-
-43
-434421
-
-24
-242521
-
-114
-11411521
-N
-39H
-394028 *
-1% %("210:7B$
-
-
-13
-29
-
-
-15
-41
-
-
-17
-42
-N
-63H
-636428 *
-1)) )(>210:7B$
-
-
-13
-29
-
-
-15
-65
-
-
-17
-66
-N
-45H
-454628 *
-1&" &(0210:7B$
-
-
-13
-29
-
-
-15
-47
-
-
-17
-48
-
-108
-10810921
-
-96
-969721
-
-90
-909121
-U
-166N
-16616771 *
-1¡ ¡(210:7B&
-
-
-13
-14
-
-15
-168
-
-17
-169
-U
-138N
-13813971 *
-1ä ä(210:7B&
-
-
-13
-14
-
-15
-140
-
-17
-141
-
-148
-14814921
-
-152
-15215321
-
-120
-12012121
-S
-128L
-12812971 *
-1p p(210:7B&
-
-
-13
-14
-
-15
-130
-
-17
-131
-
-74
-747521
-
-61
-616221
-
-104
-10410521
-
-102
-10210321
-
-142
-14214321
-
-98
-989921
-N
-57H
-575828 *
-1(0 ((L210:7B$
-
-
-13
-29
-
-
-15
-59
-
-
-17
-60
-
-126
-12612721
-
-136
-13613721
-
-67
-676821
-
-160
-16016121
-
-106
-10610721
-
-84
-848521
-
-88
-888921
-
-132
-13213321
-
-116
-11611721
-S
-110L
-11011171 *
-1S S(210:7B&
-
-
-13
-14
-
-15
-112
-
-17
-113
-
-19
-192021
-
-144
-14414521
-
-100
-10010121
-N
-26H
-262728 *
-1"! "(/210:7B$
-
-
-13
-29
-
-
-15
-30
-
-
-17
-31
-
-49
-495021
-U
-154N
-15415571 *
-1•" •(-210:7B&
-
-
-13
-14
-
-15
-156
-
-17
-157
-
-36
-363721
-N
-51H
-515228 *
-1'# '(2210:7B$
-
-
-13
-29
-
-
-15
-53
-
-
-17
-54
-
-158
-15815921
-
-82
-828321
-
-146
-14614721
-
-86
-868721
-J
-10D
-101112 *
-1   (:7B$
-
-
-13
-14
-
-
-15
-16
-
-
-17
-18
-
-79
-798021
-
-122
-12212321
-
-150
-15015121
-
-55
-555621
-N
-32H
-323328 *
-1$) $(>210:7B$
-
-
-13
-29
-
-
-15
-34
-
-
-17
-35
-
-124
-12412521
-
-134
-13413521
-U
-162N
-16216371 *
-1≥ ≥('210:7B&
-
-
-13
-14
-
-15
-164
-
-17
-165r˘0
-
-101922*
-1 (	
-
-101923*
-1 (	
-
-102422*
-1 (
-
-102423*
-1 (
-
-323638*
-1$ $((
-
-323623*
-1$ $((
-
-323623*
-1$) $(>
-
-394338*
-1% %(
-
-394323*
-1% %(
-
-394323*
-1% %("
-
-454938*
-1& &(!
-
-454923*
-1& &(!
-
-454923*
-1&" &(0
-
-515538*
-1' '("
-
-515523*
-1' '("
-
-515523*
-1'# '(2
-
-576138*
-1( ((/
-
-576123*
-1( ((/
-
-576123*
-1(0 ((L
-
-636738*
-1) )((
-
-636723*
-1) )((
-
-636723*
-1)) )(>
-
-697476*
-1+ +(
-
-697477*
-1+ +("
-
-697423*
-1+ +(
-
-697438*
-1+# +('
-
-697423*
-1+ +("
-
-694978*
-1- -(,
-
-697981*
-1- -(,
-
-694578*
-1- -(
-
-694923*
-1- -(
-
-694578*
-1- -(
-
-698281*
-1. .(1
-
-694978*
-11 1()
-
-698481*
-11 1()
-
-694578*
-11 1(
-
-694923*
-11 1(
-
-694578*
-11 1(
-
-698281*
-12 2(1
-
-695578*
-15 5(0
-
-698681*
-15* 5(0
-
-695178*
-15 5()
-
-695523*
-15 5()
-
-695178*
-15 5()
-
-697476*
-1: :(#
-
-698878*
-1: :(#
-
-699081*
-1: :(#
-
-694578*
-1: :(
-
-694923*
-1: :(
-
-694578*
-1: :(
-
-929676*
-1= =(
-
-929623*
-1= =(
-
-929876*
-1?	 ?(+
-
-923678*
-1?	 ?(+
-
-9210081*
-1? ?(+
-
-923278*
-1?	 ?(
-
-923623*
-1?	 ?(
-
-923278*
-1?	 ?(
-
-9210281*
-1@ @(8
-
-927438*
-1B B(
-
-927423*
-1B	 B(
-
-927476*
-1B C(
-
-924978*
-1B B(2
-
-9210481*
-1B$ B(2
-
-924578*
-1B B(#
-
-924923*
-1B B(#
-
-924578*
-1B B(#
-
-9210681*
-1C( C(?
-
-924378*
-1E E(-
-
-9210881*
-1E  E(-
-
-923978*
-1E E(
-
-924323*
-1E E(
-
-923978*
-1E E(
-
-1104978*
-1U	 U(#
-
-11011481*
-1U U(#
-
-1104578*
-1U	 U(
-
-1104923*
-1U	 U(
-
-1104578*
-1U	 U(
-
-1107438*
-1U5 U(9
-
-11011623*
-1W W($
-
-1106178*
-1X X(I
-
-11011881*
-1X2 X(I
-
-1105778*
-1X X(1
-
-1106123*
-1X X(1
-
-1105778*
-1X X(1
-
-11011638*
-1Z Z( 
-
-11012078*
-1[ [(1
-
-11012281*
-1[* [(1
-
-1105778*
-1[ [()
-
-1106123*
-1[ [()
-
-1105778*
-1[ [()
-
-11011638*
-1_  _(*
-
-11011623*
-1_ _(
-
-11011623*
-1_- _(?
-
-11011676*
-1f f(.
-
-1108878*
-1f f(.
-
-1109081*
-1f* f(.
-
-1105778*
-1f f()
-
-1106123*
-1f f()
-
-1105778*
-1f f()
-
-11012438*
-1h  h(%
-
-11012423*
-1h h(
-
-11012481*
-1h, h(>
-
-1106778*
-1l l(7
-
-11012681*
-1l# l(7
-
-1106378*
-1l l("
-
-1106723*
-1l l("
-
-1106378*
-1l l("
-
-12811638*
-1r r(&
-
-12811623*
-1r	 r(
-
-12811676*
-1s t(%
-
-1286178*
-1s s(9
-
-12813281*
-1s. s(9
-
-1285778*
-1s s(-
-
-1286123*
-1s s(-
-
-1285778*
-1s s(-
-
-12813478*
-1|	 |()
-
-12813681*
-1|! |()
-
-12813423*
-1|	 |( 
-
-1287438*
-1~ ~(
-
-1287423*
-1~	 ~(
-
-1284978*
-1~ ~(/
-
-12811481*
-1~$ ~(/
-
-1284578*
-1~ ~(#
-
-1284923*
-1~ ~(#
-
-1284578*
-1~ ~(#
-
-1285578*
-1Å Å(0
-
-1288681*
-1Å* Å(0
-
-1285178*
-1Å Å()
-
-1285523*
-1Å Å()
-
-1285178*
-1Å Å()
-
-1287476*
-1Ñ	 Ñ(
-
-1288878*
-1Ñ	 Ñ(
-
-1289081*
-1Ñ Ñ(
-
-1284578*
-1Ñ	 Ñ(
-
-1284923*
-1Ñ	 Ñ(
-
-1284578*
-1Ñ	 Ñ(
-
-12811676*
-1á	 á(*
-
-1288878*
-1á	 á(*
-
-1289081*
-1á& á(*
-
-1285778*
-1á	 á(%
-
-1286123*
-1á	 á(%
-
-1285778*
-1á	 á(%
-
-1387438*
-1å å(
-
-1387423*
-1å	 å(
-
-1387476*
-1å ç(
-
-1388878*
-1å å(,
-
-13814281*
-1å$ å(,
-
-1384578*
-1å å(#
-
-1384923*
-1å å(#
-
-1384578*
-1å å(#
-
-13814481*
-1ç( ç(A
-
-1382678*
-1çB ç(P
-
-1385578*
-1è è(%
-
-13814681*
-1è è(%
-
-1385178*
-1è è(
-
-1385523*
-1è è(
-
-1385178*
-1è è(
-
-13814881*
-1ê ê(.
-
-13815023*
-1ë ë(
-
-13815023*
-1ë  ë(+
-
-13815278*
-1ë  ë(+
-
-13813478*
-1ñ	 ñ()
-
-13813681*
-1ñ! ñ()
-
-13813423*
-1ñ	 ñ( 
-
-1385578*
-1ò ò($
-
-13814681*
-1ò ò($
-
-1385178*
-1ò ò(
-
-1385523*
-1ò ò(
-
-1385178*
-1ò ò(
-
-1385578*
-1û û(0
-
-1388681*
-1û* û(0
-
-1385178*
-1û û()
-
-1385523*
-1û û()
-
-1385178*
-1û û()
-
-1387476*
-1¢	 ¢(
-
-1388878*
-1¢	 ¢(
-
-1389081*
-1¢ ¢(
-
-1384578*
-1¢	 ¢(
-
-1384923*
-1¢	 ¢(
-
-1384578*
-1¢	 ¢(
-
-15415823*
-1• •( 
-
-15412078*
-1ß ß(&
-
-15416081*
-1ß ß(&
-
-1544578*
-1ß ß(
-
-1544923*
-1ß ß(
-
-1544578*
-1ß ß(
-
-1547438*
-1© ©(
-
-15415823*
-1© ©(-
-
-16215876*
-1≥ ≥(
-
-16215823*
-1≥ ≥(
-
-1627438*
-1µ µ(
-
-1627423*
-1µ	 µ(
-
-1627476*
-1µ ∂(
-
-1628878*
-1µ µ(,
-
-16214281*
-1µ$ µ(,
-
-1624578*
-1µ µ(#
-
-1624923*
-1µ µ(#
-
-1624578*
-1µ µ(#
-
-16214481*
-1∂( ∂(A
-
-1622678*
-1∂B ∂(P
-
-16215823*
-1∏ ∏(
-
-1667438*
-1√ √(
-
-1667423*
-1√	 √(
-
-1667476*
-1√ ƒ(
-
-1668878*
-1√ √(,
-
-16614281*
-1√$ √(,
-
-1664578*
-1√ √(#
-
-1664923*
-1√ √(#
-
-1664578*
-1√ √(#
-
-16614481*
-1ƒ( ƒ(A
-
-1662678*
-1ƒB ƒ(P
-
-1667476*
-1…	 …(
-
-1668878*
-1…	 …(
-
-1669081*
-1… …(
-
-1664578*
-1…	 …(
-
-1664923*
-1…	 …(
-
-1664578*
-1…	 …(

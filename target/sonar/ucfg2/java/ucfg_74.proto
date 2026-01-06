@@ -1,24 +1,0 @@
-
-Zcom.utility.consumer.config.FeignAuthConfig#requestInterceptor()Lfeign/RequestInterceptor;ƒ
-y/Users/ananyaarisenapalli/utility-backend/consumer-service/src/main/java/com/utility/consumer/config/FeignAuthConfig.java (0"1*Š
-1 (	Ÿ
-œ
- (	
-%0feign.RequestInterceptor"__declareFunction*]
-
-__unknown_file (A?
-=__sonar_lambda_16$com.utility.consumer.config.FeignAuthConfigª
-§
-
-__unknown_file (8
-
-%0feign.RequestInterceptor"
-FeignAuthConfig.this"__id*K
-
-__unknown_file (/-
-+com.utility.consumer.config.FeignAuthConfig",
- (
- 
-
-%0feign.RequestInterceptorB/-
-+com.utility.consumer.config.FeignAuthConfigH

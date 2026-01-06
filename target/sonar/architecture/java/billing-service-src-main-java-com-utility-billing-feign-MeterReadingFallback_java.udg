@@ -1,192 +1,0 @@
-
-1.0Ananya1174_utility-backendJavaFrontend"1767671991422*java2.Bü
-V
-Qbilling-service/src/main/java/com/utility/billing/feign/MeterReadingFallback.java2
-	
-type3
-	
-MAIN4
-
-
-module-key5
-
-billing-service6
-
-package8
-.
-)billing-service:com.utility.billing.feign9
-4
-.com.utility.billing.feign.MeterReadingFallback11
-
-class12
-
-access13
-
-public14
-
-
-full-range15
-
-(11:1)-(28:2)16
-
-simple-name17
-
-MeterReadingFallback18
-2
-,com.utility.billing.feign.MeterReadingClient20
-
-unknown21
-
-
-implements22
-.
-(org.springframework.stereotype.Component24
-
-annotated by25
-
-
-uses26
-‚
-|com.utility.billing.feign.MeterReadingFallback#getLatest(Ljava/lang/String;)Lcom/utility/billing/feign/MeterReadingResponse;28
-
-method29
-
-(14:5)-(21:6)30
-
-	getLatest31
-4
-.com.utility.billing.feign.MeterReadingResponse33
-
-returns34
-0
-*com.utility.billing.exception.ApiException36
-
-calls37
-)
-#org.springframework.http.HttpStatus39
-=
-7org.springframework.http.HttpStatus.SERVICE_UNAVAILABLE41
-
-
-references42
-h
-bcom.utility.billing.feign.MeterReadingFallback#getByConnection(Ljava/lang/String;)Ljava/util/List;44
-
-(23:5)-(27:6)45
-
-getByConnection46J%
-#
-1
-12
-
-3
-4
-
-5
-6 Z
-
-7
-7982
-
-
-5
-68jä
-N
-27H
-272829 *
-1! (*210:7B$
-
-
-13
-14
-
-
-15
-30
-
-
-17
-31
-
-38
-383921
-
-23
-232421
-J
-10D
-101112 *
-1 (":7B$
-
-
-13
-14
-
-
-15
-16
-
-
-17
-18
-
-35
-353621
-N
-43H
-434429 *
-1' (6210:7B$
-
-
-13
-14
-
-
-15
-45
-
-
-17
-46
-
-32
-323321
-
-40
-404121
-
-19
-192021r©
-
-101922*
-1. (@
-
-102325*
-1 (
-
-102326*
-1 (
-
-101926*
-1. (@
-
-273234*
-1 ( 
-
-273226*
-1 ( 
-
-273537*
-1 (
-
-273826*
-1 (
-
-273826*
-1 (/
-
-274042*
-1 (/
-
-433226*
-1 (%

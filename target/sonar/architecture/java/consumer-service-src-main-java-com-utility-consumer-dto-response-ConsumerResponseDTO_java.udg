@@ -1,233 +1,0 @@
-
-1.0Ananya1174_utility-backendJavaFrontend"1767671986958*java2.B”	
-^
-Yconsumer-service/src/main/java/com/utility/consumer/dto/response/ConsumerResponseDTO.java2
-	
-type3
-	
-MAIN4
-
-
-module-key5
-
-consumer-service6
-
-package8
-7
-2consumer-service:com.utility.consumer.dto.response9
-;
-5com.utility.consumer.dto.response.ConsumerResponseDTO11
-
-class12
-
-access13
-
-public14
-
-
-full-range15
-
-(6:1)-(15:2)16
-
-simple-name17
-
-ConsumerResponseDTO18
-
-lombok.Data20
-
-unknown21
-
-annotated by22
-
-
-uses23
-
-lombok.AllArgsConstructor25
->
-8com.utility.consumer.dto.response.ConsumerResponseDTO.id27
-
-field28
-
-private29
-
-(9:5)-(9:23)30
-
-id31
-D
->com.utility.consumer.dto.response.ConsumerResponseDTO.fullName33
-
-(10:5)-(10:29)34
-
-fullName35
-A
-;com.utility.consumer.dto.response.ConsumerResponseDTO.email37
-
-(11:5)-(11:26)38
-
-email39
-H
-Bcom.utility.consumer.dto.response.ConsumerResponseDTO.mobileNumber41
-
-(12:5)-(12:33)42
-
-mobileNumber43
-C
-=com.utility.consumer.dto.response.ConsumerResponseDTO.address45
-
-(13:5)-(13:28)46
-
-address47
-B
-<com.utility.consumer.dto.response.ConsumerResponseDTO.active49
-
-(14:5)-(14:28)50
-
-active51J%
-#
-1
-12
-
-3
-4
-
-5
-6 Z
-
-7
-7982
-
-
-5
-68jÔ
-J
-10D
-101112 *
-1 (!:7B$
-
-
-13
-14
-
-
-15
-16
-
-
-17
-18
-N
-40H
-404128 *
-1 ( 210:7B$
-
-
-13
-29
-
-
-15
-42
-
-
-17
-43
-N
-44H
-444528 *
-1 (210:7B$
-
-
-13
-29
-
-
-15
-46
-
-
-17
-47
-N
-36H
-363728 *
-1 (210:7B$
-
-
-13
-29
-
-
-15
-38
-
-
-17
-39
-N
-32H
-323328 *
-1
- 
-(210:7B$
-
-
-13
-29
-
-
-15
-34
-
-
-17
-35
-
-19
-192021
-N
-26H
-262728 *
-1	 	(210:7B$
-
-
-13
-29
-
-
-15
-30
-
-
-17
-31
-
-24
-242521
-N
-48H
-484928 *
-1 (210:7B$
-
-
-13
-29
-
-
-15
-50
-
-
-17
-51rl
-
-101922*
-1 (
-
-101923*
-1 (
-
-102422*
-1 (
-
-102423*
-1 (

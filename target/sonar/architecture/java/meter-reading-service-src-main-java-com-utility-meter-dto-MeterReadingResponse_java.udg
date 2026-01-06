@@ -1,327 +1,0 @@
-
-1.0Ananya1174_utility-backendJavaFrontend"1767671991799*java2.B±
-X
-Smeter-reading-service/src/main/java/com/utility/meter/dto/MeterReadingResponse.java2
-	
-type3
-	
-MAIN4
-
-
-module-key5
-
-meter-reading-service6
-
-package8
-0
-+meter-reading-service:com.utility.meter.dto9
-0
-*com.utility.meter.dto.MeterReadingResponse11
-
-class12
-
-access13
-
-public14
-
-
-full-range15
-
-(6:1)-(21:2)16
-
-simple-name17
-
-MeterReadingResponse18
-
-lombok.Data20
-
-unknown21
-
-annotated by22
-
-
-uses23
-3
--com.utility.meter.dto.MeterReadingResponse.id25
-
-field26
-
-private27
-
-(9:5)-(9:23)28
-
-id29
-;
-5com.utility.meter.dto.MeterReadingResponse.consumerId31
-
-(10:5)-(10:31)32
-
-
-consumerId33
-=
-7com.utility.meter.dto.MeterReadingResponse.connectionId35
-
-(11:5)-(11:33)36
-
-connectionId37
-<
-6com.utility.meter.dto.MeterReadingResponse.utilityType39
-
-(12:5)-(12:37)40
-
-utilityType41
-)
-#com.utility.meter.model.UtilityType43
-
-is type44
-<
-6com.utility.meter.dto.MeterReadingResponse.meterNumber46
-
-(13:5)-(13:32)47
-
-meterNumber48
-@
-:com.utility.meter.dto.MeterReadingResponse.previousReading50
-
-(15:5)-(15:34)51
-
-previousReading52
-?
-9com.utility.meter.dto.MeterReadingResponse.currentReading54
-
-(16:5)-(16:33)55
-
-currentReading56
-A
-;com.utility.meter.dto.MeterReadingResponse.consumptionUnits58
-
-(17:5)-(17:35)59
-
-consumptionUnits60
-=
-7com.utility.meter.dto.MeterReadingResponse.readingMonth62
-
-(19:5)-(19:30)63
-
-readingMonth64
-<
-6com.utility.meter.dto.MeterReadingResponse.readingYear66
-
-(20:5)-(20:29)67
-
-readingYear68J%
-#
-1
-12
-
-3
-4
-
-5
-6 Z
-
-7
-7982
-
-
-5
-68j”
-N
-38H
-383926 *
-1 ($210:7B$
-
-
-13
-27
-
-
-15
-40
-
-
-17
-41
-N
-49H
-495026 *
-1 (!210:7B$
-
-
-13
-27
-
-
-15
-51
-
-
-17
-52
-N
-57H
-575826 *
-1 ("210:7B$
-
-
-13
-27
-
-
-15
-59
-
-
-17
-60
-N
-61H
-616226 *
-1 (210:7B$
-
-
-13
-27
-
-
-15
-63
-
-
-17
-64
-N
-53H
-535426 *
-1 ( 210:7B$
-
-
-13
-27
-
-
-15
-55
-
-
-17
-56
-N
-30H
-303126 *
-1
- 
-(210:7B$
-
-
-13
-27
-
-
-15
-32
-
-
-17
-33
-N
-45H
-454626 *
-1 (210:7B$
-
-
-13
-27
-
-
-15
-47
-
-
-17
-48
-
-42
-424321
-N
-34H
-343526 *
-1 ( 210:7B$
-
-
-13
-27
-
-
-15
-36
-
-
-17
-37
-N
-24H
-242526 *
-1	 	(210:7B$
-
-
-13
-27
-
-
-15
-28
-
-
-17
-29
-
-19
-192021
-N
-65H
-656626 *
-1 (210:7B$
-
-
-13
-27
-
-
-15
-67
-
-
-17
-68
-J
-10D
-101112 *
-1 (":7B$
-
-
-13
-14
-
-
-15
-16
-
-
-17
-18r‡
-
-101922*
-1 (
-
-101923*
-1 (
-
-384244*
-1 (
-
-384223*
-1 (
-
-384223*
-1 ($

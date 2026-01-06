@@ -1,300 +1,0 @@
-
-1.0Ananya1174_utility-backendJavaFrontend"1767671991074*java2.Bâ
-
-R
-Mbilling-service/src/main/java/com/utility/billing/dto/TariffSlabResponse.java2
-	
-type3
-	
-MAIN4
-
-
-module-key5
-
-billing-service6
-
-package8
-,
-'billing-service:com.utility.billing.dto9
-0
-*com.utility.billing.dto.TariffSlabResponse11
-
-class12
-
-access13
-
-public14
-
-
-full-range15
-
-(7:1)-(27:2)16
-
-simple-name17
-
-TariffSlabResponse18
-
-lombok.Data20
-
-unknown21
-
-annotated by22
-
-
-uses23
-3
--com.utility.billing.dto.TariffSlabResponse.id25
-
-field26
-
-private27
-
-(10:5)-(10:23)28
-
-id29
-<
-6com.utility.billing.dto.TariffSlabResponse.utilityType31
-
-(11:5)-(11:37)32
-
-utilityType33
-+
-%com.utility.billing.model.UtilityType35
-
-is type36
-9
-3com.utility.billing.dto.TariffSlabResponse.planCode38
-
-(12:5)-(12:29)39
-
-planCode40
-9
-3com.utility.billing.dto.TariffSlabResponse.minUnits42
-
-(13:5)-(13:27)43
-
-minUnits44
-9
-3com.utility.billing.dto.TariffSlabResponse.maxUnits46
-
-(14:5)-(14:27)47
-
-maxUnits48
-5
-/com.utility.billing.dto.TariffSlabResponse.rate50
-
-(15:5)-(15:25)51
-
-
-rate52
-Š
-ƒcom.utility.billing.dto.TariffSlabResponse#from(Lcom/utility/billing/model/TariffSlab;)Lcom/utility/billing/dto/TariffSlabResponse;54
-
-method55
-
-(17:5)-(26:6)56
-
-
-from57
-
-returns58
-*
-$com.utility.billing.model.TariffSlab60
-
-	has param61
-
-calls62J%
-#
-1
-12
-
-3
-4
-
-5
-6 Z
-
-7
-7982
-
-
-5
-68j¸
-N
-30H
-303126 *
-1 ($210:7B$
-
-
-13
-27
-
-
-15
-32
-
-
-17
-33
-N
-37H
-373826 *
-1 (210:7B$
-
-
-13
-27
-
-
-15
-39
-
-
-17
-40
-N
-49H
-495026 *
-1 (210:7B$
-
-
-13
-27
-
-
-15
-51
-
-
-17
-52
-
-59
-596021
-N
-45H
-454626 *
-1 (210:7B$
-
-
-13
-27
-
-
-15
-47
-
-
-17
-48
-
-34
-343521
-N
-53H
-535455 *
-1& (*210:7B$
-
-
-13
-14
-
-
-15
-56
-
-
-17
-57
-
-19
-192021
-J
-10D
-101112 *
-1 ( :7B$
-
-
-13
-14
-
-
-15
-16
-
-
-17
-18
-N
-24H
-242526 *
-1
- 
-(210:7B$
-
-
-13
-27
-
-
-15
-28
-
-
-17
-29
-N
-41H
-414226 *
-1 (210:7B$
-
-
-13
-27
-
-
-15
-43
-
-
-17
-44rß
-
-101922*
-1 (
-
-101923*
-1 (
-
-303436*
-1 (
-
-303423*
-1 (
-
-303423*
-1 ($
-
-531058*
-1 (%
-
-535961*
-1+ (5
-
-531023*
-1 (%
-
-535936*
-16 (:
-
-535923*
-1+ (5
-
-531036*
-1 (
-
-531023*
-1	 (
-
-531062*
-1$ (6

@@ -1,402 +1,0 @@
-
-1.0Ananya1174_utility-backendJavaFrontend"1767671991258*java2.BÊ
-L
-Gbilling-service/src/main/java/com/utility/billing/model/TariffSlab.java2
-	
-type3
-	
-MAIN4
-
-
-module-key5
-
-billing-service6
-
-package8
-.
-)billing-service:com.utility.billing.model9
-*
-$com.utility.billing.model.TariffSlab11
-
-class12
-
-access13
-
-public14
-
-
-full-range15
-
-(11:1)-(35:2)16
-
-simple-name17
-
-
-TariffSlab18
-
-lombok.Data20
-
-unknown21
-
-annotated by22
-
-
-uses23
-
-lombok.AllArgsConstructor25
-
-lombok.NoArgsConstructor27
-<
-6org.springframework.data.mongodb.core.mapping.Document29
--
-'com.utility.billing.model.TariffSlab.id31
-
-field32
-
-private33
-
-(17:5)-(18:23)34
-
-id35
-,
-&org.springframework.data.annotation.Id37
-6
-0com.utility.billing.model.TariffSlab.utilityType39
-
-(20:5)-(21:37)40
-
-utilityType41
-+
-%com.utility.billing.model.UtilityType43
-
-is type44
-9
-3org.springframework.data.mongodb.core.mapping.Field46
-=
-7org.springframework.data.mongodb.core.mapping.FieldType48
-D
->org.springframework.data.mongodb.core.mapping.FieldType.STRING50
-
-
-references51
-3
--com.utility.billing.model.TariffSlab.planCode53
-
-(22:5)-(22:29)54
-
-planCode55
-3
--com.utility.billing.model.TariffSlab.minUnits57
-
-(24:5)-(24:27)58
-
-minUnits59
-3
--com.utility.billing.model.TariffSlab.maxUnits61
-
-(25:5)-(25:27)62
-
-maxUnits63
-/
-)com.utility.billing.model.TariffSlab.rate65
-
-(26:5)-(26:25)66
-
-
-rate67
-p
-jcom.utility.billing.model.TariffSlab#<init>(Lcom/utility/billing/model/UtilityType;Ljava/lang/String;IID)V69
-
-method70
-
-(27:5)-(34:2)71
-
-	has param72
-
-calls73J%
-#
-1
-12
-
-3
-4
-
-5
-6 Z
-
-7
-7982
-
-
-5
-68j°
-
-49
-495021
-J
-10D
-101112 *
-1 (:7B$
-
-
-13
-14
-
-
-15
-16
-
-
-17
-18
-N
-68H
-686970 *
-1 (210:7B$
-
-
-13
-14
-
-
-15
-71
-
-
-17
-18
-N
-60H
-606132 *
-1 (210:7B$
-
-
-13
-33
-
-
-15
-62
-
-
-17
-63
-N
-30H
-303132 *
-1 (210:7B$
-
-
-13
-33
-
-
-15
-34
-
-
-17
-35
-N
-52H
-525332 *
-1 (210:7B$
-
-
-13
-33
-
-
-15
-54
-
-
-17
-55
-
-28
-282921
-
-45
-454621
-
-42
-424321
-
-19
-192021
-N
-64H
-646532 *
-1 (210:7B$
-
-
-13
-33
-
-
-15
-66
-
-
-17
-67
-N
-38H
-383932 *
-1 ($210:7B$
-
-
-13
-33
-
-
-15
-40
-
-
-17
-41
-N
-56H
-565732 *
-1 (210:7B$
-
-
-13
-33
-
-
-15
-58
-
-
-17
-59
-
-47
-474821
-
-24
-242521
-
-36
-363721
-
-26
-262721r‚
-
-101922*
-1 (
-
-101923*
-1 (
-
-102422*
-1 (
-
-102423*
-1 (
-
-102622*
-1 (
-
-102623*
-1 (
-
-102822*
-1 ('
-
-102823*
-1 (
-
-
-303622*
-1 (
-
-303623*
-1 (
-
-384244*
-1 (
-
-384522*
-1 (*
-
-384523*
-1 (
-
-384723*
-1 ("
-
-384723*
-1# ()
-
-384951*
-1# ()
-
-384223*
-1 (
-
-384223*
-1 ($
-
-684272*
-1 ("
-
-681073*
-1 (
-
-684244*
-1# (.
-
-684223*
-1 ("
-
-681023*
-1 (
-
-681051*
-1 (
-
-684223*
-1 (
-
-683851*
-1 (
-
-681023*
-1 (
-
-681051*
-1 (
-
-685251*
-1 (
-
-681023*
-1 (
-
-681051*
-1 (
-
-685651*
-1 (
-
-681023*
-1   (
-
-681051*
-1   (
-
-686051*
-1   (
-
-681023*
-1! !(
-
-681051*
-1! !(
-
-686451*
-1! !(

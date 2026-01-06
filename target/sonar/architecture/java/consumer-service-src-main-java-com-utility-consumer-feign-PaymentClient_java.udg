@@ -1,139 +1,0 @@
-
-1.0Ananya1174_utility-backendJavaFrontend"1767671986693*java2.B¹
-Q
-Lconsumer-service/src/main/java/com/utility/consumer/feign/PaymentClient.java2
-	
-type3
-	
-MAIN4
-
-
-module-key5
-
-consumer-service6
-
-package8
-0
-+consumer-service:com.utility.consumer.feign9
-.
-(com.utility.consumer.feign.PaymentClient11
-
-	interface12
-
-access13
-
-public14
-
-
-full-range15
-
-(11:1)-(16:2)16
-
-simple-name17
-
-PaymentClient18
-5
-/org.springframework.cloud.openfeign.FeignClient20
-
-unknown21
-
-annotated by22
-
-
-uses23
-h
-bcom.utility.consumer.feign.PaymentClient#getPaymentsByConsumer(Ljava/lang/String;)Ljava/util/List;25
-
-method26
-
-(14:5)-(15:85)27
-
-getPaymentsByConsumer28
-8
-2org.springframework.web.bind.annotation.GetMapping30
-3
--com.utility.consumer.feign.PaymentResponseDto32
-:
-4org.springframework.web.bind.annotation.PathVariable34J%
-#
-1
-12
-
-3
-4
-
-5
-6 Z
-
-7
-7982
-
-
-5
-68jì
-J
-10D
-101112 *
-1 (:7B$
-
-
-13
-14
-
-
-15
-16
-
-
-17
-18
-
-33
-333421
-N
-24H
-242526 *
-1 (3210:7B$
-
-
-13
-14
-
-
-15
-27
-
-
-17
-28
-
-29
-293021
-
-31
-313221
-
-19
-192021r½
-
-101922*
-1 ('
-
-101923*
-1 (
-
-242922*
-1 (3
-
-242923*
-1 (
-
-243123*
-1
- (
-
-243322*
-14 (A
-
-243323*
-15 (A

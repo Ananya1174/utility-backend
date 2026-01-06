@@ -1,11 +1,0 @@
-
-ëcom.utility.billing.service.BillingService#meterFallback(Ljava/lang/String;Ljava/lang/Throwable;)Lcom/utility/billing/feign/MeterReadingResponse;Å
-w/Users/ananyaarisenapalli/utility-backend/billing-service/src/main/java/com/utility/billing/service/BillingService.java2  2(-"1*!
-16 6("
-; ;(
-"":,
-3 3(  
-connectionIdjava.lang.String:%
-4 4(
-exjava.lang.ThrowableB.,
-*com.utility.billing.service.BillingServiceH

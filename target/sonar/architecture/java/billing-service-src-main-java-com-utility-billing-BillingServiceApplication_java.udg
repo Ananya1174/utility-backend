@@ -1,183 +1,0 @@
-
-1.0Ananya1174_utility-backendJavaFrontend"1767671991438*java2.Bú
-U
-Pbilling-service/src/main/java/com/utility/billing/BillingServiceApplication.java2
-	
-type3
-	
-MAIN4
-
-
-module-key5
-
-billing-service6
-
-package8
-(
-#billing-service:com.utility.billing9
-3
--com.utility.billing.BillingServiceApplication11
-
-class12
-
-access13
-
-public14
-
-
-full-range15
-
-(9:1)-(18:2)16
-
-simple-name17
-
-BillingServiceApplication18
-@
-:org.springframework.scheduling.annotation.EnableScheduling20
-
-unknown21
-
-annotated by22
-
-
-uses23
-B
-<org.springframework.boot.autoconfigure.SpringBootApplication25
-<
-6org.springframework.cloud.openfeign.EnableFeignClients27
-F
-@org.springframework.cloud.client.discovery.EnableDiscoveryClient29
-N
-Hcom.utility.billing.BillingServiceApplication#main([Ljava/lang/String;)V31
-
-method32
-
-(15:5)-(17:6)33
-
-
-main34
-@
-:org.springframework.context.ConfigurableApplicationContext36
-
-returns37
-0
-*org.springframework.boot.SpringApplication39
-
-
-references40
-—
-org.springframework.boot.SpringApplication#run(Ljava/lang/Class;[Ljava/lang/String;)Lorg/springframework/context/ConfigurableApplicationContext;42
-
-calls43J%
-#
-1
-12
-
-3
-4
-
-5
-6 Z
-
-7
-7982
-
-
-5
-68j¨
-N
-30H
-303132 *
-1 (210:7B$
-
-
-13
-14
-
-
-15
-33
-
-
-17
-34
-
-41
-414221
-
-26
-262721
-
-38
-383921
-
-24
-242521
-J
-10D
-101112 *
-1 (':7B$
-
-
-13
-14
-
-
-15
-16
-
-
-17
-18
-
-35
-353621
-
-19
-192021
-
-28
-282921rß
-
-101922*
-1	 	(
-
-101923*
-1	 	(
-
-102422*
-1
- 
-(
-
-102423*
-1
- 
-(
-
-102622*
-1 (
-
-102623*
-1 (
-
-102822*
-1 (
-
-102823*
-1 (
-
-303537*
-1	 (
-
-303840*
-1	 (
-
-304143*
-1 (
-
-303823*
-1	 (
-
-301023*
-1 (8

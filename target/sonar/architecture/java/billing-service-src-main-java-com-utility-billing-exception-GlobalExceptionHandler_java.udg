@@ -1,523 +1,0 @@
-
-1.0Ananya1174_utility-backendJavaFrontend"1767671991398*java2.Bâ
-\
-Wbilling-service/src/main/java/com/utility/billing/exception/GlobalExceptionHandler.java2
-	
-type3
-	
-MAIN4
-
-
-module-key5
-
-billing-service6
-
-package8
-2
--billing-service:com.utility.billing.exception9
-:
-4com.utility.billing.exception.GlobalExceptionHandler11
-
-class12
-
-access13
-
-public14
-
-
-full-range15
-
-(13:1)-(76:2)16
-
-simple-name17
-
-GlobalExceptionHandler18
-B
-<org.springframework.web.bind.annotation.RestControllerAdvice20
-
-unknown21
-
-annotated by22
-
-
-uses23
-¥
-žcom.utility.billing.exception.GlobalExceptionHandler#handleApiException(Lcom/utility/billing/exception/ApiException;)Lorg/springframework/http/ResponseEntity;25
-
-method26
-
-(16:5)-(24:6)27
-
-handleApiException28
--
-'org.springframework.http.ResponseEntity30
-
-returns31
-0
-*com.utility.billing.exception.ApiException33
-
-	has param34
->
-8org.springframework.web.bind.annotation.ExceptionHandler36
-
-is type37
-9
-3org.springframework.http.ResponseEntity$BodyBuilder39
-
-
-references40
-{
-uorg.springframework.http.ResponseEntity$BodyBuilder#body(Ljava/lang/Object;)Lorg/springframework/http/ResponseEntity;42
-
-calls43
-•
-Žorg.springframework.http.ResponseEntity#status(Lorg/springframework/http/HttpStatusCode;)Lorg/springframework/http/ResponseEntity$BodyBuilder;45
-)
-#org.springframework.http.HttpStatus47
-a
-[com.utility.billing.exception.ApiException#getStatus()Lorg/springframework/http/HttpStatus;49
-‘
-Šcom.utility.billing.exception.GlobalExceptionHandler#buildResponse(Ljava/lang/String;Lorg/springframework/http/HttpStatus;)Ljava/util/Map;51
-¾
-·com.utility.billing.exception.GlobalExceptionHandler#handleValidationException(Lorg/springframework/web/bind/MethodArgumentNotValidException;)Lorg/springframework/http/ResponseEntity;53
-
-(26:5)-(50:6)54
-
-handleValidationException55
-B
-<org.springframework.web.bind.MethodArgumentNotValidException57
-+
-%org.springframework.validation.Errors59
-L
-Forg.springframework.validation.Errors#getFieldErrors()Ljava/util/List;61
-2
-,org.springframework.validation.BindingResult63
-2
-,org.springframework.validation.BindException65
-s
-morg.springframework.validation.BindException#getBindingResult()Lorg/springframework/validation/BindingResult;67
-/
-)org.springframework.validation.FieldError69
-L
-Forg.springframework.validation.FieldError#getField()Ljava/lang/String;71
-H
-Borg.springframework.context.support.DefaultMessageSourceResolvable73
-n
-horg.springframework.context.support.DefaultMessageSourceResolvable#getDefaultMessage()Ljava/lang/String;75
-2
-,org.springframework.http.HttpStatus#value()I77
-5
-/org.springframework.http.HttpStatus.BAD_REQUEST79
-£
-œcom.utility.billing.exception.GlobalExceptionHandler#handleIllegalStateException(Ljava/lang/IllegalStateException;)Lorg/springframework/http/ResponseEntity;81
-
-(52:5)-(63:6)82
-!
-handleIllegalStateException83
-?
-9org.springframework.http.HttpStatus.INTERNAL_SERVER_ERROR85
-
-private86
-
-(65:5)-(75:6)87
-
-buildResponse88J%
-#
-1
-12
-
-3
-4
-
-5
-6 Z
-
-7
-7982
-
-
-5
-68jÄ
-J
-10D
-101112 *
-1 ($:7B$
-
-
-13
-14
-
-
-15
-16
-
-
-17
-18
-
-66
-666721
-
-58
-585921
-
-62
-626321
-
-38
-383921
-
-74
-747521
-
-72
-727321
-N
-24H
-242526 *
-10 (B210:7B$
-
-
-13
-14
-
-
-15
-27
-
-
-17
-28
-
-41
-414221
-
-35
-353621
-
-64
-646521
-
-44
-444521
-N
-50H
-505126 *
-1A! A(.210:7B$
-
-
-13
-86
-
-
-15
-87
-
-
-17
-88
-
-76
-767721
-
-68
-686921
-
-78
-787921
-
-32
-323321
-
-70
-707121
-
-84
-848521
-
-56
-565721
-
-48
-484921
-
-46
-464721
-
-19
-192021
-N
-80H
-808126 *
-150 5(K210:7B$
-
-
-13
-14
-
-
-15
-82
-
-
-17
-83
-
-29
-293021
-N
-52H
-525326 *
-10 (I210:7B$
-
-
-13
-14
-
-
-15
-54
-
-
-17
-55
-
-60
-606121rÕ
-
-101922*
-1 (
-
-101923*
-1 (
-
-242931*
-1 (/
-
-243234*
-1 (
-
-243522*
-1 (*
-
-243523*
-1 (
-
-243223*
-1 (#
-
-242923*
-1 (
-
-243237*
-1 (
-
-243223*
-1 (
-
-242931*
-1 (
-
-243840*
-1 (
-
-244143*
-1 (
-
-243831*
-1 (
-
-242940*
-1 (
-
-244443*
-1 (
-
-244631*
-1 (%
-
-243240*
-1 (%
-
-244843*
-1 (%
-
-241040*
-1 ($
-
-245043*
-1 ($
-
-244631*
-16 (B
-
-243240*
-16 (B
-
-244843*
-19 (B
-
-522931*
-1 (/
-
-525634*
-1 (,
-
-523522*
-1 (=
-
-523523*
-1 (
-
-525623*
-1 (6
-
-522923*
-1 (
-
-525637*
-1- (/
-
-525623*
-1 (,
-
-525840*
-1!	 "( 
-
-526043*
-1" "( 
-
-526231*
-1!	 !(
-
-526440*
-1!	 !(
-
-526643*
-1! !(
-
-526837*
-1# #(
-
-526840*
-1%! %(/
-
-527043*
-1%' %(/
-
-527240*
-1&! &(8
-
-527443*
-1&' &(8
-
-524640*
-1,  ,(<
-
-527643*
-1,7 ,(<
-
-524623*
-1,  ,(*
-
-524623*
-1,+ ,(6
-
-527840*
-1,+ ,(6
-
-522931*
-1/ 1(
-
-523840*
-1/ 1(
-
-524143*
-11 1(
-
-523831*
-1/ 0(
-
-522940*
-1/ 0(
-
-524443*
-10 0(
-
-524623*
-10 0(#
-
-524623*
-10$ 0(/
-
-527840*
-10$ 0(/
-
-802931*
-15 5(/
-
-803522*
-14 4(3
-
-803523*
-14 4(
-
-802923*
-15 5(
-
-802931*
-19 ;(
-
-803840*
-19 ;(
-
-804143*
-1; ;(
-
-803831*
-19 :(
-
-802940*
-19 :(
-
-804443*
-1: :(
-
-804623*
-1: :(#
-
-804623*
-1:$ :(9
-
-808440*
-1:$ :(9
-
-801040*
-1; ;($
-
-805043*
-1; ;($
-
-804623*
-1= =(#
-
-804623*
-1=$ =(9
-
-808440*
-1=$ =(9
-
-504634*
-1C C(
-
-504637*
-1C C(
-
-504623*
-1C C(
-
-504640*
-1H  H(,
-
-507643*
-1H' H(,

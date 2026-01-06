@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.Collections;
 import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
@@ -203,13 +204,15 @@ public class BillingDataSeeder {
         long overdueDays =
                 ChronoUnit.DAYS.between(dueDate, today);
 
+        double chance = ThreadLocalRandom.current().nextDouble();
+
         if (overdueDays > 60) {
-            return Math.random() < 0.9
+            return chance < 0.9
                     ? BillStatus.PAID
                     : BillStatus.OVERDUE;
         }
 
-        return Math.random() < 0.6
+        return chance < 0.6
                 ? BillStatus.OVERDUE
                 : BillStatus.PAID;
     }

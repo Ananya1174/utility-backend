@@ -15,5 +15,5 @@ public interface ConsumerConnectionClient {
     List<ConnectionDto> getAllConnections();
     
     @GetMapping("/connections/{connectionId}")
-    ConnectionDto getConnectionById(@PathVariable String connectionId);
+    ConnectionDto getConnectionById(@PathVariable("connectionId") String connectionId);
 }

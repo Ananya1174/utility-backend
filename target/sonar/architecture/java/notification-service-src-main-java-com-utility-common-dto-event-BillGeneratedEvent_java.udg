@@ -1,246 +1,0 @@
-
-1.0Ananya1174_utility-backendJavaFrontend"1767671990522*java2.B»	
-\
-Wnotification-service/src/main/java/com/utility/common/dto/event/BillGeneratedEvent.java2
-	
-type3
-	
-MAIN4
-
-
-module-key5
-
-notification-service6
-
-package8
-6
-1notification-service:com.utility.common.dto.event9
-5
-/com.utility.common.dto.event.BillGeneratedEvent11
-
-class12
-
-access13
-
-public14
-
-
-full-range15
-
-(5:1)-(17:2)16
-
-simple-name17
-
-BillGeneratedEvent18
-
-lombok.Data20
-
-unknown21
-
-annotated by22
-
-
-uses23
-<
-6com.utility.common.dto.event.BillGeneratedEvent.billId25
-
-field26
-
-private27
-
-(8:5)-(8:27)28
-
-billId29
-@
-:com.utility.common.dto.event.BillGeneratedEvent.consumerId31
-
-(9:5)-(9:31)32
-
-
-consumerId33
-;
-5com.utility.common.dto.event.BillGeneratedEvent.email35
-
-(10:5)-(10:26)36
-
-email37
-<
-6com.utility.common.dto.event.BillGeneratedEvent.amount39
-
-(12:5)-(12:27)40
-
-amount41
-=
-7com.utility.common.dto.event.BillGeneratedEvent.dueDate43
-
-(13:5)-(13:28)44
-
-dueDate45
-A
-;com.utility.common.dto.event.BillGeneratedEvent.utilityType47
-
-(14:5)-(14:32)48
-
-utilityType49
-@
-:com.utility.common.dto.event.BillGeneratedEvent.tariffPlan51
-
-(15:5)-(15:31)52
-
-
-tariffPlan53J%
-#
-1
-12
-
-3
-4
-
-5
-6 Z
-
-7
-7982
-
-
-5
-68j
-J
-10D
-101112 *
-1 ( :7B$
-
-
-13
-14
-
-
-15
-16
-
-
-17
-18
-N
-34H
-343526 *
-1
- 
-(210:7B$
-
-
-13
-27
-
-
-15
-36
-
-
-17
-37
-N
-38H
-383926 *
-1 (210:7B$
-
-
-13
-27
-
-
-15
-40
-
-
-17
-41
-N
-46H
-464726 *
-1 (210:7B$
-
-
-13
-27
-
-
-15
-48
-
-
-17
-49
-
-19
-192021
-N
-50H
-505126 *
-1 (210:7B$
-
-
-13
-27
-
-
-15
-52
-
-
-17
-53
-N
-24H
-242526 *
-1 (210:7B$
-
-
-13
-27
-
-
-15
-28
-
-
-17
-29
-N
-42H
-424326 *
-1 (210:7B$
-
-
-13
-27
-
-
-15
-44
-
-
-17
-45
-N
-30H
-303126 *
-1	 	(210:7B$
-
-
-13
-27
-
-
-15
-32
-
-
-17
-33r6
-
-101922*
-1 (
-
-101923*
-1 (

@@ -1,195 +1,0 @@
-
-1.0Ananya1174_utility-backendJavaFrontend"1767671991834*java2.Bú
-Q
-Lmeter-reading-service/src/main/java/com/utility/meter/dto/ConnectionDto.java2
-	
-type3
-	
-MAIN4
-
-
-module-key5
-
-meter-reading-service6
-
-package8
-0
-+meter-reading-service:com.utility.meter.dto9
-)
-#com.utility.meter.dto.ConnectionDto11
-
-class12
-
-access13
-
-public14
-
-
-full-range15
-
-(6:1)-(13:2)16
-
-simple-name17
-
-ConnectionDto18
-
-lombok.Data20
-
-unknown21
-
-annotated by22
-
-
-uses23
-,
-&com.utility.meter.dto.ConnectionDto.id25
-
-field26
-
-private27
-
-(9:5)-(9:23)28
-
-id29
-4
-.com.utility.meter.dto.ConnectionDto.consumerId31
-
-(10:5)-(10:31)32
-
-
-consumerId33
-5
-/com.utility.meter.dto.ConnectionDto.utilityType35
-
-(11:5)-(11:37)36
-
-utilityType37
-)
-#com.utility.meter.model.UtilityType39
-
-is type40
-5
-/com.utility.meter.dto.ConnectionDto.meterNumber42
-
-(12:5)-(12:32)43
-
-meterNumber44J%
-#
-1
-12
-
-3
-4
-
-5
-6 Z
-
-7
-7982
-
-
-5
-68j´
-
-38
-383921
-N
-41H
-414226 *
-1 (210:7B$
-
-
-13
-27
-
-
-15
-43
-
-
-17
-44
-N
-24H
-242526 *
-1	 	(210:7B$
-
-
-13
-27
-
-
-15
-28
-
-
-17
-29
-N
-30H
-303126 *
-1
- 
-(210:7B$
-
-
-13
-27
-
-
-15
-32
-
-
-17
-33
-
-19
-192021
-N
-34H
-343526 *
-1 ($210:7B$
-
-
-13
-27
-
-
-15
-36
-
-
-17
-37
-J
-10D
-101112 *
-1 (:7B$
-
-
-13
-14
-
-
-15
-16
-
-
-17
-18r‡
-
-101922*
-1 (
-
-101923*
-1 (
-
-343840*
-1 (
-
-343823*
-1 (
-
-343823*
-1 ($

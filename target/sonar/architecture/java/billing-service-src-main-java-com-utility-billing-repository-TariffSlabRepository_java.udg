@@ -1,141 +1,0 @@
-
-1.0Ananya1174_utility-backendJavaFrontend"1767671990834*java2.Bî
-[
-Vbilling-service/src/main/java/com/utility/billing/repository/TariffSlabRepository.java2
-	
-type3
-	
-MAIN4
-
-
-module-key5
-
-billing-service6
-
-package8
-3
-.billing-service:com.utility.billing.repository9
-9
-3com.utility.billing.repository.TariffSlabRepository11
-
-	interface12
-
-access13
-
-public14
-
-
-full-range15
-
-(10:1)-(17:2)16
-
-simple-name17
-
-TariffSlabRepository18
-A
-;org.springframework.data.mongodb.repository.MongoRepository20
-
-unknown21
-
-
-implements22
-
-
-uses23
-*
-$com.utility.billing.model.TariffSlab25
-¥
-≠com.utility.billing.repository.TariffSlabRepository#findByUtilityTypeAndPlanCodeOrderByMinUnitsAsc(Lcom/utility/billing/model/UtilityType;Ljava/lang/String;)Ljava/util/List;27
-
-method28
-
-(13:5)-(16:7)29
-4
-.findByUtilityTypeAndPlanCodeOrderByMinUnitsAsc30
-+
-%com.utility.billing.model.UtilityType32
-
-	has param33
-
-is type34J%
-#
-1
-12
-
-3
-4
-
-5
-6 Z
-
-7
-7982
-
-
-5
-68jÿ
-
-24
-242521
-N
-26H
-262728 *
-1 (D210:7B$
-
-
-13
-14
-
-
-15
-29
-
-
-17
-30
-J
-10D
-101112 *
-1
- 
-(&:7B$
-
-
-13
-14
-
-
-15
-16
-
-
-17
-18
-
-31
-313221
-
-19
-192021rΩ
-
-101922*
-1 (4
-
-101923*
-1 ( 
-
-102423*
-1! (+
-
-263133*
-1 (
-
-262423*
-1
- (
-
-263134*
-1 (
-
-263123*
-1 (

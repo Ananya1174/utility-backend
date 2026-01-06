@@ -12,5 +12,5 @@ import org.springframework.web.bind.annotation.PathVariable;
 public interface PaymentClient {
 
     @GetMapping("/payments/consumer/{consumerId}")
-    List<PaymentResponseDto> getPaymentsByConsumer(@PathVariable String consumerId);
+    List<PaymentResponseDto> getPaymentsByConsumer(@PathVariable("consumerId") String consumerId);
 }

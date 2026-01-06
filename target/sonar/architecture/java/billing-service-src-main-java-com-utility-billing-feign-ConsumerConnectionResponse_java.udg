@@ -1,240 +1,0 @@
-
-1.0Ananya1174_utility-backendJavaFrontend"1767671991379*java2.B«	
-\
-Wbilling-service/src/main/java/com/utility/billing/feign/ConsumerConnectionResponse.java2
-	
-type3
-	
-MAIN4
-
-
-module-key5
-
-billing-service6
-
-package8
-.
-)billing-service:com.utility.billing.feign9
-:
-4com.utility.billing.feign.ConsumerConnectionResponse11
-
-class12
-
-access13
-
-public14
-
-
-full-range15
-
-(6:1)-(15:2)16
-
-simple-name17
- 
-ConsumerConnectionResponse18
-
-lombok.Data20
-
-unknown21
-
-annotated by22
-
-
-uses23
-=
-7com.utility.billing.feign.ConsumerConnectionResponse.id25
-
-field26
-
-private27
-
-(9:5)-(9:23)28
-
-id29
-E
-?com.utility.billing.feign.ConsumerConnectionResponse.consumerId31
-
-(10:5)-(10:31)32
-
-
-consumerId33
-@
-:com.utility.billing.feign.ConsumerConnectionResponse.email35
-
-(11:5)-(11:26)36
-
-email37
-F
-@com.utility.billing.feign.ConsumerConnectionResponse.utilityType39
-
-(12:5)-(12:37)40
-
-utilityType41
-+
-%com.utility.billing.model.UtilityType43
-
-is type44
-E
-?com.utility.billing.feign.ConsumerConnectionResponse.tariffPlan46
-
-(13:5)-(13:31)47
-
-
-tariffPlan48
-A
-;com.utility.billing.feign.ConsumerConnectionResponse.active50
-
-(14:5)-(14:28)51
-
-active52J%
-#
-1
-12
-
-3
-4
-
-5
-6 Z
-
-7
-7982
-
-
-5
-68jÔ
-N
-24H
-242526 *
-1	 	(210:7B$
-
-
-13
-27
-
-
-15
-28
-
-
-17
-29
-N
-34H
-343526 *
-1 (210:7B$
-
-
-13
-27
-
-
-15
-36
-
-
-17
-37
-N
-30H
-303126 *
-1
- 
-(210:7B$
-
-
-13
-27
-
-
-15
-32
-
-
-17
-33
-N
-45H
-454626 *
-1 (210:7B$
-
-
-13
-27
-
-
-15
-47
-
-
-17
-48
-J
-10D
-101112 *
-1 ((:7B$
-
-
-13
-14
-
-
-15
-16
-
-
-17
-18
-
-42
-424321
-
-19
-192021
-N
-38H
-383926 *
-1 ($210:7B$
-
-
-13
-27
-
-
-15
-40
-
-
-17
-41
-N
-49H
-495026 *
-1 (210:7B$
-
-
-13
-27
-
-
-15
-51
-
-
-17
-52r‡
-
-101922*
-1 (
-
-101923*
-1 (
-
-384244*
-1 (
-
-384223*
-1 (
-
-384223*
-1 ($

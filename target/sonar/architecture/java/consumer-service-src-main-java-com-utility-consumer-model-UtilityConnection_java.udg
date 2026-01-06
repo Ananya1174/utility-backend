@@ -1,286 +1,0 @@
-
-1.0Ananya1174_utility-backendJavaFrontend"1767671986848*java2.BË
-
-U
-Pconsumer-service/src/main/java/com/utility/consumer/model/UtilityConnection.java2
-	
-type3
-	
-MAIN4
-
-
-module-key5
-
-consumer-service6
-
-package8
-0
-+consumer-service:com.utility.consumer.model9
-2
-,com.utility.consumer.model.UtilityConnection11
-
-class12
-
-access13
-
-public14
-
-
-full-range15
-
-(12:1)-(30:2)16
-
-simple-name17
-
-UtilityConnection18
-<
-6org.springframework.data.mongodb.core.mapping.Document20
-
-unknown21
-
-annotated by22
-
-
-uses23
-
-lombok.Data25
-5
-/com.utility.consumer.model.UtilityConnection.id27
-
-field28
-
-private29
-
-(16:2)-(17:20)30
-
-id31
-,
-&org.springframework.data.annotation.Id33
-=
-7com.utility.consumer.model.UtilityConnection.consumerId35
-
-(19:2)-(19:28)36
-
-
-consumerId37
->
-8com.utility.consumer.model.UtilityConnection.utilityType39
-
-(21:2)-(21:34)40
-
-utilityType41
-,
-&com.utility.consumer.enums.UtilityType43
-
-is type44
->
-8com.utility.consumer.model.UtilityConnection.meterNumber46
-
-(23:2)-(23:29)47
-
-meterNumber48
-=
-7com.utility.consumer.model.UtilityConnection.tariffPlan50
-
-(25:2)-(25:28)51
-
-
-tariffPlan52
-9
-3com.utility.consumer.model.UtilityConnection.active54
-
-(27:2)-(27:25)55
-
-active56
->
-8com.utility.consumer.model.UtilityConnection.activatedAt58
-
-(29:2)-(29:36)59
-
-activatedAt60J%
-#
-1
-12
-
-3
-4
-
-5
-6 Z
-
-7
-7982
-
-
-5
-68jÌ
-N
-38H
-383928 *
-1 (!210:7B$
-
-
-13
-29
-
-
-15
-40
-
-
-17
-41
-J
-10D
-101112 *
-1 (:7B$
-
-
-13
-14
-
-
-15
-16
-
-
-17
-18
-
-42
-424321
-
-24
-242521
-N
-53H
-535428 *
-1 (210:7B$
-
-
-13
-29
-
-
-15
-55
-
-
-17
-56
-N
-57H
-575828 *
-1 (#210:7B$
-
-
-13
-29
-
-
-15
-59
-
-
-17
-60
-N
-45H
-454628 *
-1 (210:7B$
-
-
-13
-29
-
-
-15
-47
-
-
-17
-48
-
-32
-323321
-N
-26H
-262728 *
-1 (210:7B$
-
-
-13
-29
-
-
-15
-30
-
-
-17
-31
-N
-34H
-343528 *
-1 (210:7B$
-
-
-13
-29
-
-
-15
-36
-
-
-17
-37
-N
-49H
-495028 *
-1 (210:7B$
-
-
-13
-29
-
-
-15
-51
-
-
-17
-52
-
-19
-192021ró
-
-101922*
-1 (.
-
-101923*
-1 (
-
-
-102422*
-1 (
-
-102423*
-1 (
-
-263222*
-1 (
-
-263223*
-1 (
-
-384244*
-1
- (
-
-384223*
-1
- (
-
-384223*
-1 (!

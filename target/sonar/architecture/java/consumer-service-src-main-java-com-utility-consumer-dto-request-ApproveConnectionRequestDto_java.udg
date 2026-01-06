@@ -1,123 +1,0 @@
-
-1.0Ananya1174_utility-backendJavaFrontend"1767671986965*java2.B¹
-e
-`consumer-service/src/main/java/com/utility/consumer/dto/request/ApproveConnectionRequestDto.java2
-	
-type3
-	
-MAIN4
-
-
-module-key5
-
-consumer-service6
-
-package8
-6
-1consumer-service:com.utility.consumer.dto.request9
-B
-<com.utility.consumer.dto.request.ApproveConnectionRequestDto11
-
-class12
-
-access13
-
-public14
-
-
-full-range15
-
-(6:1)-(11:2)16
-
-simple-name17
-!
-ApproveConnectionRequestDto18
-
-lombok.Data20
-
-unknown21
-
-annotated by22
-
-
-uses23
-N
-Hcom.utility.consumer.dto.request.ApproveConnectionRequestDto.meterNumber25
-
-field26
-
-private27
-
-(9:5)-(10:32)28
-
-meterNumber29
--
-'jakarta.validation.constraints.NotBlank31J%
-#
-1
-12
-
-3
-4
-
-5
-6 Z
-
-7
-7982
-
-
-5
-68jÄ
-J
-10D
-101112 *
-1 ():7B$
-
-
-13
-14
-
-
-15
-16
-
-
-17
-18
-N
-24H
-242526 *
-1
- 
-(210:7B$
-
-
-13
-27
-
-
-15
-28
-
-
-17
-29
-
-30
-303121
-
-19
-192021rl
-
-101922*
-1 (
-
-101923*
-1 (
-
-243022*
-1	 	(
-
-243023*
-1	 	(

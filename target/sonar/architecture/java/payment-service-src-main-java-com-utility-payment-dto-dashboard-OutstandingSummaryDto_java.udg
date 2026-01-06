@@ -1,192 +1,0 @@
-
-1.0Ananya1174_utility-backendJavaFrontend"1767671988394*java2.B¬
-_
-Zpayment-service/src/main/java/com/utility/payment/dto/dashboard/OutstandingSummaryDto.java2
-	
-type3
-	
-MAIN4
-
-
-module-key5
-
-payment-service6
-
-package8
-6
-1payment-service:com.utility.payment.dto.dashboard9
-=
-7com.utility.payment.dto.dashboard.OutstandingSummaryDto11
-
-record12
-
-access13
-
-public14
-
-
-full-range15
-
-(3:1)-(7:5)16
-
-simple-name17
-
-OutstandingSummaryDto18
-I
-Ccom.utility.payment.dto.dashboard.OutstandingSummaryDto.totalBilled20
-
-field21
-
-	protected22
-
-(4:9)-(4:28)23
-
-totalBilled24
-L
-Fcom.utility.payment.dto.dashboard.OutstandingSummaryDto#totalBilled()D26
-
-method27
-
-
-references28
-G
-Acom.utility.payment.dto.dashboard.OutstandingSummaryDto.totalPaid30
-
-(5:9)-(5:26)31
-
-	totalPaid32
-J
-Dcom.utility.payment.dto.dashboard.OutstandingSummaryDto#totalPaid()D34
-O
-Icom.utility.payment.dto.dashboard.OutstandingSummaryDto.outstandingAmount36
-
-(6:9)-(6:33)37
-
-outstandingAmount38
-R
-Lcom.utility.payment.dto.dashboard.OutstandingSummaryDto#outstandingAmount()D40J%
-#
-1
-12
-
-3
-4
-
-5
-6 Z
-
-7
-7982
-
-
-5
-68jˆ
-B
-33<
-333427 *
-1 (210:7B
-
-
-15
-31
-
-
-17
-32
-B
-25<
-252627 *
-1 (210:7B
-
-
-15
-23
-
-
-17
-24
-J
-10D
-101112 *
-1 ($:7B$
-
-
-13
-14
-
-
-15
-16
-
-
-17
-18
-B
-39<
-394027 *
-1 (!210:7B
-
-
-15
-37
-
-
-17
-38
-N
-35H
-353621 *
-1 (!210:7B$
-
-
-13
-22
-
-
-15
-37
-
-
-17
-38
-N
-29H
-293021 *
-1 (210:7B$
-
-
-13
-22
-
-
-15
-31
-
-
-17
-32
-N
-19H
-192021 *
-1 (210:7B$
-
-
-13
-22
-
-
-15
-23
-
-
-17
-24rQ
-
-251928*
-1 (
-
-332928*
-1 (
-
-393528*
-1 (!

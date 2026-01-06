@@ -1,403 +1,0 @@
-
-1.0Ananya1174_utility-backendJavaFrontend"1767671988471*java2.B½
-I
-Dpayment-service/src/main/java/com/utility/payment/model/Invoice.java2
-	
-type3
-	
-MAIN4
-
-
-module-key5
-
-payment-service6
-
-package8
-.
-)payment-service:com.utility.payment.model9
-'
-!com.utility.payment.model.Invoice11
-
-class12
-
-access13
-
-public14
-
-
-full-range15
-
-(10:1)-(32:2)16
-
-simple-name17
-
-Invoice18
-
-lombok.Data20
-
-unknown21
-
-annotated by22
-
-
-uses23
-<
-6org.springframework.data.mongodb.core.mapping.Document25
-*
-$com.utility.payment.model.Invoice.id27
-
-field28
-
-private29
-
-(14:5)-(15:23)30
-
-id31
-,
-&org.springframework.data.annotation.Id33
-.
-(com.utility.payment.model.Invoice.billId35
-
-(17:5)-(17:27)36
-
-billId37
-1
-+com.utility.payment.model.Invoice.paymentId39
-
-(18:5)-(18:30)40
-
-	paymentId41
-2
-,com.utility.payment.model.Invoice.consumerId43
-
-(19:5)-(19:31)44
-
-
-consumerId45
-4
-.com.utility.payment.model.Invoice.billingMonth47
-
-(20:5)-(20:30)48
-
-billingMonth49
-3
--com.utility.payment.model.Invoice.billingYear51
-
-(21:5)-(21:29)52
-
-billingYear53
-4
-.com.utility.payment.model.Invoice.energyCharge55
-
-(22:5)-(22:33)56
-
-energyCharge57
-2
-,com.utility.payment.model.Invoice.amountPaid59
-
-(25:5)-(25:31)60
-
-
-amountPaid61
-+
-%com.utility.payment.model.Invoice.tax63
-
-(26:5)-(26:24)64
-	
-tax65
-/
-)com.utility.payment.model.Invoice.penalty67
-
-(27:5)-(27:28)68
-
-penalty69
-3
--com.utility.payment.model.Invoice.totalAmount71
-
-(28:5)-(28:32)72
-
-totalAmount73
-3
--com.utility.payment.model.Invoice.invoiceDate75
-
-(29:5)-(29:39)76
-
-invoiceDate77
-5
-/com.utility.payment.model.Invoice.invoiceNumber79
-
-(31:5)-(31:34)80
-
-invoiceNumber81J%
-#
-1
-12
-
-3
-4
-
-5
-6 Z
-
-7
-7982
-
-
-5
-68j˜	
-N
-62H
-626328 *
-1 (210:7B$
-
-
-13
-29
-
-
-15
-64
-
-
-17
-65
-N
-74H
-747528 *
-1 (&210:7B$
-
-
-13
-29
-
-
-15
-76
-
-
-17
-77
-N
-58H
-585928 *
-1 (210:7B$
-
-
-13
-29
-
-
-15
-60
-
-
-17
-61
-N
-38H
-383928 *
-1 (210:7B$
-
-
-13
-29
-
-
-15
-40
-
-
-17
-41
-N
-66H
-666728 *
-1 (210:7B$
-
-
-13
-29
-
-
-15
-68
-
-
-17
-69
-
-24
-242521
-N
-70H
-707128 *
-1 (210:7B$
-
-
-13
-29
-
-
-15
-72
-
-
-17
-73
-N
-78H
-787928 *
-1 (!210:7B$
-
-
-13
-29
-
-
-15
-80
-
-
-17
-81
-J
-10D
-101112 *
-1 (:7B$
-
-
-13
-14
-
-
-15
-16
-
-
-17
-18
-N
-54H
-545528 *
-1 ( 210:7B$
-
-
-13
-29
-
-
-15
-56
-
-
-17
-57
-
-19
-192021
-N
-34H
-343528 *
-1 (210:7B$
-
-
-13
-29
-
-
-15
-36
-
-
-17
-37
-
-32
-323321
-N
-26H
-262728 *
-1 (210:7B$
-
-
-13
-29
-
-
-15
-30
-
-
-17
-31
-N
-42H
-424328 *
-1 (210:7B$
-
-
-13
-29
-
-
-15
-44
-
-
-17
-45
-N
-50H
-505128 *
-1 (210:7B$
-
-
-13
-29
-
-
-15
-52
-
-
-17
-53
-N
-46H
-464728 *
-1 (210:7B$
-
-
-13
-29
-
-
-15
-48
-
-
-17
-49r¢
-
-101922*
-1
- 
-(
-
-101923*
-1
- 
-(
-
-102422*
-1 (#
-
-102423*
-1 (
-
-
-263222*
-1 (
-
-263223*
-1 (

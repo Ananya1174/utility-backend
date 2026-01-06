@@ -1,157 +1,0 @@
-
-1.0Ananya1174_utility-backendJavaFrontend"1767671991031*java2.Bﬁ
-R
-Mbilling-service/src/main/java/com/utility/billing/feign/ConsumerResponse.java2
-	
-type3
-	
-MAIN4
-
-
-module-key5
-
-billing-service6
-
-package8
-.
-)billing-service:com.utility.billing.feign9
-0
-*com.utility.billing.feign.ConsumerResponse11
-
-class12
-
-access13
-
-public14
-
-
-full-range15
-
-(5:1)-(11:2)16
-
-simple-name17
-
-ConsumerResponse18
-
-lombok.Data20
-
-unknown21
-
-annotated by22
-
-
-uses23
-3
--com.utility.billing.feign.ConsumerResponse.id25
-
-field26
-
-private27
-
-(8:5)-(8:23)28
-
-id29
-5
-/com.utility.billing.feign.ConsumerResponse.name31
-
-(9:5)-(9:25)32
-
-
-name33
-6
-0com.utility.billing.feign.ConsumerResponse.email35
-
-(10:5)-(10:26)36
-
-email37J%
-#
-1
-12
-
-3
-4
-
-5
-6 Z
-
-7
-7982
-
-
-5
-68j–
-N
-24H
-242526 *
-1 (210:7B$
-
-
-13
-27
-
-
-15
-28
-
-
-17
-29
-N
-34H
-343526 *
-1
- 
-(210:7B$
-
-
-13
-27
-
-
-15
-36
-
-
-17
-37
-
-19
-192021
-J
-10D
-101112 *
-1 (:7B$
-
-
-13
-14
-
-
-15
-16
-
-
-17
-18
-N
-30H
-303126 *
-1	 	(210:7B$
-
-
-13
-27
-
-
-15
-32
-
-
-17
-33r6
-
-101922*
-1 (
-
-101923*
-1 (

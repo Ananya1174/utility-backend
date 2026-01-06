@@ -1,262 +1,0 @@
-
-1.0Ananya1174_utility-backendJavaFrontend"1767671990184*java2.B≤
-W
-Rapi-gateway/src/main/java/com/utility/apigateway/config/GatewaySecurityConfig.java2
-	
-type3
-	
-MAIN4
-
-
-module-key5
-
-api-gateway6
-
-package8
-.
-)api-gateway:com.utility.apigateway.config9
-9
-3com.utility.apigateway.config.GatewaySecurityConfig11
-
-class12
-
-access13
-
-public14
-
-
-full-range15
-
-(8:1)-(21:2)16
-
-simple-name17
-
-GatewaySecurityConfig18
-:
-4org.springframework.context.annotation.Configuration20
-
-unknown21
-
-annotated by22
-
-
-uses23
-÷
-œcom.utility.apigateway.config.GatewaySecurityConfig#securityWebFilterChain(Lorg/springframework/security/config/web/server/ServerHttpSecurity;)Lorg/springframework/security/web/server/SecurityWebFilterChain;25
-
-method26
-
-(11:5)-(20:6)27
-
-securityWebFilterChain28
-D
->org.springframework.security.web.server.SecurityWebFilterChain30
-
-returns31
-G
-Aorg.springframework.security.config.web.server.ServerHttpSecurity33
-
-	has param34
-1
-+org.springframework.context.annotation.Bean36
-
-is type37
-
-
-references38
-ê
-âorg.springframework.security.config.web.server.ServerHttpSecurity#build()Lorg/springframework/security/web/server/SecurityWebFilterChain;40
-
-calls41
-œ
-»org.springframework.security.config.web.server.ServerHttpSecurity#authorizeExchange(Lorg/springframework/security/config/Customizer;)Lorg/springframework/security/config/web/server/ServerHttpSecurity;43
-¬
-ªorg.springframework.security.config.web.server.ServerHttpSecurity#csrf(Lorg/springframework/security/config/Customizer;)Lorg/springframework/security/config/web/server/ServerHttpSecurity;45
-4
-.org.springframework.security.config.Customizer47
-P
-Jorg.springframework.security.config.web.server.ServerHttpSecurity$CsrfSpec49
-]
-Worg.springframework.security.config.web.server.ServerHttpSecurity$AuthorizeExchangeSpec51
-d
-^org.springframework.security.config.web.server.ServerHttpSecurity$AuthorizeExchangeSpec$Access53
- 
-√org.springframework.security.config.web.server.ServerHttpSecurity$AuthorizeExchangeSpec$Access#permitAll()Lorg/springframework/security/config/web/server/ServerHttpSecurity$AuthorizeExchangeSpec;55
-Ã
-≈org.springframework.security.config.web.server.ServerHttpSecurity$AuthorizeExchangeSpec#anyExchange()Lorg/springframework/security/config/web/server/ServerHttpSecurity$AuthorizeExchangeSpec$Access;57J%
-#
-1
-12
-
-3
-4
-
-5
-6 Z
-
-7
-7982
-
-
-5
-68j†
-N
-24H
-242526 *
-1# (9210:7B$
-
-
-13
-14
-
-
-15
-27
-
-
-17
-28
-
-46
-464721
-
-42
-424321
-
-44
-444521
-
-48
-484921
-
-56
-565721
-
-19
-192021
-
-32
-323321
-
-52
-525321
-
-29
-293021
-
-39
-394021
-J
-10D
-101112 *
-1	 	(#:7B$
-
-
-13
-14
-
-
-15
-16
-
-
-17
-18
-
-54
-545521
-
-35
-353621
-
-50
-505121rè
-
-101922*
-1 (
-
-101923*
-1 (
-
-242931*
-1 ("
-
-243234*
-1: (L
-
-243522*
-1 (
-
-
-243523*
-1 (
-
-
-242923*
-1 ("
-
-243237*
-1M (Q
-
-243223*
-1: (L
-
-242931*
-1 (
-
-243238*
-1 (
-
-243941*
-1 (
-
-243231*
-1 (#
-
-243238*
-1 (#
-
-244241*
-1 (#
-
-243231*
-1 (
-
-243238*
-1 (
-
-244441*
-1 (
-
-244638*
-14 (;
-
-243223*
-1 ()
-
-244823*
-1* (2
-
-244838*
-1* (2
-
-245037*
-1$ (,
-
-245031*
-10 (1
-
-245238*
-10 (1
-
-245441*
-1( (1
-
-245231*
-10 (%
-
-245038*
-10 (%
-
-245641*
-1 (%
